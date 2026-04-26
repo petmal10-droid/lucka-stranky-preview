@@ -159,3 +159,4 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - Důležité: v sekci osobních údajů je ponechána výzva k doplnění skutečného správce, kontaktního e-mailu a identifikačních údajů provozovatele webu.
 - Na žádost upraveno tak, aby právní texty působily jako zatímní návrh: u osobních údajů jsou viditelné položky k doplnění, konkrétní informace dodá uživatel později.
 - Odkaz na cookies byl zviditelněn: přidán do horní navigace před `Kontakt`, zvýrazněn jemným podbarvením a patička byla přesunuta před právní sekci jako samostatný viditelný blok s odkazy `Cookies a osobní údaje` a `Nastavení cookies`.
+- Následně byla velká právní sekce nahrazena elegantnějším vysouvacím panelem po kliknutí na `Cookies`, `Cookies a osobní údaje` nebo `Více informací`. Cookies lišta byla zmenšena na kompaktní spodní oznámení. Do odkazu na CSS byl přidán cache-busting query parametr, aby GitHub Pages nenačítal staré styly.

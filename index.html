@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=20260426-legal-drawer" />
   </head>
   <body>
     <div class="page-shell">
@@ -30,7 +30,9 @@
           <a href="#bemer">BEMER a mikrocirkulace</a>
           <a href="#process">Průběh</a>
           <a href="#faq">FAQ</a>
-          <a class="nav-legal-link" href="#cookies">Cookies</a>
+          <button class="nav-legal-link" type="button" data-legal-open>
+            Cookies
+          </button>
           <a href="#contact">Kontakt</a>
         </nav>
       </header>
@@ -449,83 +451,14 @@
             <span>Právní informace jsou zatím připravené jako návrh k doplnění.</span>
           </div>
           <nav class="footer-links" aria-label="Právní odkazy">
-            <a href="#cookies">Cookies a osobní údaje</a>
+            <button class="footer-link-button" type="button" data-legal-open>
+              Cookies a osobní údaje
+            </button>
             <button class="footer-link-button" type="button" data-cookie-open>
               Nastavení cookies
             </button>
           </nav>
         </footer>
-
-        <section id="cookies" class="section legal-section">
-          <div class="legal-panel">
-            <div class="section-heading narrow">
-              <p class="eyebrow">Právní informace</p>
-              <h2>Cookies a ochrana osobních údajů</h2>
-              <p class="legal-draft-note">
-                Návrh textu k doplnění podle skutečného provozovatele webu.
-              </p>
-            </div>
-
-            <div class="legal-grid">
-              <article class="legal-card">
-                <h3>Cookies</h3>
-                <p>
-                  Tento web používá pouze nezbytné technické cookies a obdobné
-                  ukládání v prohlížeči, které slouží k zapamatování zobrazení
-                  informační lišty a k řádnému fungování webu. Nepoužíváme
-                  analytické ani marketingové cookies.
-                </p>
-                <dl class="cookie-list">
-                  <div>
-                    <dt>lucka_cookie_notice</dt>
-                    <dd>
-                      technická cookie pro zapamatování zavření cookies lišty;
-                      doba uložení 6 měsíců.
-                    </dd>
-                  </div>
-                </dl>
-              </article>
-
-              <article class="legal-card">
-                <h3>Osobní údaje</h3>
-                <p>
-                  Údaje z kontaktního formuláře nebo e-mailové komunikace jsou
-                  používány pouze k odpovědi na dotaz a navazující domluvě
-                  konzultace.
-                </p>
-                <dl class="legal-placeholder-list">
-                  <div>
-                    <dt>Správce údajů</dt>
-                    <dd>Doplnit jméno / název provozovatele.</dd>
-                  </div>
-                  <div>
-                    <dt>Kontakt</dt>
-                    <dd>Doplnit e-mail, případně telefon nebo adresu.</dd>
-                  </div>
-                  <div>
-                    <dt>Identifikační údaje</dt>
-                    <dd>Doplnit IČ, sídlo nebo další údaje, pokud jsou relevantní.</dd>
-                  </div>
-                </dl>
-                <p>
-                  Máte právo požádat o přístup k údajům, opravu, výmaz, omezení
-                  zpracování, přenositelnost údajů a vznést námitku. Stížnost je
-                  možné podat u Úřadu pro ochranu osobních údajů.
-                </p>
-              </article>
-
-              <article class="legal-card">
-                <h3>Externí obsah</h3>
-                <p>
-                  Web načítá písma, obrázky a video z externích služeb
-                  používaných pro zobrazení stránky. Při jejich načtení může
-                  provozovatel služby technicky zpracovat například IP adresu,
-                  typ prohlížeče nebo čas požadavku.
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
       </main>
 
     </div>
@@ -544,10 +477,94 @@
         </p>
       </div>
       <div class="cookie-banner-actions">
-        <a class="cookie-link" href="#cookies">Více informací</a>
+        <button class="cookie-link" type="button" data-legal-open>
+          Více informací
+        </button>
         <button class="button button-primary" type="button" data-cookie-close>
           Rozumím
         </button>
+      </div>
+    </aside>
+
+    <div class="legal-drawer-backdrop" data-legal-backdrop hidden></div>
+    <aside
+      class="legal-drawer"
+      data-legal-drawer
+      aria-labelledby="legal-drawer-title"
+      aria-modal="true"
+      role="dialog"
+      hidden
+    >
+      <div class="legal-drawer-header">
+        <div>
+          <p class="eyebrow">Právní informace</p>
+          <h2 id="legal-drawer-title">Cookies a osobní údaje</h2>
+        </div>
+        <button class="drawer-close" type="button" data-legal-close aria-label="Zavřít">
+          ×
+        </button>
+      </div>
+
+      <p class="legal-draft-note">
+        Návrh textu k doplnění podle skutečného provozovatele webu.
+      </p>
+
+      <div class="legal-grid">
+        <article class="legal-card">
+          <h3>Cookies</h3>
+          <p>
+            Tento web používá pouze nezbytné technické cookies a obdobné ukládání
+            v prohlížeči, které slouží k zapamatování zobrazení informační lišty
+            a k řádnému fungování webu. Nepoužíváme analytické ani marketingové
+            cookies.
+          </p>
+          <dl class="cookie-list">
+            <div>
+              <dt>lucka_cookie_notice</dt>
+              <dd>
+                technická cookie pro zapamatování zavření cookies lišty; doba
+                uložení 6 měsíců.
+              </dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="legal-card">
+          <h3>Osobní údaje</h3>
+          <p>
+            Údaje z kontaktního formuláře nebo e-mailové komunikace jsou používány
+            pouze k odpovědi na dotaz a navazující domluvě konzultace.
+          </p>
+          <dl class="legal-placeholder-list">
+            <div>
+              <dt>Správce údajů</dt>
+              <dd>Doplnit jméno / název provozovatele.</dd>
+            </div>
+            <div>
+              <dt>Kontakt</dt>
+              <dd>Doplnit e-mail, případně telefon nebo adresu.</dd>
+            </div>
+            <div>
+              <dt>Identifikační údaje</dt>
+              <dd>Doplnit IČ, sídlo nebo další údaje, pokud jsou relevantní.</dd>
+            </div>
+          </dl>
+          <p>
+            Máte právo požádat o přístup k údajům, opravu, výmaz, omezení
+            zpracování, přenositelnost údajů a vznést námitku. Stížnost je možné
+            podat u Úřadu pro ochranu osobních údajů.
+          </p>
+        </article>
+
+        <article class="legal-card">
+          <h3>Externí obsah</h3>
+          <p>
+            Web načítá písma, obrázky a video z externích služeb používaných pro
+            zobrazení stránky. Při jejich načtení může provozovatel služby
+            technicky zpracovat například IP adresu, typ prohlížeče nebo čas
+            požadavku.
+          </p>
+        </article>
       </div>
     </aside>
 
@@ -556,6 +573,10 @@
         const banner = document.querySelector("[data-cookie-banner]");
         const closeButton = document.querySelector("[data-cookie-close]");
         const openButtons = document.querySelectorAll("[data-cookie-open]");
+        const legalDrawer = document.querySelector("[data-legal-drawer]");
+        const legalBackdrop = document.querySelector("[data-legal-backdrop]");
+        const legalOpenButtons = document.querySelectorAll("[data-legal-open]");
+        const legalCloseButton = document.querySelector("[data-legal-close]");
         const storageKey = "lucka_cookie_notice";
         const cookieMaxAge = 60 * 60 * 24 * 183;
 
@@ -569,6 +590,18 @@
           banner.hidden = false;
         };
 
+        const openLegalDrawer = () => {
+          legalDrawer.hidden = false;
+          legalBackdrop.hidden = false;
+          document.body.classList.add("drawer-open");
+        };
+
+        const closeLegalDrawer = () => {
+          legalDrawer.hidden = true;
+          legalBackdrop.hidden = true;
+          document.body.classList.remove("drawer-open");
+        };
+
         if (localStorage.getItem(storageKey) !== "seen") {
           openBanner();
         }
@@ -576,6 +609,16 @@
         closeButton.addEventListener("click", markSeen);
         openButtons.forEach((button) => {
           button.addEventListener("click", openBanner);
+        });
+        legalOpenButtons.forEach((button) => {
+          button.addEventListener("click", openLegalDrawer);
+        });
+        legalCloseButton.addEventListener("click", closeLegalDrawer);
+        legalBackdrop.addEventListener("click", closeLegalDrawer);
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !legalDrawer.hidden) {
+            closeLegalDrawer();
+          }
         });
       })();
     </script>

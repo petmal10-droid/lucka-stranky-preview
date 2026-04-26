@@ -21,7 +21,8 @@ Tento soubor slouží jako předávací paměť projektu. Lze ho nahrát nebo zk
 
 - Hero sekce je vrácená na původní první dnešní variantu: světlé teplé pozadí, vlevo text, vpravo abstraktní kruhový/flow vizuál tvořený CSS.
 - Pokusy s fotografií/AI obrázkem jako hero background byly vráceny zpět, protože byl viditelný předěl mezi hero a další sekcí.
-- Horní navigace obsahuje odkazy: Mikrocirkulace, Průběh, Reference, Kontakt.
+- Horní navigace obsahuje odkazy: BEMER, Mikrocirkulace, Průběh, FAQ, Kontakt.
+- Navigace má nastavený scroll offset pro sticky header, aby kliknutí na položku neschovalo nadpis sekce ani nerozhodilo layout.
 - Barevnost je teplá, krémová/oranžová, s důrazem na klidný a důvěryhodný zdravotní tón.
 - Typografie: Google Fonts `Lora` pro nadpisy a `Manrope` pro texty.
 
@@ -146,3 +147,4 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - Řešeno, zda ponechat hero eyebrow `Klidná a důvěryhodná microsite`.
 - Doporučení: text odstranit nebo nahradit návštěvnicky srozumitelným popiskem. Nejlepší kandidát: `OSOBNÍ KONZULTACE BEMER TERAPIE`.
 - Následně byl eyebrow text z hero sekce odstraněn v `index.html`.
+- Horní menu bylo aktualizováno: přidán odkaz `BEMER`, reference v menu nahrazeny `FAQ`, FAQ sekce dostala `id="faq"` a v CSS byl doplněn `scroll-padding-top` / `scroll-margin-top` pro stabilní anchor skoky.

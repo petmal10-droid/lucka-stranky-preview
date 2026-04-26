@@ -23,6 +23,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 112px;
 }
 
 body {
@@ -108,18 +109,39 @@ body::before {
 .site-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
 }
 
 .site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 10px;
+  border-radius: 999px;
   color: var(--muted);
   text-decoration: none;
   font-size: 0.94rem;
+  line-height: 1;
+  transition: color 160ms ease, background 160ms ease;
 }
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
   color: var(--text);
+  background: rgba(233, 122, 45, 0.08);
+  outline: none;
+}
+
+#top,
+#bemer,
+#benefits,
+#process,
+#testimonials,
+#faq,
+#contact {
+  scroll-margin-top: 112px;
 }
 
 .section {
@@ -1444,6 +1466,10 @@ h3 {
 }
 
 @media (max-width: 720px) {
+  html {
+    scroll-padding-top: 18px;
+  }
+
   .page-shell {
     width: min(100% - 24px, 1180px);
     padding-top: 16px;
@@ -1457,7 +1483,25 @@ h3 {
   }
 
   .site-nav {
-    gap: 14px;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+
+  .site-nav a {
+    min-height: 34px;
+    padding: 0 9px;
+    font-size: 0.88rem;
+  }
+
+  #top,
+  #bemer,
+  #benefits,
+  #process,
+  #testimonials,
+  #faq,
+  #contact {
+    scroll-margin-top: 18px;
   }
 
   h1 {

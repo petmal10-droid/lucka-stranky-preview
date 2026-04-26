@@ -1,0 +1,10 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Zásobení buněk</title>
+  <path d="M14 38C22 28 31 24 44 25" stroke="#FF6A2A" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M14 44C22 34 32 31 48 33" stroke="#FF6A2A" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M44 25L40 21" stroke="#FF6A2A" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M44 25L39.5 29" stroke="#FF6A2A" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="24" cy="34" r="3.2" fill="#FF6A2A" fill-opacity="0.9"/>
+  <circle cx="32" cy="30.5" r="2.8" fill="#FF6A2A" fill-opacity="0.72"/>
+  <circle cx="40" cy="29.5" r="2.6" fill="#FF6A2A" fill-opacity="0.55"/>
+</svg>

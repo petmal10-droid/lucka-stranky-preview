@@ -149,6 +149,7 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - Následně byl eyebrow text z hero sekce odstraněn v `index.html`.
 - Horní menu bylo aktualizováno: přidán odkaz `BEMER`, reference v menu nahrazeny `FAQ`, FAQ sekce dostala `id="faq"` a v CSS byl doplněn `scroll-padding-top` / `scroll-margin-top` pro stabilní anchor skoky.
 - Po testu bylo menu zjednodušeno na `BEMER a mikrocirkulace`, protože samostatný odkaz `#benefits` skákal doprostřed vnořeného BEMER panelu a opticky ořezával úvod s fotkou přístroje.
+- Z horního menu bylo odstraněno právní/cookie tlačítko. Nastavení cookies a právní informace mají zůstat pouze dole ve footeru a v cookie liště.
 - Doplněna základní cookies lišta a právní informační sekce pro ČR:
   - web komunikuje použití pouze nezbytných/technických cookies,
   - ukládá technickou cookie `lucka_cookie_notice` pro zapamatování zavření lišty,

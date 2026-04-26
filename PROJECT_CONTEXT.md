@@ -149,3 +149,13 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - Následně byl eyebrow text z hero sekce odstraněn v `index.html`.
 - Horní menu bylo aktualizováno: přidán odkaz `BEMER`, reference v menu nahrazeny `FAQ`, FAQ sekce dostala `id="faq"` a v CSS byl doplněn `scroll-padding-top` / `scroll-margin-top` pro stabilní anchor skoky.
 - Po testu bylo menu zjednodušeno na `BEMER a mikrocirkulace`, protože samostatný odkaz `#benefits` skákal doprostřed vnořeného BEMER panelu a opticky ořezával úvod s fotkou přístroje.
+- Doplněna základní cookies lišta a právní informační sekce pro ČR:
+  - web komunikuje použití pouze nezbytných/technických cookies,
+  - ukládá technickou cookie `lucka_cookie_notice` pro zapamatování zavření lišty,
+  - doplněn odkaz `Cookies a osobní údaje` v patičce,
+  - přidána poznámka ke kontaktnímu formuláři,
+  - doplněna informace o externím obsahu načítaném pro zobrazení webu,
+  - soubory: `index.html`, `styles.css`.
+- Důležité: v sekci osobních údajů je ponechána výzva k doplnění skutečného správce, kontaktního e-mailu a identifikačních údajů provozovatele webu.
+- Na žádost upraveno tak, aby právní texty působily jako zatímní návrh: u osobních údajů jsou viditelné položky k doplnění, konkrétní informace dodá uživatel později.
+- Odkaz na cookies byl zviditelněn: přidán do horní navigace před `Kontakt`, zvýrazněn jemným podbarvením a patička byla přesunuta před právní sekci jako samostatný viditelný blok s odkazy `Cookies a osobní údaje` a `Nastavení cookies`.

@@ -137,12 +137,22 @@ body::before {
   margin: -84px calc(50% - 50vw) 8px;
   padding: clamp(150px, 15vw, 192px) max(24px, calc((100vw - 1180px) / 2)) clamp(112px, 13vw, 160px);
   overflow: hidden;
+  background: linear-gradient(180deg, #fbf3eb 0%, #f9efe5 64%, #f7ecdf 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   background-image:
     linear-gradient(90deg, rgba(255, 250, 243, 0.98) 0%, rgba(255, 248, 240, 0.92) 28%, rgba(255, 247, 239, 0.62) 50%, rgba(255, 247, 239, 0.08) 78%),
-    linear-gradient(180deg, rgba(247, 239, 231, 0.1) 0%, rgba(247, 239, 231, 0.08) 54%, rgba(247, 239, 231, 0.94) 100%),
+    linear-gradient(180deg, rgba(247, 239, 231, 0.06) 0%, rgba(247, 239, 231, 0.22) 58%, rgba(247, 239, 231, 0.88) 100%),
     url("./hero-neural-bg.jpeg");
   background-position: center center;
   background-size: cover;
+  mask-image: linear-gradient(180deg, #000 0%, #000 46%, rgba(0, 0, 0, 0.82) 62%, rgba(0, 0, 0, 0.34) 78%, transparent 96%);
+  pointer-events: none;
 }
 
 .hero::after {
@@ -151,13 +161,17 @@ body::before {
   left: 0;
   right: 0;
   bottom: -1px;
-  z-index: -1;
-  height: 28%;
-  background: linear-gradient(180deg, transparent 0%, rgba(247, 239, 231, 0.96) 76%, #f7ecdf 100%);
+  z-index: 1;
+  height: 44%;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(247, 236, 223, 0.96) 0%, rgba(247, 236, 223, 0.72) 34%, transparent 70%),
+    linear-gradient(180deg, transparent 0%, rgba(248, 239, 229, 0.7) 58%, #f7ecdf 100%);
   pointer-events: none;
 }
 
 .hero-copy {
+  position: relative;
+  z-index: 2;
   max-width: 620px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
@@ -1432,6 +1446,9 @@ h3 {
   .hero {
     min-height: auto;
     padding-top: 138px;
+  }
+
+  .hero::before {
     background-position: 60% center;
   }
 
@@ -1576,11 +1593,15 @@ h3 {
   .hero {
     margin-top: -24px;
     padding: 86px 20px 92px;
+  }
+
+  .hero::before {
     background-image:
       linear-gradient(90deg, rgba(255, 250, 243, 0.98) 0%, rgba(255, 248, 240, 0.94) 58%, rgba(255, 247, 239, 0.54) 100%),
       linear-gradient(180deg, rgba(247, 239, 231, 0.08) 0%, rgba(247, 239, 231, 0.2) 56%, rgba(247, 239, 231, 0.96) 100%),
       url("./hero-neural-bg.jpeg");
     background-position: 66% center;
+    mask-image: linear-gradient(180deg, #000 0%, #000 52%, rgba(0, 0, 0, 0.72) 70%, transparent 96%);
   }
 
   .testimonial-section,

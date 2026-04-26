@@ -127,41 +127,11 @@ body::before {
 }
 
 .hero {
-  position: relative;
-  isolation: isolate;
   display: grid;
-  grid-template-columns: minmax(0, 620px);
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
   align-items: center;
-  width: 100vw;
-  min-height: calc(100vh - 150px);
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  margin-top: -10px;
-  padding: clamp(72px, 10vw, 132px) max(24px, calc((100vw - 1180px) / 2)) clamp(88px, 12vw, 150px);
-  overflow: hidden;
-  background-image:
-    linear-gradient(90deg, rgba(255, 250, 243, 0.96) 0%, rgba(255, 248, 240, 0.88) 28%, rgba(255, 246, 235, 0.42) 52%, rgba(255, 246, 235, 0.08) 78%),
-    linear-gradient(180deg, rgba(247, 239, 231, 0.28), rgba(247, 239, 231, 0.68)),
-    url("./hero-microcirculation.png");
-  background-position: center center;
-  background-size: cover;
-  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
-  box-shadow: 0 26px 70px rgba(64, 35, 22, 0.12);
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0;
-  z-index: -1;
-  height: 34%;
-  background: linear-gradient(180deg, transparent, rgba(247, 239, 231, 0.95));
-  pointer-events: none;
-}
-
-.hero-copy {
-  max-width: 620px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+  min-height: calc(100vh - 180px);
 }
 
 .eyebrow {
@@ -1433,7 +1403,7 @@ h3 {
 
   .hero {
     min-height: auto;
-    background-position: 58% center;
+    padding-top: 18px;
   }
 
   .faq-layout {
@@ -1572,17 +1542,6 @@ h3 {
 
   .hero-visual {
     min-height: 300px;
-  }
-
-  .hero {
-    margin-top: 0;
-    padding: 64px 20px 84px;
-    background-image:
-      linear-gradient(90deg, rgba(255, 250, 243, 0.98) 0%, rgba(255, 248, 240, 0.92) 58%, rgba(255, 246, 235, 0.44) 100%),
-      linear-gradient(180deg, rgba(247, 239, 231, 0.24), rgba(247, 239, 231, 0.78)),
-      url("./hero-microcirculation.png");
-    background-position: 62% center;
-    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   }
 
   .testimonial-section,

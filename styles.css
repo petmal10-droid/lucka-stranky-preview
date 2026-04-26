@@ -798,8 +798,8 @@ h3 {
 .pillars-subtitle {
   grid-column: 1 / -1;
   margin: 8px 0 10px;
-  max-width: 16ch;
-  font-size: clamp(1.8rem, 3vw, 2.65rem);
+  max-width: 20ch;
+  font-size: clamp(1.45rem, 2.1vw, 2rem);
   color: var(--text);
 }
 

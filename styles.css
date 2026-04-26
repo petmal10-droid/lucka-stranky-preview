@@ -151,8 +151,7 @@ body::before {
 #process,
 #testimonials,
 #faq,
-#contact,
-#cookies {
+#contact {
   scroll-margin-top: 112px;
 }
 
@@ -1489,10 +1488,9 @@ h3 {
 }
 
 .site-footer {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
   gap: 18px 28px;
   margin: 28px 0 0;
   padding: 22px 24px;
@@ -1538,8 +1536,45 @@ h3 {
   cursor: pointer;
 }
 
-.drawer-open {
+.legal-inline-panel {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 18px;
+  max-height: 0;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    max-height 520ms ease,
+    opacity 260ms ease,
+    transform 260ms ease,
+    margin-top 260ms ease,
+    padding-top 260ms ease;
+}
+
+.site-footer.is-legal-open .legal-inline-panel {
+  max-height: 2600px;
+  margin-top: 4px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.legal-inline-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.legal-inline-header h2 {
+  max-width: none;
+  font-size: clamp(1.65rem, 2.5vw, 2.35rem);
+}
+
+.legal-inline-panel .legal-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .cookie-banner {
@@ -1587,76 +1622,6 @@ h3 {
 .cookie-banner .button {
   min-height: 42px;
   padding: 0 16px;
-}
-
-.legal-drawer-backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 70;
-  background: rgba(46, 33, 27, 0.2);
-  backdrop-filter: blur(4px);
-}
-
-.legal-drawer-backdrop[hidden] {
-  display: none;
-}
-
-.legal-drawer {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  bottom: 16px;
-  z-index: 80;
-  display: grid;
-  align-content: start;
-  gap: 20px;
-  width: min(560px, calc(100% - 32px));
-  padding: 26px;
-  overflow: auto;
-  border: 1px solid rgba(255, 255, 255, 0.68);
-  border-radius: 28px;
-  background:
-    linear-gradient(180deg, rgba(255, 250, 243, 0.96), rgba(250, 238, 225, 0.95));
-  box-shadow: 0 30px 90px rgba(46, 33, 27, 0.28);
-  transform: translateX(0);
-}
-
-.legal-drawer[hidden] {
-  display: none;
-}
-
-.legal-drawer-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 18px;
-}
-
-.legal-drawer-header h2 {
-  max-width: 10ch;
-  font-size: clamp(2rem, 4vw, 2.8rem);
-}
-
-.drawer-close {
-  display: grid;
-  flex: 0 0 auto;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.66);
-  color: var(--text);
-  font: inherit;
-  font-size: 1.6rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.drawer-close:hover,
-.drawer-close:focus-visible {
-  background: rgba(233, 122, 45, 0.1);
-  outline: none;
 }
 
 @media (max-width: 1080px) {
@@ -1749,6 +1714,7 @@ h3 {
   }
 
   .site-footer {
+    grid-template-columns: 1fr;
     align-items: flex-start;
   }
 
@@ -1761,8 +1727,7 @@ h3 {
   #process,
   #testimonials,
   #faq,
-  #contact,
-  #cookies {
+  #contact {
     scroll-margin-top: 18px;
   }
 
@@ -1877,15 +1842,12 @@ h3 {
     justify-content: flex-start;
   }
 
-  .legal-drawer {
-    inset: 10px;
-    width: auto;
-    padding: 20px;
-    border-radius: 22px;
+  .legal-inline-header {
+    display: grid;
   }
 
-  .legal-drawer-header h2 {
-    max-width: 100%;
+  .legal-inline-panel .legal-grid {
+    grid-template-columns: 1fr;
   }
 
   .flow-visual {

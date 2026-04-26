@@ -68,6 +68,11 @@ Tento soubor slouží jako předávací paměť projektu. Lze ho nahrát nebo zk
   - `hero-neural-bg.jpeg`
 - Obě varianty byly vráceny, protože mezi hero a následující sekcí vznikal nežádoucí viditelný předěl.
 - Aktuálně preferovaná varianta hero je původní čistý layout bez foto backgroundu.
+- Hero eyebrow text `Klidná a důvěryhodná microsite` působí interně jako popis projektu, ne jako sdělení pro návštěvníka. Doporučené další řešení: buď eyebrow úplně odstranit, nebo nahradit jednou z variant:
+  - `OSOBNÍ KONZULTACE BEMER TERAPIE`
+  - `BEMER TERAPIE A MIKROCIRKULACE`
+  - `DOPLŇKOVÁ PODPORA REGENERACE`
+  - `MIKROCIRKULACE, REGENERACE, VITALITA`
 
 ## Změny během práce
 
@@ -132,3 +137,11 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - proč
 - které soubory
 - zda bylo pushnuto na GitHub Pages
+
+## Průběžné poznámky
+
+### 2026-04-26
+
+- Řešeno, zda ponechat hero eyebrow `Klidná a důvěryhodná microsite`.
+- Doporučení: text odstranit nebo nahradit návštěvnicky srozumitelným popiskem. Nejlepší kandidát: `OSOBNÍ KONZULTACE BEMER TERAPIE`.
+- Zatím nebyla provedena změna v `index.html`; jde pouze o rozhodovací poznámku.

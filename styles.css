@@ -1171,33 +1171,84 @@ h3 {
 }
 
 .usp-card {
+  position: relative;
+  min-height: 360px;
+  padding: 30px 24px 28px;
+  overflow: hidden;
   background:
-    linear-gradient(135deg, rgba(180, 88, 28, 0.95), rgba(233, 122, 45, 0.96));
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 42px rgba(148, 72, 24, 0.18);
+    radial-gradient(circle at 84% 16%, rgba(233, 122, 45, 0.16), transparent 28%),
+    linear-gradient(180deg, rgba(255, 253, 249, 0.94), rgba(255, 246, 237, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    0 20px 48px rgba(84, 51, 34, 0.09);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
-.usp-card h3,
-.usp-card p {
-  color: #fff6ee;
+.usp-card h3 {
+  position: relative;
+  z-index: 1;
+  margin-top: 26px;
+  color: var(--text);
 }
 
 .usp-card p {
-  opacity: 0.95;
+  position: relative;
+  z-index: 1;
+  color: rgba(72, 54, 45, 0.76);
+  line-height: 1.76;
 }
 
 .usp-card::before {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.08));
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 6px;
+  background: linear-gradient(90deg, var(--accent), rgba(255, 190, 130, 0.58));
 }
 
 .usp-card::after {
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 68%);
+  content: "";
+  position: absolute;
+  right: -54px;
+  bottom: -58px;
+  width: 160px;
+  height: 160px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(233, 122, 45, 0.13), transparent 68%);
+  pointer-events: none;
 }
 
 .usp-card-primary {
   background:
-    radial-gradient(circle at top right, rgba(255, 218, 184, 0.22), transparent 28%),
-    linear-gradient(135deg, rgba(164, 78, 22, 0.98), rgba(233, 122, 45, 0.98));
+    radial-gradient(circle at 84% 16%, rgba(233, 122, 45, 0.18), transparent 30%),
+    linear-gradient(180deg, rgba(255, 252, 247, 0.96), rgba(255, 245, 235, 0.92));
+}
+
+.usp-card-index {
+  position: relative;
+  z-index: 1;
+  display: inline-grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--accent), var(--accent-deep));
+  color: #fff8f0;
+  font-family: "Lora", serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  box-shadow:
+    0 0 0 10px rgba(233, 122, 45, 0.1),
+    0 14px 26px rgba(160, 80, 28, 0.2);
+}
+
+.usp-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(233, 122, 45, 0.22);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 28px 60px rgba(84, 51, 34, 0.13);
 }
 
 .process-section {
@@ -1757,6 +1808,10 @@ h3 {
   .benefits-feature-grid .feature-card {
     min-height: auto;
     padding: 26px 22px 24px;
+  }
+
+  .usp-card {
+    min-height: auto;
   }
 
   .section {

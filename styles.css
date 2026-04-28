@@ -440,51 +440,27 @@ h3 {
 }
 
 .bemer-section {
-  padding-top: 18px;
+  padding-top: 52px;
 }
 
 .bemer-panel {
   position: relative;
-  padding: 34px 34px 26px;
-  border-radius: 36px;
-  background:
-    radial-gradient(circle at top right, rgba(255, 226, 196, 0.45), transparent 22%),
-    linear-gradient(180deg, rgba(255, 250, 243, 0.92), rgba(255, 247, 240, 0.78));
-  border: 1px solid rgba(255, 255, 255, 0.62);
-  box-shadow: 0 26px 70px rgba(64, 35, 22, 0.08);
-  overflow: hidden;
+  padding: 0;
 }
 
 .bemer-panel::before {
-  content: "";
-  position: absolute;
-  inset: auto -8% -24% auto;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(233, 122, 45, 0.14), transparent 68%);
-  pointer-events: none;
+  content: none;
 }
 
 .bemer-benefits-block {
   position: relative;
-  margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(233, 122, 45, 0.12);
+  margin-top: 72px;
+  padding-top: 0;
+  border-top: 0;
 }
 
 .bemer-benefits-block::before {
-  content: "";
-  position: absolute;
-  inset: 12px 16px auto auto;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 1px solid rgba(233, 122, 45, 0.1);
-  box-shadow:
-    0 0 0 18px rgba(233, 122, 45, 0.04),
-    0 0 0 42px rgba(233, 122, 45, 0.025);
-  pointer-events: none;
+  content: none;
 }
 
 .benefits-layout {
@@ -1787,7 +1763,7 @@ h3 {
   }
 
   .bemer-panel {
-    padding: 28px 24px 24px;
+    padding: 0;
   }
 
   .bemer-photo {
@@ -1891,13 +1867,12 @@ h3 {
   }
 
   .bemer-panel {
-    padding: 22px 18px 24px;
-    border-radius: 28px;
+    padding: 0;
   }
 
   .bemer-benefits-block {
-    margin-top: 20px;
-    padding-top: 20px;
+    margin-top: 44px;
+    padding-top: 0;
   }
 
   .benefit-intro-card {

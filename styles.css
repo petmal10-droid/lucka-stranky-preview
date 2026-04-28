@@ -1271,9 +1271,7 @@ h3 {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 0.55fr) minmax(260px, 0.45fr);
-  gap: 36px;
-  align-items: end;
+  grid-template-columns: 1fr;
   margin-bottom: 28px;
 }
 
@@ -1282,15 +1280,7 @@ h3 {
 }
 
 .testimonial-heading h2 {
-  max-width: 16ch;
-}
-
-.testimonial-heading > p {
-  max-width: 52ch;
-  margin: 0 0 4px;
-  color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.8;
+  max-width: 18ch;
 }
 
 .testimonial-grid {

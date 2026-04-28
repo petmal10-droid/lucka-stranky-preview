@@ -181,3 +181,4 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - Karty v sekci `Jak to funguje v praxi` byly následně laděny do světlejší polished měděno-oranžové varianty se světlým textem, aby nepůsobily příliš černě.
 - Ze sekce `BEMER a jeho technologie` / `Mikrocirkulace - klíč ke zdraví` byl odstraněn společný vnější rámeček/panel. Obsah je zarovnán a odsazen konzistentněji jako ostatní sekce.
 - Výška hero a horní odsazení BEMER sekce byly zmenšeny, aby nadpis `BEMER a jeho technologie` začínal už na úvodní obrazovce a motivoval ke scrollování.
+- Nadpis referencí byl změněn na `Osobní zkušenosti s BEMER terapií` a doprovodný odstavec v hlavičce referencí byl odstraněn.

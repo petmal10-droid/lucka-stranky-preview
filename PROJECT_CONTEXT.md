@@ -174,3 +174,4 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
   - medailonek přepsán na `O mě` s osobním textem o lékařském vzdělání, péči o dceru a zkušenosti s BEMER terapií.
 - Soubory: `index.html`, `styles.css`.
 - Text první karty `Energie, výkon, regenerace` byl následně zpřesněn na formulaci: `Lepší prokrvení tkání pomáhá buňkám efektivněji využívat kyslík a živiny, což se může projevit na celkové vitalitě a schopnosti regenerace. Vhodné i pro sportovce.`
+- Nadpis `Jak to funguje v praxi` byl typograficky zalomen na dva řádky: `Jak to funguje` / `v praxi`.

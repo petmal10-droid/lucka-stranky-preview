@@ -182,3 +182,14 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - Ze sekce `BEMER a jeho technologie` / `Mikrocirkulace - klíč ke zdraví` byl odstraněn společný vnější rámeček/panel. Obsah je zarovnán a odsazen konzistentněji jako ostatní sekce.
 - Výška hero a horní odsazení BEMER sekce byly zmenšeny, aby nadpis `BEMER a jeho technologie` začínal už na úvodní obrazovce a motivoval ke scrollování.
 - Nadpis referencí byl změněn na `Osobní zkušenosti s BEMER terapií` a doprovodný odstavec v hlavičce referencí byl odstraněn.
+- Vytvořena druhá vizuální varianta podle dodané reference:
+  - přepracovaný header s logotypem `lucka`, navigací a CTA,
+  - hero s jemnou oranžovou radiální/signální grafikou,
+  - mikrocirkulace poskládaná jako text + insight karta + široké video + třísloupcový benefit strip,
+  - samostatný produktový BEMER panel,
+  - čtyři světlé benefit karty, disclaimer, reference, kompaktní FAQ a kontaktní blok,
+  - kontaktní vizuál byl nahrazen klidnější ilustrační fotografií z Pexels.
+- Soubory: `index.html`, `styles.css`, `PROJECT_CONTEXT.md`.
+- Změna zatím nebyla pushnutá na GitHub Pages.
+- Pro klientské porovnání byla původní varianta vytažena z posledního commitu do `varianta-1.html` + `styles-varianta-1.css`.
+- Přidán rozcestník `porovnani.html`, který odkazuje na původní variantu 1 a aktuální novou variantu 2 (`index.html`).

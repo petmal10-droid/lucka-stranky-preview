@@ -180,3 +180,4 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - Reference sekce byla přepracována ze sytě oranžového bloku na světlejší prémiový panel s dvousloupcovým úvodem, jemnými quote kartami, autorskými popisky a decentním oranžovým akcentem.
 - Karty v sekci `Jak to funguje v praxi` byly následně laděny do světlejší polished měděno-oranžové varianty se světlým textem, aby nepůsobily příliš černě.
 - Ze sekce `BEMER a jeho technologie` / `Mikrocirkulace - klíč ke zdraví` byl odstraněn společný vnější rámeček/panel. Obsah je zarovnán a odsazen konzistentněji jako ostatní sekce.
+- Výška hero a horní odsazení BEMER sekce byly zmenšeny, aby nadpis `BEMER a jeho technologie` začínal už na úvodní obrazovce a motivoval ke scrollování.

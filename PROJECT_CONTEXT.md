@@ -162,3 +162,14 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - Odkaz na cookies byl zviditelněn: přidán do horní navigace před `Kontakt`, zvýrazněn jemným podbarvením a patička byla přesunuta před právní sekci jako samostatný viditelný blok s odkazy `Cookies a osobní údaje` a `Nastavení cookies`.
 - Následně byla velká právní sekce nahrazena elegantnějším vysouvacím panelem po kliknutí na `Cookies`, `Cookies a osobní údaje` nebo `Více informací`. Cookies lišta byla zmenšena na kompaktní spodní oznámení. Do odkazu na CSS byl přidán cache-busting query parametr, aby GitHub Pages nenačítal staré styly.
 - Podle dalšího zadání byl boční drawer nahrazen rozbalovacím panelem přímo v patičce. Odkaz se jmenuje `Právní informace`; po kliknutí se právní texty vysunou pod ním jako součást designu webu. Cache-busting parametr CSS byl aktualizován na `legal-inline`.
+
+### 2026-04-28
+
+- Zapracovány aktivní textové připomínky z Pastel review od Lucie Klozové:
+  - hero bod změněn na `individuální posouzení vhodnosti terapie`,
+  - BEMER úvod doplněn o regeneraci, hojení a opatrnou poznámku k podpoře působení léčiv/doplňků,
+  - šest karet `S čím vám může terapie pomoci` přepsáno podle review: energie/výkon/regenerace, imunita, orgány a sliznice, hojení tkání, bolestivé stavy, chronická onemocnění,
+  - sekce spolupráce přejmenována na `Jak to funguje v praxi`,
+  - praktické karty přepsány na `Individuální konzultace`, `Domácí terapie`, `Akutní potíže`, `Dlouhodobé užívání`,
+  - medailonek přepsán na `O mě` s osobním textem o lékařském vzdělání, péči o dceru a zkušenosti s BEMER terapií.
+- Soubory: `index.html`, `styles.css`.

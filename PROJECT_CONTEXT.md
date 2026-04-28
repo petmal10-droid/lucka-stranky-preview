@@ -176,3 +176,4 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - Text první karty `Energie, výkon, regenerace` byl následně zpřesněn na formulaci: `Lepší prokrvení tkání pomáhá buňkám efektivněji využívat kyslík a živiny, což se může projevit na celkové vitalitě a schopnosti regenerace. Vhodné i pro sportovce.`
 - Nadpis `Jak to funguje v praxi` byl typograficky zalomen na dva řádky: `Jak to funguje` / `v praxi`.
 - Karty v sekci `Jak to funguje v praxi` byly vizuálně zatraktivněny: světlejší vrstvené pozadí, očíslovaný oranžový badge, horní linka, jemnější stín a hover efekt.
+- Do karet `Jak to funguje v praxi` byly doplněny odpovídající inline SVG ikony: konzultace, domácí terapie, akutní potíže a dlouhodobé užívání.

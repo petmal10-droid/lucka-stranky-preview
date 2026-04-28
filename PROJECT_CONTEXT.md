@@ -179,3 +179,4 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - Sekce `Jak probíhá BEMER terapie` byla odstraněna včetně položky `Průběh` v horním menu.
 - Reference sekce byla přepracována ze sytě oranžového bloku na světlejší prémiový panel s dvousloupcovým úvodem, jemnými quote kartami, autorskými popisky a decentním oranžovým akcentem.
 - Karty v sekci `Jak to funguje v praxi` byly následně laděny do světlejší polished měděno-oranžové varianty se světlým textem, aby nepůsobily příliš černě.
+- Reference byly následně zvýrazněny dynamičtějším layoutem: tmavý levý editorial panel a světlé quote karty ve stacku napravo, aby se sekce méně slévala s okolím.

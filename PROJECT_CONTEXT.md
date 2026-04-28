@@ -178,4 +178,4 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - Karty v sekci `Jak to funguje v praxi` byly vizuálně zatraktivněny: světlejší vrstvené pozadí, očíslovaný oranžový badge, horní linka, jemnější stín a hover efekt.
 - Sekce `Jak probíhá BEMER terapie` byla odstraněna včetně položky `Průběh` v horním menu.
 - Reference sekce byla přepracována ze sytě oranžového bloku na světlejší prémiový panel s dvousloupcovým úvodem, jemnými quote kartami, autorskými popisky a decentním oranžovým akcentem.
-- Karty v sekci `Jak to funguje v praxi` byly následně invertovány do tmavé teplé varianty se světlým textem a jemnými oranžovými akcenty.
+- Karty v sekci `Jak to funguje v praxi` byly následně laděny do světlejší polished měděno-oranžové varianty se světlým textem, aby nepůsobily příliš černě.

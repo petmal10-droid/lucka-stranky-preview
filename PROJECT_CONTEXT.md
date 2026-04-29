@@ -201,3 +201,7 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
   - převzat hero odstavec a body,
   - sekce BEMER technologie, praktický průběh, reference, FAQ a kontaktní poznámka používají formulace z první varianty,
   - vizuální layout druhé varianty zůstal zachovaný.
+- Následně byla v produktové/BEMER sekci varianty 2 vrácena původní textace druhé varianty:
+  - `Jak do toho vstupuje BEMER`,
+  - `Jak BEMER podporuje mikrocirkulaci`,
+  - odstavec o pulzním elektromagnetickém poli a tři body k neinvazivní terapii, cíli podpory mikrocirkulace a individuálnímu posouzení.

@@ -209,3 +209,4 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - V kontaktní sekci varianty 2 byla ilustrační Pexels fotka nahrazena projektovým obrázkem `bemer-b-bed-evo.png`, snímkem z oficiálního BEMER B.Bed Evo produktového videa.
 - Úvodní odstavec sekce `Mikrocirkulace - klíč ke zdraví` byl ve variantě 2 vrácen na původní znění o zásobení buněk kyslíkem a živinami, výměně odpadních látek, regeneraci, hojení a menším vyčerpávání.
 - Header/menu ve variantě 2 bylo nastaveno jako sticky s jemným průsvitným pozadím, blur efektem a decentním stínem.
+- Ve variantě 2 byl odstraněn informační box pod kartami `Jak to funguje v praxi`.

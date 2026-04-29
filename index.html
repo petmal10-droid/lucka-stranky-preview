@@ -329,25 +329,63 @@
 
         <section id="contact" class="section contact-section">
           <div class="contact-card">
-            <div class="contact-copy">
-              <h2>Ráda vám pomůžu najít cestu k lepšímu prokrvení a regeneraci vašeho těla.</h2>
-              <a class="button button-primary" href="mailto:info@luckabemer.cz">
-                Domluvit nezávaznou konzultaci
-              </a>
+            <div class="contact-copy contact-form-block">
+              <div>
+                <p class="eyebrow">Kontakt</p>
+                <h2>Ráda vám pomůžu najít cestu k lepšímu prokrvení a regeneraci vašeho těla.</h2>
+              </div>
+              <form
+                class="contact-form"
+                action="mailto:info@luckabemer.cz"
+                method="post"
+                enctype="text/plain"
+              >
+                <div class="form-row">
+                  <label>
+                    Jméno
+                    <input name="Jméno" type="text" autocomplete="name" placeholder="Vaše jméno" />
+                  </label>
+                  <label>
+                    E-mail
+                    <input name="E-mail" type="email" autocomplete="email" placeholder="vas@email.cz" />
+                  </label>
+                </div>
+                <label>
+                  Telefon
+                  <input name="Telefon" type="tel" autocomplete="tel" placeholder="+420 ..." />
+                </label>
+                <label>
+                  Zpráva
+                  <textarea
+                    name="Zpráva"
+                    rows="4"
+                    placeholder="Napište stručně, s čím vám mohu pomoci."
+                  ></textarea>
+                </label>
+                <button class="button button-primary" type="submit">
+                  Odeslat nezávaznou poptávku
+                </button>
+                <p class="form-note">
+                  Odesláním se otevře váš e-mailový klient. Údaje slouží pouze
+                  k odpovědi na dotaz a domluvě konzultace.
+                </p>
+              </form>
             </div>
 
-            <div class="contact-details" aria-label="Kontaktní údaje">
-              <a href="tel:+420123456789">+420 123 456 789</a>
-              <a href="mailto:info@luckabemer.cz">info@luckabemer.cz</a>
-              <span>Osobní konzultace v Praze a okolí</span>
-            </div>
+            <aside class="contact-side">
+              <div class="contact-details" aria-label="Kontaktní údaje">
+                <a href="tel:+420123456789">+420 123 456 789</a>
+                <a href="mailto:info@luckabemer.cz">info@luckabemer.cz</a>
+                <span>Osobní konzultace v Praze a okolí</span>
+              </div>
 
-            <figure class="contact-photo">
-              <img
-                src="https://images.pexels.com/photos/6628473/pexels-photo-6628473.jpeg?cs=srgb&fm=jpg&w=900"
-                alt="Klidná místnost pro podpůrnou terapii"
-              />
-            </figure>
+              <figure class="contact-photo">
+                <img
+                  src="https://images.pexels.com/photos/6628473/pexels-photo-6628473.jpeg?cs=srgb&fm=jpg&w=900"
+                  alt="Klidná místnost pro podpůrnou terapii"
+                />
+              </figure>
+            </aside>
           </div>
         </section>
 

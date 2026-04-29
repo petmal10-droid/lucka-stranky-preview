@@ -193,3 +193,7 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - Změna zatím nebyla pushnutá na GitHub Pages.
 - Pro klientské porovnání byla původní varianta vytažena z posledního commitu do `varianta-1.html` + `styles-varianta-1.css`.
 - Přidán rozcestník `porovnani.html`, který odkazuje na původní variantu 1 a aktuální novou variantu 2 (`index.html`).
+- V kontaktní sekci varianty 2 byl původní CTA blok nahrazen kontaktním formulářem:
+  - pole `Jméno`, `E-mail`, `Telefon`, `Zpráva`,
+  - odeslání přes `mailto:info@luckabemer.cz`,
+  - zachované kontaktní údaje a ilustrační fotografie v pravém sloupci.

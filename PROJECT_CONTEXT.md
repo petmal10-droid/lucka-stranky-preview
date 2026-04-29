@@ -207,3 +207,4 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
   - odstavec o pulzním elektromagnetickém poli a tři body k neinvazivní terapii, cíli podpory mikrocirkulace a individuálnímu posouzení.
 - V insight kartě u mikrocirkulace byla vrácena původní formulace: `Zdravá mikrocirkulace znamená lepší podmínky pro regeneraci, vitalitu a přirozenou odolnost těla.`
 - V kontaktní sekci varianty 2 byla ilustrační Pexels fotka nahrazena projektovým obrázkem `bemer-b-bed-evo.png`, snímkem z oficiálního BEMER B.Bed Evo produktového videa.
+- Úvodní odstavec sekce `Mikrocirkulace - klíč ke zdraví` byl ve variantě 2 vrácen na původní znění o zásobení buněk kyslíkem a živinami, výměně odpadních látek, regeneraci, hojení a menším vyčerpávání.

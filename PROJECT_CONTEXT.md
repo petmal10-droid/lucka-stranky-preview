@@ -210,3 +210,10 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - Úvodní odstavec sekce `Mikrocirkulace - klíč ke zdraví` byl ve variantě 2 vrácen na původní znění o zásobení buněk kyslíkem a živinami, výměně odpadních látek, regeneraci, hojení a menším vyčerpávání.
 - Header/menu ve variantě 2 bylo nastaveno jako sticky s jemným průsvitným pozadím, blur efektem a decentním stínem.
 - Ve variantě 2 byl odstraněn informační box pod kartami `Jak to funguje v praxi`.
+- Do varianty 2 byla mezi produktový BEMER panel a sekci `Jak to funguje v praxi` doplněna nová sekce `S čím může terapie pomoci` se šesti kartami:
+  - energie/výkon/regenerace,
+  - imunitní systém,
+  - funkce orgánů a sliznic,
+  - hojení tkání,
+  - bolestivé stavy,
+  - chronická onemocnění.

@@ -205,3 +205,4 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
   - `Jak do toho vstupuje BEMER`,
   - `Jak BEMER podporuje mikrocirkulaci`,
   - odstavec o pulzním elektromagnetickém poli a tři body k neinvazivní terapii, cíli podpory mikrocirkulace a individuálnímu posouzení.
+- V insight kartě u mikrocirkulace byla vrácena původní formulace: `Zdravá mikrocirkulace znamená lepší podmínky pro regeneraci, vitalitu a přirozenou odolnost těla.`

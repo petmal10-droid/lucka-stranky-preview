@@ -197,3 +197,7 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
   - pole `Jméno`, `E-mail`, `Telefon`, `Zpráva`,
   - odeslání přes `mailto:info@luckabemer.cz`,
   - zachované kontaktní údaje a ilustrační fotografie v pravém sloupci.
+- Textace varianty 2 (`index.html`) byla sladěna podle původní varianty 1:
+  - převzat hero odstavec a body,
+  - sekce BEMER technologie, praktický průběh, reference, FAQ a kontaktní poznámka používají formulace z první varianty,
+  - vizuální layout druhé varianty zůstal zachovaný.

@@ -206,3 +206,4 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
   - `Jak BEMER podporuje mikrocirkulaci`,
   - odstavec o pulzním elektromagnetickém poli a tři body k neinvazivní terapii, cíli podpory mikrocirkulace a individuálnímu posouzení.
 - V insight kartě u mikrocirkulace byla vrácena původní formulace: `Zdravá mikrocirkulace znamená lepší podmínky pro regeneraci, vitalitu a přirozenou odolnost těla.`
+- V kontaktní sekci varianty 2 byla ilustrační Pexels fotka nahrazena projektovým obrázkem `bemer-b-bed-evo.png`, snímkem z oficiálního BEMER B.Bed Evo produktového videa.

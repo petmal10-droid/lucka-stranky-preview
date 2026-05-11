@@ -47,23 +47,41 @@ document.addEventListener("DOMContentLoaded", () => {
     .filter(Boolean);
 
   if (sectionLinks.length) {
-    const navObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
+    let ticking = false;
 
-          sectionLinks.forEach(({ link }) => link.classList.remove("is-active"));
-          const active = sectionLinks.find(({ section }) => section === entry.target);
-          if (active) active.link.classList.add("is-active");
-        });
-      },
-      {
-        threshold: 0.35,
-        rootMargin: "-20% 0px -55% 0px",
+    const setActiveLink = () => {
+      const headerOffset = header ? header.offsetHeight + 34 : 120;
+      const currentPosition = window.scrollY + headerOffset;
+      const pageBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+
+      let activeItem = sectionLinks[0];
+
+      sectionLinks.forEach((item) => {
+        if (item.section.offsetTop <= currentPosition) {
+          activeItem = item;
+        }
+      });
+
+      if (pageBottom) {
+        activeItem = sectionLinks[sectionLinks.length - 1];
       }
-    );
 
-    sectionLinks.forEach(({ section }) => navObserver.observe(section));
+      sectionLinks.forEach(({ link }) => {
+        link.classList.toggle("is-active", link === activeItem.link);
+      });
+
+      ticking = false;
+    };
+
+    const requestActiveLinkUpdate = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(setActiveLink);
+    };
+
+    setActiveLink();
+    window.addEventListener("scroll", requestActiveLinkUpdate, { passive: true });
+    window.addEventListener("resize", requestActiveLinkUpdate);
   }
 
   const faqItems = document.querySelectorAll(".faq-item");

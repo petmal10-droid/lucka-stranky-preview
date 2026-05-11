@@ -218,3 +218,4 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
   - bolestivé stavy,
   - chronická onemocnění.
 - Hero text varianty 2 byl zpřesněn tak, aby návštěvník hned pochopil, že BEMER je neinvazivní pulzní elektromagnetická terapie navržená pro podporu mikrocirkulace.
+- Produktová BEMER sekce varianty 2 byla přepsána tak, aby vysvětlovala, že jde o systém s podložkou a lokálními aplikátory, jak terapie probíhá a jak souvisí s mikrocirkulací.

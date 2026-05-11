@@ -570,6 +570,47 @@ h3 {
   max-width: 14ch;
 }
 
+.bemer-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.bemer-proof-card {
+  min-height: 124px;
+  padding: 18px 16px;
+  border: 1px solid rgba(239, 111, 24, 0.18);
+  border-radius: 12px;
+  background: rgba(255, 253, 249, 0.78);
+  box-shadow: 0 14px 28px rgba(68, 37, 18, 0.06);
+}
+
+.bemer-proof-card strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.9rem, 3vw, 2.55rem);
+  line-height: 0.95;
+}
+
+.bemer-proof-card span {
+  display: block;
+  color: #5c4a42;
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.bemer-proof-card a {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .device-image {
   margin: 0;
   text-align: center;
@@ -1118,6 +1159,7 @@ h3 {
   }
 
   .feature-strip,
+  .bemer-proof-grid,
   .help-grid,
   .audience-grid,
   .testimonial-grid,
@@ -1192,6 +1234,7 @@ h3 {
   }
 
   .feature-strip,
+  .bemer-proof-grid,
   .help-grid,
   .audience-grid,
   .testimonial-grid,

@@ -221,3 +221,4 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - Produktová BEMER sekce varianty 2 byla přepsána tak, aby vysvětlovala, že jde o systém s podložkou a lokálními aplikátory, jak terapie probíhá a jak souvisí s mikrocirkulací.
 - Odrážky v produktové BEMER sekci varianty 2 byly nahrazeny výraznými USP kartami: založení/vývoj od roku 1998, 5+ mezinárodních patentů a odkaz na PubMed studie k BEMER.
 - USP karty v produktové BEMER sekci byly stylisticky upraveny na `20+ let zkušeností`, `5+ patentů` a samostatně zarovnaný odkaz na PubMed studie.
+- PubMed USP karta dostala kompaktnější nadpis a ochranu proti přetékání textu z úzké karty.

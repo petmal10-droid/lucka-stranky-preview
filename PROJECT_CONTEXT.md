@@ -222,3 +222,18 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - Odrážky v produktové BEMER sekci varianty 2 byly nahrazeny výraznými USP kartami: založení/vývoj od roku 1998, 5+ mezinárodních patentů a odkaz na PubMed studie k BEMER.
 - USP karty v produktové BEMER sekci byly stylisticky upraveny na `20+ let zkušeností`, `5+ patentů` a samostatně zarovnaný odkaz na PubMed studie.
 - PubMed USP karta dostala kompaktnější nadpis a ochranu proti přetékání textu z úzké karty.
+- Sekce `Jak to funguje v praxi` byla přepracována na procesní sekci `Jak spolupráce probíhá` se čtyřmi kroky: úvodní konzultace, vyzkoušení doma, průběžná podpora a rozhodnutí bez tlaku. Pod karty bylo přidáno CTA na nezávaznou konzultaci.
+- Procesní sekce byla mikrocopy doladěna: kratší texty v kartách, krok 02 přejmenován na `Domácí vyzkoušení`, závěr kroku 04 je méně obchodní a CTA používá výrazné oranžové tlačítko.
+- Reference byly zlidštěny na `Zkušenosti lidí, kteří BEMER vyzkoušeli`, dostaly vysvětlující podnadpis, konkrétnější texty, štítky typu zkušenosti a byly odstraněny carousel tečky.
+- FAQ sekce byla přepracována z technického edukačního bloku na praktické otázky před konzultací a domácím vyzkoušením: 6 položek, úvodní podnadpis, kratší otázky a sekundární odkaz `Přejít na oficiální FAQ BEMER`.
+- Kontaktní sekce byla posunuta z produktové roviny do osobnější: odstraněna fotka lehátka, přidán úvod nad formulářem, kontaktní blok a osobní medailonek Lucie s civilním textem a dovětkem o nezávaznosti konzultace.
+- Nadpis kontaktní sekce byl změněn na `Máte otázky k BEMER terapii? Ozvěte se mi`.
+- Do patičky byl přidán odkaz `Identifikační údaje` a do právního panelu blok pro doplnění identifikačních údajů provozovatele: jméno/název, IČO, sídlo/adresa podnikání, kontakt a případný zápis v rejstříku.
+- Sekce `S čím může terapie pomoci` byla zjemněna na orientační přehled podpůrných oblastí: nový nadpis `Kde může být BEMER vhodnou podporou`, podnadpis o individuálním posouzení, bezpečnější copy karet a jemné ikonové značky místo dominantního číslování.
+- Sekce podpůrných oblastí byla dále doladěna: osobnější podnadpis, kratší copy v kartách, kompaktnější karty a vlastní šířka/velikost H2 pro přirozenější zalomení.
+- Produktová BEMER sekce byla napojena zpět na předchozí vysvětlení mikrocirkulace: nadštítek `Praktická podpora mikrocirkulace`, nadpis `Jak BEMER podporuje mikrocirkulaci`, dva kratší odstavce o principu a průběhu terapie, zpřesněné proof boxy a jemnější PubMed vizuál.
+- Úvodní mikrocirkulační sekce byla zjemněna: nadštítek `Proč začínáme mikrocirkulací`, nadpis `Mikrocirkulace jako základ regenerace`, bezpečnější úvodní odstavec, upravený insight box a spodní karty ve struktuře zásobení buněk, látková výměna, regenerace a vitalita.
+- Ve spodních kartách mikrocirkulační sekce bylo odstraněno číslování 01-03 a ponechány pouze ikonové ilustrace.
+- Z video bloku mikrocirkulační sekce byl odstraněn dekorativní play button.
+- Hero copy bylo zjemněno: hlavní odstavec vysvětluje BEMER jako neinvazivní terapii využívající pulzní elektromagnetické pole pro podporu mikrocirkulace a body jsou osobnější, včetně domácího vyzkoušení.
+- 2026-05-11: Přidán motion/UX polish bez redesignu. Soubory `index.html`, `styles.css` a nový `script.js` doplnily scroll reveal, stagger animace gridů, jemné hover stavy karet a tlačítek, mikroanimaci hero vizuálu, aktivní navigaci, sticky header stav, plynulý FAQ accordion s `aria-expanded`, focus polish formuláře a `prefers-reduced-motion` fallback. Cílem je klidnější prémiový pocit a lepší interaktivita; změna bude po kontrole pushnuta na GitHub Pages.

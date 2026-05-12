@@ -241,3 +241,4 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - 2026-05-12: Hero podkladová grafika byla přepracována z kruhového abstraktu na jemnou simulaci elektromagnetického vlnění vycházejícího z horizontální spodní linky/podložky. Animace je velmi pomalá a nevtíravá, respektuje globální reduced-motion fallback.
 - 2026-05-12: Hero vlnění bylo rozšířeno na fullscreen šířku viewportu, mírně zvýrazněno a hero dostalo vyšší první viewport s výraznější spodní linkou/podložkou.
 - 2026-05-12: Hero sekce byla opravena na skutečný full-bleed layout přes celou šířku viewportu (`100vw`), zatímco textový obsah zůstává zarovnaný do původního vnitřního kontejneru.
+- 2026-05-12: Hero elektromagnetické vlnění bylo zvýrazněno pomocí devíti samostatných zdrojů/sond podél spodní linky podložky. Každý zdroj má vlastní jemně posunutou pulzaci, aby efekt působil živěji a atraktivněji, ale pořád klidně a neagresivně.

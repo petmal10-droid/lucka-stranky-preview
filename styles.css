@@ -348,27 +348,28 @@ h3 {
 .hero-art::before {
   inset: -2% -7% 0 -7%;
   background:
-    repeating-radial-gradient(ellipse at 62% 100%, transparent 0 22px, rgba(239, 111, 24, 0.13) 23px 24px, transparent 25px 49px),
-    repeating-radial-gradient(ellipse at 62% 100%, transparent 0 52px, rgba(239, 111, 24, 0.072) 53px 54px, transparent 55px 98px),
-    radial-gradient(ellipse at 62% 100%, rgba(239, 111, 24, 0.13), transparent 58%);
+    repeating-linear-gradient(82deg, transparent 0 42px, rgba(239, 111, 24, 0.045) 43px 45px, transparent 46px 88px),
+    repeating-radial-gradient(ellipse at 64% 100%, transparent 0 30px, rgba(239, 111, 24, 0.095) 31px 32px, transparent 33px 66px),
+    repeating-radial-gradient(ellipse at 54% 100%, transparent 0 58px, rgba(239, 111, 24, 0.055) 59px 60px, transparent 61px 110px),
+    radial-gradient(ellipse at 62% 100%, rgba(239, 111, 24, 0.14), transparent 62%);
   mask-image:
-    linear-gradient(0deg, black 0%, black 80%, transparent 100%),
-    linear-gradient(90deg, transparent 0%, black 16%, black 96%);
-  opacity: 0.9;
+    linear-gradient(0deg, black 0%, black 82%, transparent 100%),
+    linear-gradient(90deg, transparent 0%, black 8%, black 98%);
+  opacity: 0.82;
   transform-origin: 62% 100%;
-  animation: bemerWaveField 12s var(--ease-soft) infinite;
+  animation: bemerWaveField 10s var(--ease-soft) infinite;
 }
 
 .hero-art::after {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 3px;
+  height: 4px;
   background:
-    linear-gradient(90deg, transparent, rgba(239, 111, 24, 0.22) 8%, rgba(239, 111, 24, 0.48) 62%, rgba(239, 111, 24, 0.18) 88%, transparent),
+    linear-gradient(90deg, transparent, rgba(239, 111, 24, 0.28) 8%, rgba(239, 111, 24, 0.58) 52%, rgba(239, 111, 24, 0.22) 90%, transparent),
     linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent);
   box-shadow:
-    0 -16px 46px rgba(239, 111, 24, 0.18),
+    0 -22px 62px rgba(239, 111, 24, 0.22),
     0 -1px 0 rgba(239, 111, 24, 0.12);
 }
 
@@ -387,14 +388,139 @@ h3 {
   transform-origin: 62% 100%;
 }
 
+.signal-emitter {
+  --emitter-x: 50%;
+  --emitter-width: 360px;
+  --emitter-height: 420px;
+  --emitter-opacity: 0.54;
+  --emitter-delay: 0s;
+  position: absolute;
+  left: var(--emitter-x);
+  bottom: -2px;
+  width: var(--emitter-width);
+  height: var(--emitter-height);
+  transform: translateX(-50%);
+  transform-origin: center bottom;
+  pointer-events: none;
+}
+
+.signal-emitter::before,
+.signal-emitter::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.signal-emitter::before {
+  inset: 0;
+  background:
+    repeating-radial-gradient(ellipse at 50% 100%, transparent 0 20px, rgba(239, 111, 24, 0.16) 21px 22px, transparent 23px 45px),
+    repeating-radial-gradient(ellipse at 50% 100%, transparent 0 54px, rgba(239, 111, 24, 0.075) 55px 56px, transparent 57px 102px),
+    radial-gradient(ellipse at 50% 100%, rgba(239, 111, 24, 0.18), rgba(239, 111, 24, 0.06) 45%, transparent 76%);
+  filter: blur(0.1px);
+  mask-image: linear-gradient(0deg, black 0%, black 80%, transparent 100%);
+  opacity: var(--emitter-opacity);
+  transform-origin: center bottom;
+  animation: emitterWave 7.6s var(--ease-soft) infinite;
+  animation-delay: var(--emitter-delay);
+}
+
+.signal-emitter::after {
+  left: 50%;
+  bottom: 0;
+  width: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(239, 111, 24, 0.68);
+  box-shadow:
+    0 0 0 7px rgba(239, 111, 24, 0.08),
+    0 0 22px rgba(239, 111, 24, 0.22);
+  opacity: 0.72;
+  transform: translateX(-50%);
+  animation: probePulse 5.4s var(--ease-soft) infinite;
+  animation-delay: var(--emitter-delay);
+}
+
+.signal-emitter-one {
+  --emitter-x: 13%;
+  --emitter-width: 300px;
+  --emitter-height: 360px;
+  --emitter-opacity: 0.4;
+  --emitter-delay: -1.6s;
+}
+
+.signal-emitter-two {
+  --emitter-x: 24%;
+  --emitter-width: 380px;
+  --emitter-height: 430px;
+  --emitter-opacity: 0.48;
+  --emitter-delay: -4.8s;
+}
+
+.signal-emitter-three {
+  --emitter-x: 35%;
+  --emitter-width: 420px;
+  --emitter-height: 500px;
+  --emitter-opacity: 0.56;
+  --emitter-delay: -2.8s;
+}
+
+.signal-emitter-four {
+  --emitter-x: 47%;
+  --emitter-width: 470px;
+  --emitter-height: 560px;
+  --emitter-opacity: 0.62;
+  --emitter-delay: -6.1s;
+}
+
+.signal-emitter-five {
+  --emitter-x: 59%;
+  --emitter-width: 520px;
+  --emitter-height: 610px;
+  --emitter-opacity: 0.66;
+  --emitter-delay: -0.9s;
+}
+
+.signal-emitter-six {
+  --emitter-x: 70%;
+  --emitter-width: 470px;
+  --emitter-height: 570px;
+  --emitter-opacity: 0.58;
+  --emitter-delay: -5.2s;
+}
+
+.signal-emitter-seven {
+  --emitter-x: 81%;
+  --emitter-width: 390px;
+  --emitter-height: 480px;
+  --emitter-opacity: 0.5;
+  --emitter-delay: -3.4s;
+}
+
+.signal-emitter-eight {
+  --emitter-x: 91%;
+  --emitter-width: 320px;
+  --emitter-height: 390px;
+  --emitter-opacity: 0.42;
+  --emitter-delay: -7s;
+}
+
+.signal-emitter-nine {
+  --emitter-x: 104%;
+  --emitter-width: 300px;
+  --emitter-height: 360px;
+  --emitter-opacity: 0.34;
+  --emitter-delay: -2.1s;
+}
+
 .signal-dot {
   position: absolute;
   width: 9px;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: rgba(239, 111, 24, 0.48);
-  box-shadow: 0 0 0 7px rgba(239, 111, 24, 0.055);
-  animation: fieldParticle 12s var(--ease-soft) infinite;
+  background: rgba(239, 111, 24, 0.56);
+  box-shadow: 0 0 0 8px rgba(239, 111, 24, 0.07);
+  animation: fieldParticle 10s var(--ease-soft) infinite;
 }
 
 .signal-dot-one {
@@ -431,8 +557,34 @@ h3 {
   }
 
   50% {
-    transform: translate3d(0, -8px, 0) scaleY(1.018);
-    opacity: 0.9;
+    transform: translate3d(0, -10px, 0) scaleY(1.022);
+    opacity: 0.96;
+  }
+}
+
+@keyframes emitterWave {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(0.985, 0.985);
+    opacity: 0.34;
+  }
+
+  48% {
+    transform: translate3d(0, -14px, 0) scale(1.035, 1.045);
+    opacity: var(--emitter-opacity);
+  }
+}
+
+@keyframes probePulse {
+  0%,
+  100% {
+    transform: translateX(-50%) scale(0.88);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: translateX(-50%) scale(1.22);
+    opacity: 0.92;
   }
 }
 

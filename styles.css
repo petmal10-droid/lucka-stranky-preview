@@ -237,6 +237,18 @@ a {
   border-bottom: 1px solid rgba(239, 111, 24, 0.16);
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 70% 28%, rgba(255, 220, 190, 0.58), transparent 34%),
+    radial-gradient(circle at 88% 58%, rgba(245, 164, 94, 0.18), transparent 38%),
+    linear-gradient(90deg, #fffaf5 0%, rgba(255, 250, 245, 0.96) 38%, #fff3e8 100%);
+  pointer-events: none;
+}
+
 .hero-copy {
   position: relative;
   z-index: 2;
@@ -331,11 +343,11 @@ h3 {
 }
 
 .hero-field {
-  --field-line: rgba(221, 99, 22, 0.105);
-  --field-line-soft: rgba(221, 99, 22, 0.062);
-  --field-line-active: rgba(234, 111, 30, 0.2);
-  --field-dot: rgba(234, 111, 30, 0.38);
-  --field-glow: rgba(245, 164, 94, 0.2);
+  --field-line: rgba(221, 99, 22, 0.18);
+  --field-line-soft: rgba(221, 99, 22, 0.11);
+  --field-line-active: rgba(234, 111, 30, 0.34);
+  --field-dot: rgba(234, 111, 30, 0.56);
+  --field-glow: rgba(245, 164, 94, 0.28);
   position: absolute;
   inset: 0 0 -1px;
   z-index: 1;
@@ -351,12 +363,12 @@ h3 {
 }
 
 .hero-field::before {
-  inset: 6% -4% 5% 38%;
+  inset: 2% -6% 0 30%;
   background:
-    radial-gradient(circle at 58% 46%, rgba(245, 164, 94, 0.22), transparent 58%),
-    radial-gradient(ellipse at 76% 64%, rgba(239, 111, 24, 0.1), transparent 62%);
-  filter: blur(30px);
-  opacity: 0.78;
+    radial-gradient(circle at 54% 45%, rgba(245, 164, 94, 0.32), transparent 55%),
+    radial-gradient(ellipse at 72% 66%, rgba(239, 111, 24, 0.15), transparent 60%);
+  filter: blur(26px);
+  opacity: 0.9;
 }
 
 .hero-field::after {
@@ -374,17 +386,17 @@ h3 {
 
 .field-pad {
   position: absolute;
-  right: 3%;
-  top: 32%;
-  width: min(55vw, 760px);
-  height: 255px;
-  border: 1px solid rgba(221, 99, 22, 0.095);
+  right: 4%;
+  top: 29%;
+  width: min(58vw, 800px);
+  height: 275px;
+  border: 1px solid rgba(221, 99, 22, 0.14);
   border-radius: 46px;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(234, 111, 30, 0.04)),
     radial-gradient(ellipse at 62% 52%, rgba(245, 164, 94, 0.11), transparent 64%);
   filter: blur(0.2px);
-  opacity: 0.78;
+  opacity: 0.92;
   transform: rotate(-8deg) skewX(-10deg);
   transform-origin: center;
 }
@@ -399,10 +411,10 @@ h3 {
 
 .field-svg {
   position: absolute;
-  inset: -4% -9% -4% 21%;
-  width: 92%;
+  inset: -6% -7% -4% 6%;
+  width: 108%;
   height: 112%;
-  opacity: 0.94;
+  opacity: 1;
   overflow: visible;
 }
 
@@ -411,7 +423,7 @@ h3 {
   stroke: var(--field-line);
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 1.05;
+  stroke-width: 1.35;
   vector-effect: non-scaling-stroke;
 }
 
@@ -422,7 +434,7 @@ h3 {
 .field-line--active {
   stroke: var(--field-line-active);
   stroke-dasharray: 11 24;
-  stroke-width: 1.15;
+  stroke-width: 1.55;
   opacity: 0;
   transform-box: fill-box;
   transform-origin: 62% 74%;
@@ -447,8 +459,8 @@ h3 {
 
 .field-dot {
   fill: var(--field-dot);
-  filter: drop-shadow(0 0 12px rgba(234, 111, 30, 0.28));
-  opacity: 0.45;
+  filter: drop-shadow(0 0 14px rgba(234, 111, 30, 0.34));
+  opacity: 0.62;
   animation: dotBreathe 8.5s var(--ease-soft) infinite;
 }
 
@@ -465,9 +477,9 @@ h3 {
 }
 
 .field-particle {
-  fill: rgba(234, 111, 30, 0.24);
-  filter: drop-shadow(0 0 10px rgba(234, 111, 30, 0.18));
-  opacity: 0.38;
+  fill: rgba(234, 111, 30, 0.34);
+  filter: drop-shadow(0 0 10px rgba(234, 111, 30, 0.24));
+  opacity: 0.48;
   animation: particleDrift 13s var(--ease-soft) infinite;
 }
 
@@ -490,11 +502,11 @@ h3 {
   }
 
   34% {
-    opacity: 0.45;
+    opacity: 0.62;
   }
 
   72% {
-    opacity: 0.12;
+    opacity: 0.2;
     stroke-dashoffset: 0;
     transform: translate3d(0, -6px, 0) scale(1.018);
   }
@@ -503,12 +515,12 @@ h3 {
 @keyframes dotBreathe {
   0%,
   100% {
-    opacity: 0.28;
+    opacity: 0.42;
     transform: scale(0.82);
   }
 
   45% {
-    opacity: 0.92;
+    opacity: 1;
     transform: scale(1.18);
   }
 }

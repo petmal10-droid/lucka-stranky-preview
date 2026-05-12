@@ -66,7 +66,7 @@ a {
 .page-shell {
   width: min(1180px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 22px 0 34px;
+  padding: 0 0 34px;
 }
 
 .site-header {
@@ -229,8 +229,10 @@ a {
   grid-template-columns: minmax(0, 0.86fr) minmax(420px, 1.14fr);
   align-items: center;
   width: 100vw;
-  min-height: min(760px, calc(100vh - 118px));
+  min-height: min(840px, calc(100vh - 28px));
+  margin-top: -74px;
   margin-left: calc(50% - 50vw);
+  padding-top: 74px;
   padding-left: max(24px, calc((100vw - 1180px) / 2));
   padding-right: max(24px, calc((100vw - 1180px) / 2));
   overflow: hidden;
@@ -1547,6 +1549,8 @@ h3 {
 
   .hero {
     min-height: auto;
+    margin-top: -112px;
+    padding-top: 112px;
   }
 
   .hero-art {
@@ -1596,7 +1600,7 @@ h3 {
 
   .page-shell {
     width: min(100% - 24px, 1180px);
-    padding-top: 16px;
+    padding-top: 0;
   }
 
   .site-nav {
@@ -1605,6 +1609,11 @@ h3 {
 
   .hero-copy {
     padding: 34px 0 42px;
+  }
+
+  .hero {
+    margin-top: -128px;
+    padding-top: 128px;
   }
 
   h1 {

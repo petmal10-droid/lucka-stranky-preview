@@ -237,18 +237,6 @@ a {
   border-bottom: 1px solid rgba(239, 111, 24, 0.16);
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background:
-    radial-gradient(circle at 70% 28%, rgba(255, 220, 190, 0.58), transparent 34%),
-    radial-gradient(circle at 88% 58%, rgba(245, 164, 94, 0.18), transparent 38%),
-    linear-gradient(90deg, #fffaf5 0%, rgba(255, 250, 245, 0.96) 38%, #fff3e8 100%);
-  pointer-events: none;
-}
-
 .hero-copy {
   position: relative;
   z-index: 2;
@@ -342,116 +330,135 @@ h3 {
   margin-top: 30px;
 }
 
-.hero-glow {
+.hero-art {
   position: absolute;
   inset: 0 0 -1px;
   z-index: 1;
   overflow: hidden;
-  pointer-events: none;
+  opacity: 1;
 }
 
-.hero-glow::after {
+.hero-art::before,
+.hero-art::after {
   content: "";
   position: absolute;
   pointer-events: none;
 }
 
-.hero-glow::after {
+.hero-art::before {
+  inset: -2% -7% 0 -7%;
+  background:
+    repeating-radial-gradient(ellipse at 62% 100%, transparent 0 22px, rgba(239, 111, 24, 0.13) 23px 24px, transparent 25px 49px),
+    repeating-radial-gradient(ellipse at 62% 100%, transparent 0 52px, rgba(239, 111, 24, 0.072) 53px 54px, transparent 55px 98px),
+    radial-gradient(ellipse at 62% 100%, rgba(239, 111, 24, 0.13), transparent 58%);
+  mask-image:
+    linear-gradient(0deg, black 0%, black 80%, transparent 100%),
+    linear-gradient(90deg, transparent 0%, black 16%, black 96%);
+  opacity: 0.9;
+  transform-origin: 62% 100%;
+  animation: bemerWaveField 12s var(--ease-soft) infinite;
+}
+
+.hero-art::after {
   left: 0;
   right: 0;
   bottom: 0;
   height: 3px;
   background:
-    linear-gradient(90deg, transparent, rgba(239, 111, 24, 0.2) 12%, rgba(239, 111, 24, 0.38) 54%, rgba(239, 111, 24, 0.15) 88%, transparent),
-    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.78), transparent);
+    linear-gradient(90deg, transparent, rgba(239, 111, 24, 0.22) 8%, rgba(239, 111, 24, 0.48) 62%, rgba(239, 111, 24, 0.18) 88%, transparent),
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent);
   box-shadow:
-    0 -18px 58px rgba(239, 111, 24, 0.16),
-    0 -1px 0 rgba(239, 111, 24, 0.1);
+    0 -16px 46px rgba(239, 111, 24, 0.18),
+    0 -1px 0 rgba(239, 111, 24, 0.12);
 }
 
-.glow-orb {
+.signal-sun {
   position: absolute;
-  border-radius: 999px;
-  transform-origin: center;
-  animation: ambientBreathe 13s var(--ease-soft) infinite;
-}
-
-.glow-orb-main {
-  right: 8%;
-  top: 14%;
-  width: min(52vw, 720px);
-  height: min(52vw, 720px);
+  left: 12%;
+  right: 0;
+  bottom: -34px;
+  height: 230px;
+  border-radius: 50% 50% 0 0;
   background:
-    radial-gradient(circle at 48% 45%, rgba(245, 164, 94, 0.34), rgba(245, 164, 94, 0.12) 34%, transparent 68%);
-  filter: blur(20px);
+    radial-gradient(ellipse at 62% 100%, rgba(239, 111, 24, 0.23), rgba(239, 111, 24, 0.075) 45%, transparent 72%);
+  filter: blur(0.2px);
   opacity: 0.82;
+  animation: padGlow 10s var(--ease-soft) infinite;
+  transform-origin: 62% 100%;
 }
 
-.glow-orb-soft {
-  right: -8%;
-  bottom: -18%;
-  width: min(46vw, 640px);
-  height: min(34vw, 460px);
-  background: radial-gradient(ellipse at center, rgba(239, 111, 24, 0.13), transparent 68%);
-  filter: blur(18px);
-  opacity: 0.74;
-  animation-delay: -6s;
-}
-
-.glow-dot {
+.signal-dot {
   position: absolute;
   width: 9px;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: rgba(239, 111, 24, 0.42);
-  box-shadow:
-    0 0 0 8px rgba(239, 111, 24, 0.055),
-    0 0 20px rgba(239, 111, 24, 0.18);
-  animation: softFloat 12s var(--ease-soft) infinite;
+  background: rgba(239, 111, 24, 0.48);
+  box-shadow: 0 0 0 7px rgba(239, 111, 24, 0.055);
+  animation: fieldParticle 12s var(--ease-soft) infinite;
 }
 
-.glow-dot-one {
-  right: 22%;
-  top: 34%;
+.signal-dot-one {
+  left: 46%;
+  bottom: 39%;
 }
 
-.glow-dot-two {
-  right: 10%;
-  bottom: 26%;
+.signal-dot-two {
+  left: 74%;
+  bottom: 70%;
+  width: 13px;
+  animation-delay: -3s;
+}
+
+.signal-dot-three {
+  left: 83%;
+  bottom: 32%;
   width: 12px;
-  animation-delay: -4s;
+  animation-delay: -6s;
 }
 
-.glow-dot-three {
-  right: 37%;
-  bottom: 20%;
-  width: 7px;
+.signal-dot-four {
+  right: 6%;
+  bottom: 56%;
+  width: 8px;
   animation-delay: -8s;
 }
 
-@keyframes ambientBreathe {
+@keyframes bemerWaveField {
   0%,
   100% {
-    opacity: 0.62;
-    transform: scale(0.985);
+    transform: translate3d(0, 0, 0) scaleY(1);
+    opacity: 0.72;
   }
 
   50% {
+    transform: translate3d(0, -8px, 0) scaleY(1.018);
     opacity: 0.9;
-    transform: scale(1.025);
   }
 }
 
-@keyframes softFloat {
+@keyframes padGlow {
   0%,
   100% {
-    opacity: 0.34;
-    transform: translate3d(0, 0, 0) scale(0.92);
+    transform: scaleX(1);
+    opacity: 0.58;
   }
 
   50% {
-    opacity: 0.72;
-    transform: translate3d(8px, -10px, 0) scale(1.08);
+    transform: scaleX(1.025);
+    opacity: 0.78;
+  }
+}
+
+@keyframes fieldParticle {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.42;
+  }
+
+  50% {
+    transform: translate3d(5px, -10px, 0);
+    opacity: 0.68;
   }
 }
 
@@ -1566,8 +1573,8 @@ h3 {
     transform: none !important;
   }
 
-  .glow-orb,
-  .glow-dot {
+  .signal-sun,
+  .signal-dot {
     transform: none !important;
   }
 }
@@ -1595,10 +1602,10 @@ h3 {
     min-height: auto;
   }
 
-  .hero-glow {
+  .hero-art {
     inset: auto -24% -4% -16%;
-    height: 380px;
-    opacity: 0.58;
+    height: 360px;
+    opacity: 0.62;
   }
 
   .feature-strip,
@@ -1651,12 +1658,6 @@ h3 {
 
   .hero-copy {
     padding: 34px 0 42px;
-  }
-
-  .hero-glow {
-    inset: auto -42% -5% -36%;
-    height: 330px;
-    opacity: 0.4;
   }
 
   h1 {

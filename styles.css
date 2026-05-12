@@ -348,7 +348,6 @@ h3 {
 .hero-art::before {
   inset: -2% -7% 0 -7%;
   background:
-    repeating-linear-gradient(82deg, transparent 0 42px, rgba(239, 111, 24, 0.045) 43px 45px, transparent 46px 88px),
     repeating-radial-gradient(ellipse at 64% 100%, transparent 0 30px, rgba(239, 111, 24, 0.095) 31px 32px, transparent 33px 66px),
     repeating-radial-gradient(ellipse at 54% 100%, transparent 0 58px, rgba(239, 111, 24, 0.055) 59px 60px, transparent 61px 110px),
     radial-gradient(ellipse at 62% 100%, rgba(239, 111, 24, 0.14), transparent 62%);

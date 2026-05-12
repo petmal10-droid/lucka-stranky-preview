@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260512-multi-probe-wave" />
+    <link rel="stylesheet" href="./styles.css?v=20260512-field-map" />
     <noscript>
       <style>
         .reveal,
@@ -68,21 +68,30 @@
             </div>
           </div>
 
-          <div class="hero-art" aria-hidden="true">
-            <span class="signal-sun"></span>
-            <span class="signal-emitter signal-emitter-one"></span>
-            <span class="signal-emitter signal-emitter-two"></span>
-            <span class="signal-emitter signal-emitter-three"></span>
-            <span class="signal-emitter signal-emitter-four"></span>
-            <span class="signal-emitter signal-emitter-five"></span>
-            <span class="signal-emitter signal-emitter-six"></span>
-            <span class="signal-emitter signal-emitter-seven"></span>
-            <span class="signal-emitter signal-emitter-eight"></span>
-            <span class="signal-emitter signal-emitter-nine"></span>
-            <span class="signal-dot signal-dot-one"></span>
-            <span class="signal-dot signal-dot-two"></span>
-            <span class="signal-dot signal-dot-three"></span>
-            <span class="signal-dot signal-dot-four"></span>
+          <div class="hero-field" aria-hidden="true">
+            <span class="field-pad"></span>
+            <svg class="field-svg" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <g class="field-lines">
+                <path class="field-line" d="M470 556 C545 500 620 478 710 485 C825 494 905 548 1028 530 C1110 518 1165 468 1218 404" />
+                <path class="field-line" d="M410 604 C505 510 624 442 754 444 C888 446 968 538 1096 484 C1168 454 1215 382 1245 298" />
+                <path class="field-line" d="M500 628 C570 515 694 398 838 404 C942 408 1035 474 1132 424 C1194 392 1230 320 1258 230" />
+                <path class="field-line" d="M595 624 C632 520 720 364 874 346 C1016 330 1108 414 1210 340 C1268 298 1280 226 1298 142" />
+                <path class="field-line" d="M698 620 C706 494 770 326 920 282 C1058 242 1165 310 1232 222 C1272 168 1278 96 1275 28" />
+                <path class="field-line" d="M792 618 C778 470 828 284 980 212 C1116 148 1202 190 1268 95" />
+                <path class="field-line field-line--active field-line--one" d="M520 586 C606 500 700 458 818 466 C930 474 1018 536 1142 472 C1198 443 1230 392 1260 330" />
+                <path class="field-line field-line--active field-line--two" d="M620 616 C660 488 750 360 886 342 C1015 324 1116 398 1216 322 C1272 280 1288 210 1298 142" />
+                <path class="field-line field-line--active field-line--three" d="M744 616 C728 472 800 284 964 234 C1088 196 1190 246 1260 162" />
+              </g>
+              <g class="field-sources">
+                <circle class="field-dot field-dot--one" cx="650" cy="503" r="5" />
+                <circle class="field-dot field-dot--two" cx="760" cy="468" r="6" />
+                <circle class="field-dot field-dot--three" cx="880" cy="438" r="5" />
+                <circle class="field-dot field-dot--four" cx="990" cy="408" r="4.5" />
+                <circle class="field-particle field-particle--one" cx="712" cy="322" r="3" />
+                <circle class="field-particle field-particle--two" cx="1026" cy="260" r="4" />
+                <circle class="field-particle field-particle--three" cx="1118" cy="512" r="3.5" />
+              </g>
+            </svg>
           </div>
         </section>
 

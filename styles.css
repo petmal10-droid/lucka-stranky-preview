@@ -330,286 +330,199 @@ h3 {
   margin-top: 30px;
 }
 
-.hero-art {
+.hero-field {
+  --field-line: rgba(221, 99, 22, 0.105);
+  --field-line-soft: rgba(221, 99, 22, 0.062);
+  --field-line-active: rgba(234, 111, 30, 0.2);
+  --field-dot: rgba(234, 111, 30, 0.38);
+  --field-glow: rgba(245, 164, 94, 0.2);
   position: absolute;
   inset: 0 0 -1px;
   z-index: 1;
   overflow: hidden;
-  opacity: 1;
+  pointer-events: none;
 }
 
-.hero-art::before,
-.hero-art::after {
+.hero-field::before,
+.hero-field::after {
   content: "";
   position: absolute;
   pointer-events: none;
 }
 
-.hero-art::before {
-  inset: -2% -7% 0 -7%;
+.hero-field::before {
+  inset: 6% -4% 5% 38%;
   background:
-    repeating-radial-gradient(ellipse at 64% 100%, transparent 0 30px, rgba(239, 111, 24, 0.095) 31px 32px, transparent 33px 66px),
-    repeating-radial-gradient(ellipse at 54% 100%, transparent 0 58px, rgba(239, 111, 24, 0.055) 59px 60px, transparent 61px 110px),
-    radial-gradient(ellipse at 62% 100%, rgba(239, 111, 24, 0.14), transparent 62%);
-  mask-image:
-    linear-gradient(0deg, black 0%, black 82%, transparent 100%),
-    linear-gradient(90deg, transparent 0%, black 8%, black 98%);
-  opacity: 0.82;
-  transform-origin: 62% 100%;
-  animation: bemerWaveField 10s var(--ease-soft) infinite;
+    radial-gradient(circle at 58% 46%, rgba(245, 164, 94, 0.22), transparent 58%),
+    radial-gradient(ellipse at 76% 64%, rgba(239, 111, 24, 0.1), transparent 62%);
+  filter: blur(30px);
+  opacity: 0.78;
 }
 
-.hero-art::after {
+.hero-field::after {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 4px;
+  height: 3px;
   background:
-    linear-gradient(90deg, transparent, rgba(239, 111, 24, 0.28) 8%, rgba(239, 111, 24, 0.58) 52%, rgba(239, 111, 24, 0.22) 90%, transparent),
-    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent);
+    linear-gradient(90deg, transparent, rgba(239, 111, 24, 0.2) 12%, rgba(239, 111, 24, 0.38) 54%, rgba(239, 111, 24, 0.15) 88%, transparent),
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.78), transparent);
   box-shadow:
-    0 -22px 62px rgba(239, 111, 24, 0.22),
-    0 -1px 0 rgba(239, 111, 24, 0.12);
+    0 -18px 58px rgba(239, 111, 24, 0.16),
+    0 -1px 0 rgba(239, 111, 24, 0.1);
 }
 
-.signal-sun {
+.field-pad {
   position: absolute;
-  left: 12%;
-  right: 0;
-  bottom: -34px;
-  height: 230px;
-  border-radius: 50% 50% 0 0;
+  right: 3%;
+  top: 32%;
+  width: min(55vw, 760px);
+  height: 255px;
+  border: 1px solid rgba(221, 99, 22, 0.095);
+  border-radius: 46px;
   background:
-    radial-gradient(ellipse at 62% 100%, rgba(239, 111, 24, 0.23), rgba(239, 111, 24, 0.075) 45%, transparent 72%);
+    linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(234, 111, 30, 0.04)),
+    radial-gradient(ellipse at 62% 52%, rgba(245, 164, 94, 0.11), transparent 64%);
   filter: blur(0.2px);
-  opacity: 0.82;
-  animation: padGlow 10s var(--ease-soft) infinite;
-  transform-origin: 62% 100%;
+  opacity: 0.78;
+  transform: rotate(-8deg) skewX(-10deg);
+  transform-origin: center;
 }
 
-.signal-emitter {
-  --emitter-x: 50%;
-  --emitter-width: 360px;
-  --emitter-height: 420px;
-  --emitter-opacity: 0.54;
-  --emitter-delay: 0s;
-  position: absolute;
-  left: var(--emitter-x);
-  bottom: -2px;
-  width: var(--emitter-width);
-  height: var(--emitter-height);
-  transform: translateX(-50%);
-  transform-origin: center bottom;
-  pointer-events: none;
-}
-
-.signal-emitter::before,
-.signal-emitter::after {
+.field-pad::before {
   content: "";
   position: absolute;
-  pointer-events: none;
+  inset: 20px 30px;
+  border-radius: 34px;
+  border: 1px solid rgba(221, 99, 22, 0.055);
 }
 
-.signal-emitter::before {
-  inset: 0;
-  background:
-    repeating-radial-gradient(ellipse at 50% 100%, transparent 0 20px, rgba(239, 111, 24, 0.16) 21px 22px, transparent 23px 45px),
-    repeating-radial-gradient(ellipse at 50% 100%, transparent 0 54px, rgba(239, 111, 24, 0.075) 55px 56px, transparent 57px 102px),
-    radial-gradient(ellipse at 50% 100%, rgba(239, 111, 24, 0.18), rgba(239, 111, 24, 0.06) 45%, transparent 76%);
-  filter: blur(0.1px);
-  mask-image: linear-gradient(0deg, black 0%, black 80%, transparent 100%);
-  opacity: var(--emitter-opacity);
-  transform-origin: center bottom;
-  animation: emitterWave 7.6s var(--ease-soft) infinite;
-  animation-delay: var(--emitter-delay);
-}
-
-.signal-emitter::after {
-  left: 50%;
-  bottom: 0;
-  width: 8px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: rgba(239, 111, 24, 0.68);
-  box-shadow:
-    0 0 0 7px rgba(239, 111, 24, 0.08),
-    0 0 22px rgba(239, 111, 24, 0.22);
-  opacity: 0.72;
-  transform: translateX(-50%);
-  animation: probePulse 5.4s var(--ease-soft) infinite;
-  animation-delay: var(--emitter-delay);
-}
-
-.signal-emitter-one {
-  --emitter-x: 13%;
-  --emitter-width: 300px;
-  --emitter-height: 360px;
-  --emitter-opacity: 0.4;
-  --emitter-delay: -1.6s;
-}
-
-.signal-emitter-two {
-  --emitter-x: 24%;
-  --emitter-width: 380px;
-  --emitter-height: 430px;
-  --emitter-opacity: 0.48;
-  --emitter-delay: -4.8s;
-}
-
-.signal-emitter-three {
-  --emitter-x: 35%;
-  --emitter-width: 420px;
-  --emitter-height: 500px;
-  --emitter-opacity: 0.56;
-  --emitter-delay: -2.8s;
-}
-
-.signal-emitter-four {
-  --emitter-x: 47%;
-  --emitter-width: 470px;
-  --emitter-height: 560px;
-  --emitter-opacity: 0.62;
-  --emitter-delay: -6.1s;
-}
-
-.signal-emitter-five {
-  --emitter-x: 59%;
-  --emitter-width: 520px;
-  --emitter-height: 610px;
-  --emitter-opacity: 0.66;
-  --emitter-delay: -0.9s;
-}
-
-.signal-emitter-six {
-  --emitter-x: 70%;
-  --emitter-width: 470px;
-  --emitter-height: 570px;
-  --emitter-opacity: 0.58;
-  --emitter-delay: -5.2s;
-}
-
-.signal-emitter-seven {
-  --emitter-x: 81%;
-  --emitter-width: 390px;
-  --emitter-height: 480px;
-  --emitter-opacity: 0.5;
-  --emitter-delay: -3.4s;
-}
-
-.signal-emitter-eight {
-  --emitter-x: 91%;
-  --emitter-width: 320px;
-  --emitter-height: 390px;
-  --emitter-opacity: 0.42;
-  --emitter-delay: -7s;
-}
-
-.signal-emitter-nine {
-  --emitter-x: 104%;
-  --emitter-width: 300px;
-  --emitter-height: 360px;
-  --emitter-opacity: 0.34;
-  --emitter-delay: -2.1s;
-}
-
-.signal-dot {
+.field-svg {
   position: absolute;
-  width: 9px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: rgba(239, 111, 24, 0.56);
-  box-shadow: 0 0 0 8px rgba(239, 111, 24, 0.07);
-  animation: fieldParticle 10s var(--ease-soft) infinite;
+  inset: -4% -9% -4% 21%;
+  width: 92%;
+  height: 112%;
+  opacity: 0.94;
+  overflow: visible;
 }
 
-.signal-dot-one {
-  left: 46%;
-  bottom: 39%;
+.field-line {
+  fill: none;
+  stroke: var(--field-line);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.05;
+  vector-effect: non-scaling-stroke;
 }
 
-.signal-dot-two {
-  left: 74%;
-  bottom: 70%;
-  width: 13px;
-  animation-delay: -3s;
+.field-line:nth-child(2n) {
+  stroke: var(--field-line-soft);
 }
 
-.signal-dot-three {
-  left: 83%;
-  bottom: 32%;
-  width: 12px;
-  animation-delay: -6s;
+.field-line--active {
+  stroke: var(--field-line-active);
+  stroke-dasharray: 11 24;
+  stroke-width: 1.15;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: 62% 74%;
+  animation: fieldPulse 14s var(--ease-soft) infinite;
 }
 
-.signal-dot-four {
-  right: 6%;
-  bottom: 56%;
-  width: 8px;
-  animation-delay: -8s;
+.field-line--two {
+  animation-delay: -5.5s;
+  animation-duration: 16s;
 }
 
-@keyframes bemerWaveField {
+.field-line--three {
+  animation-delay: -9s;
+  animation-duration: 18s;
+}
+
+.field-dot,
+.field-particle {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.field-dot {
+  fill: var(--field-dot);
+  filter: drop-shadow(0 0 12px rgba(234, 111, 30, 0.28));
+  opacity: 0.45;
+  animation: dotBreathe 8.5s var(--ease-soft) infinite;
+}
+
+.field-dot--two {
+  animation-delay: -3.1s;
+}
+
+.field-dot--three {
+  animation-delay: -5.8s;
+}
+
+.field-dot--four {
+  animation-delay: -7.2s;
+}
+
+.field-particle {
+  fill: rgba(234, 111, 30, 0.24);
+  filter: drop-shadow(0 0 10px rgba(234, 111, 30, 0.18));
+  opacity: 0.38;
+  animation: particleDrift 13s var(--ease-soft) infinite;
+}
+
+.field-particle--two {
+  animation-delay: -5s;
+  animation-duration: 15s;
+}
+
+.field-particle--three {
+  animation-delay: -9s;
+  animation-duration: 17s;
+}
+
+@keyframes fieldPulse {
   0%,
   100% {
-    transform: translate3d(0, 0, 0) scaleY(1);
-    opacity: 0.72;
+    opacity: 0;
+    stroke-dashoffset: 96;
+    transform: translate3d(0, 8px, 0) scale(0.985);
   }
 
-  50% {
-    transform: translate3d(0, -10px, 0) scaleY(1.022);
-    opacity: 0.96;
-  }
-}
-
-@keyframes emitterWave {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(0.985, 0.985);
-    opacity: 0.34;
-  }
-
-  48% {
-    transform: translate3d(0, -14px, 0) scale(1.035, 1.045);
-    opacity: var(--emitter-opacity);
-  }
-}
-
-@keyframes probePulse {
-  0%,
-  100% {
-    transform: translateX(-50%) scale(0.88);
+  34% {
     opacity: 0.45;
   }
 
-  50% {
-    transform: translateX(-50%) scale(1.22);
+  72% {
+    opacity: 0.12;
+    stroke-dashoffset: 0;
+    transform: translate3d(0, -6px, 0) scale(1.018);
+  }
+}
+
+@keyframes dotBreathe {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: scale(0.82);
+  }
+
+  45% {
     opacity: 0.92;
+    transform: scale(1.18);
   }
 }
 
-@keyframes padGlow {
+@keyframes particleDrift {
   0%,
   100% {
-    transform: scaleX(1);
-    opacity: 0.58;
-  }
-
-  50% {
-    transform: scaleX(1.025);
-    opacity: 0.78;
-  }
-}
-
-@keyframes fieldParticle {
-  0%,
-  100% {
+    opacity: 0.22;
     transform: translate3d(0, 0, 0);
-    opacity: 0.42;
   }
 
   50% {
-    transform: translate3d(5px, -10px, 0);
-    opacity: 0.68;
+    opacity: 0.5;
+    transform: translate3d(10px, -14px, 0);
   }
 }
 
@@ -1723,6 +1636,18 @@ h3 {
     opacity: 1 !important;
     transform: none !important;
   }
+
+  .field-line--active {
+    opacity: 0.16 !important;
+    stroke-dashoffset: 0 !important;
+    transform: none !important;
+  }
+
+  .field-dot,
+  .field-particle {
+    opacity: 0.45 !important;
+    transform: none !important;
+  }
 }
 
 @media (max-width: 980px) {
@@ -1748,10 +1673,22 @@ h3 {
     min-height: auto;
   }
 
-  .hero-art {
-    inset: auto -26% -4% -18%;
-    height: 360px;
-    opacity: 0.62;
+  .hero-field {
+    inset: auto -24% -4% -16%;
+    height: 380px;
+    opacity: 0.58;
+  }
+
+  .field-pad {
+    right: 2%;
+    top: 42%;
+    width: min(82vw, 620px);
+    height: 190px;
+  }
+
+  .field-svg {
+    inset: -8% -12% -4% 10%;
+    width: 112%;
   }
 
   .feature-strip,
@@ -1804,6 +1741,20 @@ h3 {
 
   .hero-copy {
     padding: 34px 0 42px;
+  }
+
+  .hero-field {
+    inset: auto -42% -5% -36%;
+    height: 330px;
+    opacity: 0.4;
+  }
+
+  .field-pad {
+    display: none;
+  }
+
+  .field-line--active {
+    animation-duration: 20s;
   }
 
   h1 {

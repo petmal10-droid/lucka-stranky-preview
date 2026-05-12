@@ -35,6 +35,39 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", updateHeader, { passive: true });
   }
 
+  const hero = document.querySelector(".hero");
+  const heroArt = document.querySelector(".hero-art");
+  if (hero && heroArt && !prefersReducedMotion) {
+    let parallaxTicking = false;
+
+    const updateHeroParallax = () => {
+      const heroRect = hero.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const isHeroVisible = heroRect.bottom > 0 && heroRect.top < viewportHeight;
+
+      if (!isHeroVisible) {
+        parallaxTicking = false;
+        return;
+      }
+
+      const scrollProgress = Math.min(Math.max(-heroRect.top, 0), hero.offsetHeight);
+      const parallaxY = scrollProgress * 0.42;
+
+      heroArt.style.setProperty("--hero-parallax-y", `${parallaxY.toFixed(1)}px`);
+      parallaxTicking = false;
+    };
+
+    const requestHeroParallaxUpdate = () => {
+      if (parallaxTicking) return;
+      parallaxTicking = true;
+      window.requestAnimationFrame(updateHeroParallax);
+    };
+
+    updateHeroParallax();
+    window.addEventListener("scroll", requestHeroParallaxUpdate, { passive: true });
+    window.addEventListener("resize", requestHeroParallaxUpdate);
+  }
+
   const navLinks = Array.from(document.querySelectorAll('.site-nav a[href^="#"]'));
   const sectionLinks = navLinks
     .map((link) => {

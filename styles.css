@@ -228,7 +228,11 @@ a {
   display: grid;
   grid-template-columns: minmax(0, 0.86fr) minmax(420px, 1.14fr);
   align-items: center;
+  width: 100vw;
   min-height: min(760px, calc(100vh - 118px));
+  margin-left: calc(50% - 50vw);
+  padding-left: max(24px, calc((100vw - 1180px) / 2));
+  padding-right: max(24px, calc((100vw - 1180px) / 2));
   overflow: hidden;
   border-bottom: 1px solid rgba(239, 111, 24, 0.16);
 }
@@ -328,7 +332,7 @@ h3 {
 
 .hero-art {
   position: absolute;
-  inset: 0 calc(50% - 50vw) -1px calc(50% - 50vw);
+  inset: 0 0 -1px;
   z-index: 1;
   overflow: hidden;
   opacity: 1;

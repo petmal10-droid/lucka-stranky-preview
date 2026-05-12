@@ -240,3 +240,4 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - 2026-05-11: Menu bylo sladěno s aktuálním obsahem stránky (`Mikrocirkulace`, `BEMER`, `Podpora`, `Spolupráce`, `Reference`, `FAQ`, `Kontakt`), doplněny kotvy `support` a `cooperation` a aktivní stav navigace byl přepsán na výpočet podle scroll pozice, aby se správně zvýraznil i kontakt na konci stránky.
 - 2026-05-12: Hero podkladová grafika byla přepracována z kruhového abstraktu na jemnou simulaci elektromagnetického vlnění vycházejícího z horizontální spodní linky/podložky. Animace je velmi pomalá a nevtíravá, respektuje globální reduced-motion fallback.
 - 2026-05-12: Hero vlnění bylo rozšířeno na fullscreen šířku viewportu, mírně zvýrazněno a hero dostalo vyšší první viewport s výraznější spodní linkou/podložkou.
+- 2026-05-12: Hero sekce byla opravena na skutečný full-bleed layout přes celou šířku viewportu (`100vw`), zatímco textový obsah zůstává zarovnaný do původního vnitřního kontejneru.

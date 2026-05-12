@@ -1651,6 +1651,13 @@ h3 {
     aspect-ratio: 1.45 / 1;
   }
 
+  .video-card .micro-video {
+    height: 124%;
+    object-fit: cover;
+    object-position: center top;
+    transform: translateY(-7%);
+  }
+
   .feature-strip,
   .bemer-proof-grid,
   .help-grid,

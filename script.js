@@ -127,4 +127,18 @@ document.addEventListener("DOMContentLoaded", () => {
       button.setAttribute("aria-expanded", String(isOpen));
     });
   });
+
+  const inlineVideos = document.querySelectorAll("video[autoplay][muted]");
+  inlineVideos.forEach((video) => {
+    video.controls = false;
+    video.muted = true;
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
+    video.removeAttribute("controls");
+
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {});
+    }
+  });
 });

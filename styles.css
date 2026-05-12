@@ -567,10 +567,20 @@ h3 {
 }
 
 .micro-video::-webkit-media-controls,
+.micro-video::-webkit-media-controls-enclosure,
 .micro-video::-webkit-media-controls-panel,
+.micro-video::-webkit-media-controls-current-time-display,
+.micro-video::-webkit-media-controls-time-remaining-display,
+.micro-video::-webkit-media-controls-timeline,
+.micro-video::-webkit-media-controls-play-button,
+.micro-video::-webkit-media-controls-overlay-play-button,
 .micro-video::-webkit-media-controls-start-playback-button {
   display: none !important;
   opacity: 0 !important;
+}
+
+.micro-video {
+  pointer-events: none;
 }
 
 .feature-strip {
@@ -1634,9 +1644,7 @@ h3 {
   }
 
   .insight-card {
-    grid-template-columns: 1fr;
-    justify-self: stretch;
-    padding: 24px;
+    display: none;
   }
 
   .video-card {

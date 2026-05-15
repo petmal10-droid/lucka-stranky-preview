@@ -128,6 +128,62 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  const testimonialSlides = Array.from(document.querySelectorAll("[data-testimonial-slide]"));
+  const testimonialDots = Array.from(document.querySelectorAll("[data-testimonial-dot]"));
+  if (testimonialSlides.length && testimonialDots.length) {
+    let activeTestimonial = 0;
+    let testimonialTimer;
+
+    const showTestimonial = (index) => {
+      activeTestimonial = index;
+
+      testimonialSlides.forEach((slide) => {
+        const isActive = Number(slide.dataset.testimonialSlide) === index;
+        slide.classList.toggle("is-active", isActive);
+        slide.hidden = !isActive;
+      });
+
+      testimonialDots.forEach((dot) => {
+        const isActive = Number(dot.dataset.testimonialDot) === index;
+        dot.classList.toggle("is-active", isActive);
+        dot.setAttribute("aria-current", String(isActive));
+      });
+    };
+
+    const startTestimonialTimer = () => {
+      if (prefersReducedMotion) return;
+      if (testimonialTimer) return;
+      testimonialTimer = window.setInterval(() => {
+        showTestimonial((activeTestimonial + 1) % testimonialSlides.length);
+      }, 7000);
+    };
+
+    const stopTestimonialTimer = () => {
+      if (testimonialTimer) {
+        window.clearInterval(testimonialTimer);
+        testimonialTimer = undefined;
+      }
+    };
+
+    testimonialDots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        stopTestimonialTimer();
+        showTestimonial(Number(dot.dataset.testimonialDot));
+        startTestimonialTimer();
+      });
+    });
+
+    const carousel = document.querySelector(".testimonial-carousel");
+    if (carousel) {
+      carousel.addEventListener("mouseenter", stopTestimonialTimer);
+      carousel.addEventListener("mouseleave", startTestimonialTimer);
+      carousel.addEventListener("focusin", stopTestimonialTimer);
+      carousel.addEventListener("focusout", startTestimonialTimer);
+    }
+
+    startTestimonialTimer();
+  }
+
   const inlineVideos = document.querySelectorAll("video[autoplay][muted]");
   inlineVideos.forEach((video) => {
     video.controls = false;

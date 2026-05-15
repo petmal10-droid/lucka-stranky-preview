@@ -255,3 +255,4 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - 2026-05-15: Textové logo v hlavičce a patičce bylo nahrazeno novým obrázkovým logem `logo.png` připraveným z dodaného podkladu. Do HTML byly doplněny `img.brand-logo` prvky a CSS nastavuje samostatné velikosti pro header a footer.
 - 2026-05-15: `logo.png` bylo opticky vycentrováno ořezem průhledného plátna tak, aby horní a dolní okraj kolem loga působily vyváženěji. Padding hlavičky byl sjednocen na stejnou horní i dolní hodnotu.
 - 2026-05-15: Do `logo.png` byl doplněn průhledný okraj zleva, aby levé odsazení loga odpovídalo spodnímu odsazení. HTML používá cache query u loga, aby se nová varianta načetla v prohlížeči.
+- 2026-05-15: Reference byly rozšířeny na jemný carousel s více kartami. V `index.html`, `styles.css` a `script.js` přibyly tři sady referencí, spodní bullet ovládání, automatické pomalé střídání a pauza při najetí/focusu; změna bude pushnuta na GitHub Pages.

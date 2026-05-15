@@ -930,6 +930,72 @@ h3 {
   margin-top: 24px;
 }
 
+.testimonial-carousel {
+  margin-top: 24px;
+}
+
+.testimonial-slide[hidden] {
+  display: none;
+}
+
+.testimonial-slide.is-active {
+  animation: testimonialPanelIn var(--motion-medium) var(--ease-soft);
+}
+
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.testimonial-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 1px solid rgba(239, 111, 24, 0.42);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    width var(--motion-base) var(--ease-standard),
+    background-color var(--motion-base) var(--ease-standard),
+    border-color var(--motion-base) var(--ease-standard),
+    box-shadow var(--motion-base) var(--ease-standard),
+    transform var(--motion-base) var(--ease-standard);
+}
+
+.testimonial-dot.is-active {
+  width: 22px;
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 5px rgba(239, 111, 24, 0.1);
+}
+
+.testimonial-dot:focus-visible {
+  outline: 3px solid rgba(239, 111, 24, 0.22);
+  outline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .testimonial-dot:hover {
+    background: rgba(239, 111, 24, 0.22);
+    transform: translateY(-1px);
+  }
+}
+
+@keyframes testimonialPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .testimonial-card {
   position: relative;
   min-height: 150px;

@@ -99,38 +99,21 @@ a {
 }
 
 .brand {
-  display: inline-grid;
-  gap: 0;
+  display: inline-flex;
+  align-items: center;
   color: var(--text);
   text-decoration: none;
   line-height: 1;
 }
 
-.brand-name {
-  position: relative;
-  display: inline-block;
-  font-family: "Lora", Georgia, serif;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -0.04em;
+.brand-logo {
+  display: block;
+  width: 132px;
+  height: auto;
 }
 
-.brand-name::after {
-  content: "";
-  position: absolute;
-  right: 0.33em;
-  top: 0.05em;
-  width: 0.28em;
-  height: 0.28em;
-  border-radius: 50%;
-  background: var(--accent);
-}
-
-.brand-subtitle {
-  margin-top: -2px;
-  font-size: 0.53rem;
-  font-weight: 800;
-  letter-spacing: 0.17em;
+.footer-brand .brand-logo {
+  width: 118px;
 }
 
 .site-nav {
@@ -1350,10 +1333,6 @@ h3 {
   padding-top: 18px;
   color: #8b766b;
   font-size: 0.82rem;
-}
-
-.footer-brand .brand-name {
-  font-size: 1.8rem;
 }
 
 .footer-links {

@@ -254,3 +254,4 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - 2026-05-12: Protože čas na mobilu zůstal viditelný jako součást samotného videa, mobilní video je nyní oříznuté přiblížením (`height: 124%`, posun nahoru), aby spodní vypálený čas zůstal mimo viditelný výřez karty.
 - 2026-05-15: Textové logo v hlavičce a patičce bylo nahrazeno novým obrázkovým logem `logo.png` připraveným z dodaného podkladu. Do HTML byly doplněny `img.brand-logo` prvky a CSS nastavuje samostatné velikosti pro header a footer.
 - 2026-05-15: `logo.png` bylo opticky vycentrováno ořezem průhledného plátna tak, aby horní a dolní okraj kolem loga působily vyváženěji. Padding hlavičky byl sjednocen na stejnou horní i dolní hodnotu.
+- 2026-05-15: Do `logo.png` byl doplněn průhledný okraj zleva, aby levé odsazení loga odpovídalo spodnímu odsazení. HTML používá cache query u loga, aby se nová varianta načetla v prohlížeči.

@@ -182,6 +182,7 @@ collections:
                 name: steps
                 widget: list
                 summary: "{{fields.number}} {{fields.title}}"
+                hint: "Karty lze přidávat, odebírat i řadit. Web se podle počtu karet automaticky přizpůsobí: na desktopu až 4 sloupce, na tabletu nejvýše 2, na mobilu 1."
                 fields:
                   - { label: Číslo, name: number, widget: string, hint: "Např. 01." }
                   - { label: Nadpis, name: title, widget: string }

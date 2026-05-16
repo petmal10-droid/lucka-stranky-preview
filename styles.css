@@ -887,10 +887,31 @@ h3 {
 }
 
 .audience-grid {
+  --audience-count: 4;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--audience-count), minmax(0, 1fr));
   gap: 18px;
   margin-top: 28px;
+}
+
+.audience-grid[data-count="1"] {
+  --audience-count: 1;
+}
+
+.audience-grid[data-count="2"] {
+  --audience-count: 2;
+}
+
+.audience-grid[data-count="3"] {
+  --audience-count: 3;
+}
+
+.audience-grid[data-count="4"] {
+  --audience-count: 4;
+}
+
+.audience-grid[hidden] {
+  display: none;
 }
 
 .audience-card {
@@ -1691,11 +1712,18 @@ h3 {
   .feature-strip,
   .bemer-proof-grid,
   .help-grid,
-  .audience-grid,
   .testimonial-grid,
   .faq-grid,
   .legal-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .audience-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .audience-grid[data-count="1"] {
+    grid-template-columns: 1fr;
   }
 
   .feature-strip[data-count="1"] {
@@ -1784,10 +1812,13 @@ h3 {
   .feature-strip,
   .bemer-proof-grid,
   .help-grid,
-  .audience-grid,
   .testimonial-grid,
   .faq-grid,
   .legal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .audience-grid {
     grid-template-columns: 1fr;
   }
 

@@ -180,7 +180,14 @@ const renderHelpCards = (cards = []) => {
 
 const renderSteps = (steps = []) => {
   const container = document.querySelector('[data-cms-list="cooperation.steps"]');
-  if (!container || !Array.isArray(steps) || !steps.length) return;
+  if (!container || !Array.isArray(steps)) return;
+  if (!steps.length) {
+    container.hidden = true;
+    return;
+  }
+
+  container.hidden = false;
+  container.dataset.count = String(Math.min(steps.length, 4));
 
   container.replaceChildren(
     ...steps.map((step, index) => {

@@ -72,7 +72,9 @@ const applyVisibilityFields = (content) => {
     if (typeof value !== "boolean") return;
 
     element.hidden = !value;
-    element.closest(".section-grid")?.classList.toggle("section-grid--single", !value);
+    if (element.dataset.cmsLayoutToggle === "section-grid-single") {
+      element.closest(".section-grid")?.classList.toggle("section-grid--single", !value);
+    }
   });
 };
 

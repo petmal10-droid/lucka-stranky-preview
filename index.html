@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260516-responsive-feature-cards" />
+    <link rel="stylesheet" href="./styles.css?v=20260516-eyebrow-visibility" />
     <noscript>
       <style>
         .reveal,
@@ -86,7 +86,7 @@
         <section id="bemer" class="micro-section section reveal">
           <div class="section-grid section-grid--single">
             <div class="section-heading">
-              <p class="eyebrow" data-cms-text="microcirculation.eyebrow">Proč začínáme mikrocirkulací</p>
+              <p class="eyebrow" data-cms-active="microcirculation.eyebrow.active" data-cms-text="microcirculation.eyebrow.text">Proč začínáme mikrocirkulací</p>
               <h2 data-cms-text="microcirculation.title">Mikrocirkulace jako základ regenerace</h2>
               <p data-cms-text="microcirculation.text">
                 Mikrocirkulace označuje proudění krve v nejmenších cévách.
@@ -96,7 +96,7 @@
               </p>
             </div>
 
-            <aside class="insight-card" data-cms-active="microcirculation.insight.active" hidden>
+            <aside class="insight-card" data-cms-active="microcirculation.insight.active" data-cms-layout-toggle="section-grid-single" hidden>
               <span class="insight-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" role="img">
                   <path d="M12 21s-7-4.36-7-10a4.5 4.5 0 0 1 7-3.74A4.5 4.5 0 0 1 19 11c0 5.64-7 10-7 10Z" />
@@ -167,7 +167,7 @@
 
         <section id="process" class="device-panel section reveal">
           <div class="device-copy">
-            <p class="eyebrow" data-cms-text="bemer.eyebrow">Praktická podpora mikrocirkulace</p>
+            <p class="eyebrow" data-cms-active="bemer.eyebrow.active" data-cms-text="bemer.eyebrow.text">Praktická podpora mikrocirkulace</p>
             <h2 data-cms-text="bemer.title">Jak BEMER podporuje mikrocirkulaci</h2>
             <p data-cms-text="bemer.paragraphs.0">
               Mikrocirkulace ovlivňuje zásobení buněk kyslíkem, látkovou výměnu
@@ -208,7 +208,7 @@
 
         <section id="support" class="section therapy-help-section reveal">
           <div class="section-heading full">
-            <p class="eyebrow" data-cms-text="support.eyebrow">S čím může terapie pomoci</p>
+            <p class="eyebrow" data-cms-active="support.eyebrow.active" data-cms-text="support.eyebrow.text">S čím může terapie pomoci</p>
             <h2 data-cms-text="support.title">Kde může být BEMER vhodnou podporou</h2>
             <p data-cms-text="support.text">
               BEMER se nejčastěji využívá jako doplňková podpora regenerace,
@@ -277,7 +277,7 @@
 
         <section id="cooperation" class="section audience-section reveal">
           <div class="section-heading full">
-            <p class="eyebrow" data-cms-text="cooperation.eyebrow">Proč právě se mnou</p>
+            <p class="eyebrow" data-cms-active="cooperation.eyebrow.active" data-cms-text="cooperation.eyebrow.text">Proč právě se mnou</p>
             <h2 data-cms-text="cooperation.title">Jak spolupráce probíhá</h2>
             <p data-cms-text="cooperation.text">
               Nejprve si společně ujasníme, co řešíte. Poté vám ukážu, jak
@@ -333,7 +333,7 @@
 
         <section id="testimonials" class="section testimonials-section reveal">
           <div class="section-heading full">
-            <p class="eyebrow" data-cms-text="testimonials.eyebrow">Reference</p>
+            <p class="eyebrow" data-cms-active="testimonials.eyebrow.active" data-cms-text="testimonials.eyebrow.text">Reference</p>
             <h2 data-cms-text="testimonials.title">Zkušenosti lidí, kteří BEMER vyzkoušeli</h2>
             <p data-cms-text="testimonials.text">
               Každý člověk reaguje jinak. Přečtěte si osobní zkušenosti lidí,
@@ -444,7 +444,7 @@
         <section id="faq" class="section faq-section reveal">
           <div class="faq-header">
             <div class="section-heading full">
-              <p class="eyebrow" data-cms-text="faq.eyebrow">Časté otázky</p>
+              <p class="eyebrow" data-cms-active="faq.eyebrow.active" data-cms-text="faq.eyebrow.text">Časté otázky</p>
               <h2 data-cms-text="faq.title">Často kladené otázky</h2>
               <p data-cms-text="faq.text">
                 Odpovědi na otázky, které lidé nejčastěji řeší před první
@@ -552,7 +552,7 @@
           <div class="contact-card">
             <div class="contact-copy contact-form-block">
               <div>
-                <p class="eyebrow" data-cms-text="contact.eyebrow">Kontakt</p>
+                <p class="eyebrow" data-cms-active="contact.eyebrow.active" data-cms-text="contact.eyebrow.text">Kontakt</p>
                 <h2 data-cms-text="contact.title">Máte otázky k BEMER terapii? Ozvěte se mi</h2>
                 <p data-cms-text="contact.text">
                   Napište mi krátce, co řešíte, a společně se domluvíme na
@@ -667,7 +667,7 @@
           <div class="legal-inline-panel" data-legal-panel aria-hidden="true">
             <div class="legal-inline-header">
               <div>
-                <p class="eyebrow" data-cms-text="legal.eyebrow">Právní informace</p>
+                <p class="eyebrow" data-cms-active="legal.eyebrow.active" data-cms-text="legal.eyebrow.text">Právní informace</p>
                 <h2 data-cms-text="legal.title">Identifikační údaje, cookies a osobní údaje</h2>
               </div>
               <button class="footer-link-button" type="button" data-legal-close>
@@ -786,6 +786,6 @@
         });
       })();
     </script>
-    <script src="./script.js?v=20260516-responsive-feature-cards"></script>
+    <script src="./script.js?v=20260516-eyebrow-visibility"></script>
   </body>
 </html>

@@ -475,6 +475,10 @@ h3 {
   text-transform: uppercase;
 }
 
+.eyebrow[hidden] {
+  display: none;
+}
+
 .section-heading {
   display: grid;
   gap: 13px;

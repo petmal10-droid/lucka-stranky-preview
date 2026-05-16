@@ -165,6 +165,13 @@ const renderHelpCards = (cards = []) => {
       const article = createElement("article", "help-card");
       const icon = createElement("span", "help-icon");
       icon.setAttribute("aria-hidden", "true");
+      if (card.image?.src) {
+        icon.classList.add("help-icon--custom");
+        const img = createElement("img");
+        img.src = normalizeImagePath(card.image.src);
+        img.alt = card.image.alt || "";
+        icon.append(img);
+      }
       article.append(icon, createElement("h3", "", card.title || ""), createElement("p", "", card.text || ""));
       return article;
     })

@@ -118,27 +118,51 @@
     "cards": [
       {
         "title": "Regenerace a energie",
-        "text": "Podpora mikrocirkulace může přispět k lepším podmínkám pro zásobení tkání kyslíkem a živinami. To může být užitečné při únavě, zátěži i regeneraci."
+        "text": "Podpora mikrocirkulace může přispět k lepším podmínkám pro zásobení tkání kyslíkem a živinami. To může být užitečné při únavě, zátěži i regeneraci.",
+        "image": {
+          "src": "",
+          "alt": ""
+        }
       },
       {
         "title": "Imunitní systém",
-        "text": "Správně fungující mikrocirkulace podporuje přirozené procesy organismu. BEMER může být součástí péče o celkovou odolnost a zdravý životní styl."
+        "text": "Správně fungující mikrocirkulace podporuje přirozené procesy organismu. BEMER může být součástí péče o celkovou odolnost a zdravý životní styl.",
+        "image": {
+          "src": "",
+          "alt": ""
+        }
       },
       {
         "title": "Funkce orgánů a sliznic",
-        "text": "Orgány i sliznice jsou závislé na jemném cévním zásobení. Podpora mikrocirkulace může vytvářet lepší podmínky pro jejich běžnou činnost a obnovu."
+        "text": "Orgány i sliznice jsou závislé na jemném cévním zásobení. Podpora mikrocirkulace může vytvářet lepší podmínky pro jejich běžnou činnost a obnovu.",
+        "image": {
+          "src": "",
+          "alt": ""
+        }
       },
       {
         "title": "Hojení a obnova tkání",
-        "text": "Při zátěži, úrazech nebo po operacích tělo potřebuje dobré podmínky pro regeneraci. BEMER může být podpůrným nástrojem v období obnovy."
+        "text": "Při zátěži, úrazech nebo po operacích tělo potřebuje dobré podmínky pro regeneraci. BEMER může být podpůrným nástrojem v období obnovy.",
+        "image": {
+          "src": "",
+          "alt": ""
+        }
       },
       {
         "title": "Pohybový aparát",
-        "text": "Lidé BEMER často vyhledávají při zatížení zad, svalů nebo kloubů. Vhodné použití vždy záleží na konkrétní situaci a zdravotních omezeních."
+        "text": "Lidé BEMER často vyhledávají při zatížení zad, svalů nebo kloubů. Vhodné použití vždy záleží na konkrétní situaci a zdravotních omezeních.",
+        "image": {
+          "src": "",
+          "alt": ""
+        }
       },
       {
         "title": "Dlouhodobé potíže",
-        "text": "U chronických nebo neurologických potíží je důležitý individuální přístup a respekt k lékařské péči. BEMER může sloužit jako doplňková podpora komfortu a regenerace."
+        "text": "U chronických nebo neurologických potíží je důležitý individuální přístup a respekt k lékařské péči. BEMER může sloužit jako doplňková podpora komfortu a regenerace.",
+        "image": {
+          "src": "",
+          "alt": ""
+        }
       }
     ]
   },

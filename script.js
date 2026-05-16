@@ -66,6 +66,16 @@ const applyTextFields = (content) => {
   });
 };
 
+const applyVisibilityFields = (content) => {
+  document.querySelectorAll("[data-cms-active]").forEach((element) => {
+    const value = getValue(content, element.dataset.cmsActive);
+    if (typeof value !== "boolean") return;
+
+    element.hidden = !value;
+    element.closest(".section-grid")?.classList.toggle("section-grid--single", !value);
+  });
+};
+
 const applyBrand = (brand = {}) => {
   if (!brand.logo?.src) return;
 
@@ -290,6 +300,7 @@ const applyContact = (contact = {}) => {
 
 const applyCmsContent = (content) => {
   applyTextFields(content);
+  applyVisibilityFields(content);
   applyBrand(content.brand);
   applyHero(content.hero);
   renderFeatureStrip(content.microcirculation?.features);

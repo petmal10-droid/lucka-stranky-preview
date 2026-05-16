@@ -507,6 +507,14 @@ h3 {
   margin-bottom: 36px;
 }
 
+.section-grid--single {
+  grid-template-columns: minmax(0, 760px);
+}
+
+.insight-card[hidden] {
+  display: none;
+}
+
 .insight-card {
   display: grid;
   grid-template-columns: auto 1fr;

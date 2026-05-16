@@ -44,7 +44,7 @@
   },
   "microcirculation": {
     "eyebrow": {
-      "active": true,
+      "active": false,
       "text": "Proč začínáme mikrocirkulací"
     },
     "title": "Mikrocirkulace jako základ regenerace",
@@ -76,7 +76,7 @@
   },
   "bemer": {
     "eyebrow": {
-      "active": true,
+      "active": false,
       "text": "Praktická podpora mikrocirkulace"
     },
     "title": "Jak BEMER podporuje mikrocirkulaci",
@@ -110,7 +110,7 @@
   },
   "support": {
     "eyebrow": {
-      "active": true,
+      "active": false,
       "text": "S čím může terapie pomoci"
     },
     "title": "Kde může být BEMER vhodnou podporou",
@@ -144,7 +144,7 @@
   },
   "cooperation": {
     "eyebrow": {
-      "active": true,
+      "active": false,
       "text": "Proč právě se mnou"
     },
     "title": "Jak spolupráce probíhá",

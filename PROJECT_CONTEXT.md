@@ -17,6 +17,17 @@ Tento soubor slouží jako předávací paměť projektu. Lze ho nahrát nebo zk
 - GitHub repo: https://github.com/petmal10-droid/lucka-stranky-preview
 - Hlavní soubory: `index.html`, `styles.css`
 
+## Závazná pravidla práce
+
+Tato pravidla mají přednost před běžnými poznámkami v historii změn a platí pro celý projekt bez výjimky:
+
+- Každá designová změna se vztahuje k produkčnímu preview `https://petmal10-droid.github.io/lucka-stranky-preview/`. Při ověřování, kontrole výsledku a komunikaci o webu se pracuje s touto adresou jako s cílovou stránkou.
+- Před každou změnou designu je nutné zkontrolovat, zda má dopad na CMS. CMS zde znamená zejména `content/site.json`, `admin/config.yml`, napojení přes `data-cms-*` atributy v `index.html` a aplikační logiku v `script.js`.
+- Pokud změna ovlivňuje obsah, strukturu sekcí, viditelnost bloků, opakovatelné položky, obrázky, odkazy, texty, popisky, pořadí nebo cokoli, co má být spravovatelné v administraci, musí se automaticky aktualizovat i CMS model a data. Nestačí změnit pouze HTML nebo CSS.
+- CSS se používá jen pro prezentaci. CSS nesmí nahrazovat CMS stav, například skrývat obsah, který má být v CMS označený jako neaktivní. Stav musí být uložený v datech a popsaný ve schématu CMS.
+- Při změně CMS je nutné držet data a schéma pohromadě: upravit `content/site.json`, odpovídající pole v `admin/config.yml` a front-end napojení v `index.html` / `script.js`.
+- Po nasazení změny, která se má projevit na veřejném webu, je nutné počítat se zpožděním GitHub Pages a ověřit deployment na produkční adrese.
+
 ## Aktuální stav designu
 
 - Hero sekce je vrácená na původní první dnešní variantu: světlé teplé pozadí, vlevo text, vpravo abstraktní kruhový/flow vizuál tvořený CSS.
@@ -128,7 +139,7 @@ GitHub Pages může mít několik desítek sekund zpoždění.
 
 ## Prompt pro pokračování v ChatGPT
 
-Použij tento projektový kontext jako paměť práce na webu `Lucka stránky`. Jedná se o statický microsite web pro BEMER terapii v `C:\Users\malp\Documents\Lucka stránky`, s online preview na GitHub Pages. Zachovej aktuální směr: klidný, důvěryhodný, teplý design, bez full-width hero fotografie, protože předchozí pokusy s fotografickým hero backgroundem byly vrácené kvůli viditelnému předělu. Pracuj hlavně se soubory `index.html` a `styles.css`, respektuj aktuální layout a ukládej změny do git historie.
+Použij tento projektový kontext jako paměť práce na webu `Lucka stránky`. Jedná se o statický microsite web pro BEMER terapii v `C:\Users\malp\Documents\Lucka stránky`, s online preview na GitHub Pages: `https://petmal10-droid.github.io/lucka-stranky-preview/`. Zachovej aktuální směr: klidný, důvěryhodný, teplý design, bez full-width hero fotografie, protože předchozí pokusy s fotografickým hero backgroundem byly vrácené kvůli viditelnému předělu. Při každé designové změně pracuj s produkčním preview jako cílovou stránkou a bez výjimky zvaž dopad na CMS. Pokud změna ovlivňuje obsah, viditelnost, strukturu, obrázky, odkazy, seznamy nebo cokoli spravovatelného v administraci, automaticky aktualizuj `content/site.json`, `admin/config.yml` a odpovídající napojení v `index.html` / `script.js`. CSS používej pouze pro prezentaci, ne jako náhradu CMS stavu. Respektuj aktuální layout a ukládej změny do git historie.
 
 ## Pravidlo pro další práci
 
@@ -261,3 +272,4 @@ Po významné změně aktualizovat tento dokument stručným záznamem:
 - 2026-05-16: Do CMS byla doplněna sekce `Horní menu`, kde lze měnit texty položek navigace a horní CTA tlačítko. CMS mění pouze popisky, kotvy na existující sekce zůstávají pevně řízené v HTML, aby klientka omylem nerozbila navigaci.
 - 2026-05-16: `admin/config.yml` byl vrácen z lokálního preview odkazu na produkční GitHub Pages adresu. Lokální testování CMS dál používá `local_backend: true`, ale pro online přihlášení přes GitHub Pages je nutné doplnit samostatnou Decap OAuth proxy (`backend.base_url` + `auth_endpoint`).
 - 2026-05-16: Administrace byla kvůli funkčnímu přihlášení na GitHub Pages přepnuta z čistého Decap CMS skriptu na Sveltia CMS (`@sveltia/cms`), které používá kompatibilní Decap/Netlify CMS konfiguraci a umožňuje přihlášení přes GitHub token bez samostatné OAuth proxy. `admin/config.yml` zůstává Git-based a zapisuje do větve `main`; OAuth proxy lze doplnit později pro pohodlnější přihlášení bez tokenu.
+- 2026-05-16: Do projektového kontextu byla doplněna závazná pravidla práce: každá designová změna se vztahuje k produkčnímu preview `https://petmal10-droid.github.io/lucka-stranky-preview/` a vždy se musí bez výjimky posoudit dopad na CMS. Pokud dopad existuje, musí se automaticky aktualizovat `content/site.json`, `admin/config.yml` a napojení v `index.html` / `script.js`; CSS nesmí nahrazovat CMS stav.

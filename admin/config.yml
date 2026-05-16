@@ -75,8 +75,12 @@ collections:
               - { label: Nadštítek, name: eyebrow, widget: string }
               - { label: Nadpis, name: title, widget: string, hint: "Doporučení: do 60 znaků." }
               - { label: Text sekce, name: text, widget: text, hint: "Doporučení: 3-5 vět." }
-              - { label: Zobrazit boční kartu, name: insightActive, widget: boolean, default: false, hint: "Vypnuto = karta se na webu nezobrazí, ale text níže zůstane uložený v CMS." }
-              - { label: Text v boční kartě, name: insight, widget: text, hint: "Doporučení: 1-2 kratší věty." }
+              - label: Boční karta
+                name: insight
+                widget: object
+                fields:
+                  - { label: Aktivní, name: active, widget: boolean, default: false, hint: "Vypnuto = karta se na webu nezobrazí, ale text níže zůstane uložený v CMS." }
+                  - { label: Text, name: text, widget: text, hint: "Doporučení: 1-2 kratší věty." }
               - label: Karty pod videem
                 name: features
                 widget: list

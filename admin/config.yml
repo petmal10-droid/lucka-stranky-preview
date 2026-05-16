@@ -1,13 +1,14 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
 backend:
   name: github
   repo: petmal10-droid/lucka-stranky-preview
   branch: main
-  # Pro online přihlášení na GitHub Pages je potřeba doplnit OAuth proxy.
-  # Jakmile bude proxy nasazená, přidejte sem např.:
-  # base_url: https://vase-decap-oauth-proxy.example.com
-  # auth_endpoint: auth
+  # Administrace používá Sveltia CMS, které je kompatibilní s Decap/Netlify CMS
+  # konfigurací a na GitHub Pages umožňuje rychlé přihlášení přes GitHub token.
+  # Pro pohodlnější OAuth přihlášení bez tokenu lze později doplnit base_url
+  # na vlastní OAuth proxy.
 
-local_backend: true
 media_folder: uploads
 public_folder: /lucka-stranky-preview/uploads
 publish_mode: simple

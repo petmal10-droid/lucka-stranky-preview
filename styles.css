@@ -59,6 +59,19 @@ video {
   max-width: 100%;
 }
 
+p,
+li,
+a,
+button,
+span,
+small,
+strong,
+h1,
+h2,
+h3 {
+  overflow-wrap: anywhere;
+}
+
 a {
   color: inherit;
 }
@@ -166,6 +179,8 @@ a {
   font-size: 0.88rem;
   font-weight: 800;
   line-height: 1;
+  text-align: center;
+  white-space: normal;
   text-decoration: none;
   transition:
     transform var(--motion-base) var(--ease-standard),
@@ -582,6 +597,7 @@ h3 {
   grid-template-columns: 54px minmax(0, 1fr);
   gap: 22px;
   min-height: 164px;
+  min-width: 0;
   padding: 28px 28px 27px;
   transition:
     transform var(--motion-base) var(--ease-standard),
@@ -770,6 +786,7 @@ h3 {
 .help-card {
   position: relative;
   min-height: 204px;
+  min-width: 0;
   padding: 22px 22px 22px;
   overflow: hidden;
   border: 1px solid rgba(239, 111, 24, 0.16);
@@ -833,6 +850,7 @@ h3 {
 .audience-card {
   position: relative;
   min-height: 246px;
+  min-width: 0;
   padding: 30px 24px 26px;
   overflow: hidden;
   border: 1px solid rgba(239, 111, 24, 0.2);
@@ -999,6 +1017,7 @@ h3 {
 .testimonial-card {
   position: relative;
   min-height: 150px;
+  min-width: 0;
   margin: 0;
   padding: 32px 30px 28px 62px;
   border-radius: 12px;
@@ -1043,6 +1062,7 @@ h3 {
   color: var(--text);
   font-size: 0.86rem;
   font-weight: 800;
+  overflow-wrap: anywhere;
 }
 
 .testimonial-card footer small {
@@ -1151,7 +1171,7 @@ h3 {
 }
 
 .faq-item.is-open .faq-answer {
-  max-height: 320px;
+  max-height: 900px;
   opacity: 1;
 }
 
@@ -1335,9 +1355,17 @@ h3 {
   font-family: "Playfair Display", Georgia, serif;
   font-size: 2.25rem;
   font-weight: 700;
+  overflow: hidden;
   transition:
     transform var(--motion-base) var(--ease-standard),
     border-color var(--motion-base) var(--ease-standard);
+}
+
+.profile-photo-placeholder img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .profile-label {

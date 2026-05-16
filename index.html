@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260512-mobile-video-crop" />
+    <link rel="stylesheet" href="./styles.css?v=20260516-decap-cms" />
     <noscript>
       <style>
         .reveal,
@@ -29,41 +29,47 @@
     <div class="page-shell">
       <header class="site-header">
         <a class="brand" href="#top" aria-label="Lucka BEMER terapie">
-          <img class="brand-logo" src="logo.png?v=20260515-logo-left-space" alt="BEMER Lucie Klozová" />
+          <img
+            class="brand-logo"
+            src="logo.png?v=20260515-logo-left-space"
+            alt="BEMER Lucie Klozová"
+            data-cms-logo
+            data-fallback-src="logo.png?v=20260515-logo-left-space"
+          />
         </a>
 
         <nav class="site-nav" aria-label="Hlavní navigace">
-          <a href="#bemer">Mikrocirkulace</a>
-          <a href="#process">BEMER</a>
-          <a href="#support">Podpora</a>
-          <a href="#cooperation">Spolupráce</a>
-          <a href="#testimonials">Reference</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Kontakt</a>
+          <a href="#bemer" data-cms-text="navigation.items.0.label">Mikrocirkulace</a>
+          <a href="#process" data-cms-text="navigation.items.1.label">BEMER</a>
+          <a href="#support" data-cms-text="navigation.items.2.label">Podpora</a>
+          <a href="#cooperation" data-cms-text="navigation.items.3.label">Spolupráce</a>
+          <a href="#testimonials" data-cms-text="navigation.items.4.label">Reference</a>
+          <a href="#faq" data-cms-text="navigation.items.5.label">FAQ</a>
+          <a href="#contact" data-cms-text="navigation.items.6.label">Kontakt</a>
         </nav>
 
-        <a class="header-cta" href="#contact">Domluvit konzultaci</a>
+        <a class="header-cta" href="#contact" data-cms-text="navigation.ctaLabel">Domluvit konzultaci</a>
       </header>
 
       <main id="top">
         <section class="hero reveal">
           <div class="hero-copy">
-            <h1>Podpora mikrocirkulace pomocí BEMER terapie</h1>
-            <p class="hero-text">
+            <h1 data-cms-text="hero.title">Podpora mikrocirkulace pomocí BEMER terapie</h1>
+            <p class="hero-text" data-cms-text="hero.intro">
               BEMER je neinvazivní terapie využívající pulzní elektromagnetické
               pole navržené pro podporu mikrocirkulace. Ta souvisí se zásobením
               buněk, regenerací, vitalitou a celkovou kondicí.
             </p>
 
-            <ul class="hero-points">
+            <ul class="hero-points" data-cms-list="hero.points">
               <li>Společně projdeme vaši situaci</li>
               <li>Vysvětlím vše srozumitelně a bez tlaku</li>
               <li>BEMER si můžete vyzkoušet i doma</li>
             </ul>
 
             <div class="hero-actions">
-              <a class="button button-primary" href="#contact">Domluvit konzultaci</a>
-              <a class="button button-secondary" href="#process">Jak BEMER funguje</a>
+              <a class="button button-primary" href="#contact" data-cms-text="hero.primaryCta">Domluvit konzultaci</a>
+              <a class="button button-secondary" href="#process" data-cms-text="hero.secondaryCta">Jak BEMER funguje</a>
             </div>
           </div>
 
@@ -80,9 +86,9 @@
         <section id="bemer" class="micro-section section reveal">
           <div class="section-grid">
             <div class="section-heading">
-              <p class="eyebrow">Proč začínáme mikrocirkulací</p>
-              <h2>Mikrocirkulace jako základ regenerace</h2>
-              <p>
+              <p class="eyebrow" data-cms-text="microcirculation.eyebrow">Proč začínáme mikrocirkulací</p>
+              <h2 data-cms-text="microcirculation.title">Mikrocirkulace jako základ regenerace</h2>
+              <p data-cms-text="microcirculation.text">
                 Mikrocirkulace označuje proudění krve v nejmenších cévách.
                 Pomáhá zásobovat buňky kyslíkem a živinami a odvádět látky,
                 které už tělo nepotřebuje. Když funguje správně, organismus má
@@ -97,7 +103,7 @@
                   <path d="M12 8v7M8.5 11.5h7" />
                 </svg>
               </span>
-              <p>
+              <p data-cms-text="microcirculation.insight">
                 Dobře fungující mikrocirkulace vytváří lepší podmínky pro
                 regeneraci, vitalitu a přirozenou odolnost těla.
               </p>
@@ -125,7 +131,7 @@
             </video>
           </div>
 
-          <div class="feature-strip reveal-stagger">
+          <div class="feature-strip reveal-stagger" data-cms-list="microcirculation.features">
             <article>
               <img src="01_zasobeni_bunek.png" alt="" />
               <div>
@@ -161,20 +167,20 @@
 
         <section id="process" class="device-panel section reveal">
           <div class="device-copy">
-            <p class="eyebrow">Praktická podpora mikrocirkulace</p>
-            <h2>Jak BEMER podporuje mikrocirkulaci</h2>
-            <p>
+            <p class="eyebrow" data-cms-text="bemer.eyebrow">Praktická podpora mikrocirkulace</p>
+            <h2 data-cms-text="bemer.title">Jak BEMER podporuje mikrocirkulaci</h2>
+            <p data-cms-text="bemer.paragraphs.0">
               Mikrocirkulace ovlivňuje zásobení buněk kyslíkem, látkovou výměnu
               i regeneraci. BEMER do tohoto procesu vstupuje jako neinvazivní
               terapie využívající pulzní elektromagnetické pole navržené pro
               podporu mikrocirkulace.
             </p>
-            <p>
+            <p data-cms-text="bemer.paragraphs.1">
               Používá se vleže nebo vsedě na podložce, případně s lokálním
               aplikátorem. Terapie je nebolestivá, odpočinková a nastavení vždy
               přizpůsobíme vaší situaci.
             </p>
-            <div class="bemer-proof-grid reveal-stagger" aria-label="Kvality BEMER terapie">
+            <div class="bemer-proof-grid reveal-stagger" aria-label="Kvality BEMER terapie" data-cms-list="bemer.proofs">
               <article class="bemer-proof-card">
                 <strong>20+</strong>
                 <span>let vývoje a praktického využití technologie BEMER v oblasti mikrocirkulace</span>
@@ -190,27 +196,28 @@
               </article>
             </div>
           </div>
-          <figure class="device-image">
+          <figure class="device-image" data-cms-image-wrapper="bemer.image">
             <img
               src="https://res.cloudinary.com/bemergroup/image/upload/d_fallback_emn3wg.png/ar_1,w_1200,dpr_1,c_fill,g_auto,q_auto,f_auto/v1/marketing_site_remote_images_stage_usa/8c20cc015559cce611d707daf983b678c3fc593f-1051x1051.png"
               alt="BEMER Premium-Set Evo"
+              data-fallback-src="https://res.cloudinary.com/bemergroup/image/upload/d_fallback_emn3wg.png/ar_1,w_1200,dpr_1,c_fill,g_auto,q_auto,f_auto/v1/marketing_site_remote_images_stage_usa/8c20cc015559cce611d707daf983b678c3fc593f-1051x1051.png"
             />
-            <figcaption>BEMER Premium-Set Evo / B.Box Evo</figcaption>
+            <figcaption data-cms-text="bemer.image.caption">BEMER Premium-Set Evo / B.Box Evo</figcaption>
           </figure>
         </section>
 
         <section id="support" class="section therapy-help-section reveal">
           <div class="section-heading full">
-            <p class="eyebrow">S čím může terapie pomoci</p>
-            <h2>Kde může být BEMER vhodnou podporou</h2>
-            <p>
+            <p class="eyebrow" data-cms-text="support.eyebrow">S čím může terapie pomoci</p>
+            <h2 data-cms-text="support.title">Kde může být BEMER vhodnou podporou</h2>
+            <p data-cms-text="support.text">
               BEMER se nejčastěji využívá jako doplňková podpora regenerace,
               vitality a celkové kondice. Při konzultaci společně projdeme, zda
               a jak může dávat smysl právě ve vaší situaci.
             </p>
           </div>
 
-          <div class="help-grid reveal-stagger">
+          <div class="help-grid reveal-stagger" data-cms-list="support.cards">
             <article class="help-card">
               <span class="help-icon" aria-hidden="true"></span>
               <h3>Regenerace a energie</h3>
@@ -270,15 +277,15 @@
 
         <section id="cooperation" class="section audience-section reveal">
           <div class="section-heading full">
-            <p class="eyebrow">Proč právě se mnou</p>
-            <h2>Jak spolupráce probíhá</h2>
-            <p>
+            <p class="eyebrow" data-cms-text="cooperation.eyebrow">Proč právě se mnou</p>
+            <h2 data-cms-text="cooperation.title">Jak spolupráce probíhá</h2>
+            <p data-cms-text="cooperation.text">
               Nejprve si společně ujasníme, co řešíte. Poté vám ukážu, jak
               BEMER používat doma bezpečně, srozumitelně a podle vašich potřeb.
             </p>
           </div>
 
-          <div class="audience-grid reveal-stagger">
+          <div class="audience-grid reveal-stagger" data-cms-list="cooperation.steps">
             <article class="audience-card">
               <span class="process-number">01</span>
               <h3>Úvodní konzultace</h3>
@@ -316,25 +323,25 @@
           </div>
 
           <div class="process-cta reveal">
-            <p>
+            <p data-cms-text="cooperation.ctaText">
               Nejste si jistí, jestli je BEMER pro vás vhodný? Domluvte si
               nezávaznou konzultaci a společně projdeme vaši situaci.
             </p>
-            <a class="button button-primary compact" href="#contact">Domluvit konzultaci</a>
+            <a class="button button-primary compact" href="#contact" data-cms-text="cooperation.ctaLabel">Domluvit konzultaci</a>
           </div>
         </section>
 
         <section id="testimonials" class="section testimonials-section reveal">
           <div class="section-heading full">
-            <p class="eyebrow">Reference</p>
-            <h2>Zkušenosti lidí, kteří BEMER vyzkoušeli</h2>
-            <p>
+            <p class="eyebrow" data-cms-text="testimonials.eyebrow">Reference</p>
+            <h2 data-cms-text="testimonials.title">Zkušenosti lidí, kteří BEMER vyzkoušeli</h2>
+            <p data-cms-text="testimonials.text">
               Každý člověk reaguje jinak. Přečtěte si osobní zkušenosti lidí,
               kteří si prošli konzultací nebo domácím zapůjčením přístroje.
             </p>
           </div>
 
-          <div class="testimonial-carousel reveal-stagger" aria-label="Reference klientů">
+          <div class="testimonial-carousel reveal-stagger" aria-label="Reference klientů" data-cms-list="testimonials.items">
             <div class="testimonial-slide is-active" data-testimonial-slide="0">
               <div class="testimonial-grid">
                 <blockquote class="testimonial-card">
@@ -437,9 +444,9 @@
         <section id="faq" class="section faq-section reveal">
           <div class="faq-header">
             <div class="section-heading full">
-              <p class="eyebrow">Časté otázky</p>
-              <h2>Často kladené otázky</h2>
-              <p>
+              <p class="eyebrow" data-cms-text="faq.eyebrow">Časté otázky</p>
+              <h2 data-cms-text="faq.title">Často kladené otázky</h2>
+              <p data-cms-text="faq.text">
                 Odpovědi na otázky, které lidé nejčastěji řeší před první
                 konzultací nebo domácím vyzkoušením BEMER terapie.
               </p>
@@ -454,7 +461,7 @@
             </a>
           </div>
 
-          <div class="faq-grid reveal-stagger">
+          <div class="faq-grid reveal-stagger" data-cms-list="faq.items">
             <article class="faq-entry faq-item">
               <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1">
                 <span>Jak BEMER terapie funguje?</span>
@@ -545,9 +552,9 @@
           <div class="contact-card">
             <div class="contact-copy contact-form-block">
               <div>
-                <p class="eyebrow">Kontakt</p>
-                <h2>Máte otázky k BEMER terapii? Ozvěte se mi</h2>
-                <p>
+                <p class="eyebrow" data-cms-text="contact.eyebrow">Kontakt</p>
+                <h2 data-cms-text="contact.title">Máte otázky k BEMER terapii? Ozvěte se mi</h2>
+                <p data-cms-text="contact.text">
                   Napište mi krátce, co řešíte, a společně se domluvíme na
                   nezávazné konzultaci nebo možnosti domácího vyzkoušení.
                 </p>
@@ -581,9 +588,9 @@
                   ></textarea>
                 </label>
                 <button class="button button-primary" type="submit">
-                  Odeslat nezávaznou poptávku
+                  <span data-cms-text="contact.form.submitLabel">Odeslat nezávaznou poptávku</span>
                 </button>
-                <p class="form-note">
+                <p class="form-note" data-cms-text="contact.form.note">
                   Odesláním zprávy předáváte údaje jen za účelem vyřízení dotazu.
                   Podrobnosti najdete v informacích o ochraně osobních údajů níže.
                 </p>
@@ -592,29 +599,29 @@
 
             <aside class="contact-side">
               <div class="contact-details" aria-label="Kontaktní údaje">
-                <h3>Kontakt</h3>
-                <a href="tel:+420123456789">+420 123 456 789</a>
-                <a href="mailto:info@luckabemer.cz">info@luckabemer.cz</a>
-                <span>Osobní konzultace v Praze a okolí</span>
+                <h3 data-cms-text="contact.details.title">Kontakt</h3>
+                <a href="tel:+420123456789" data-cms-contact="phone">+420 123 456 789</a>
+                <a href="mailto:info@luckabemer.cz" data-cms-contact="email">info@luckabemer.cz</a>
+                <span data-cms-text="contact.details.location">Osobní konzultace v Praze a okolí</span>
               </div>
 
               <article class="profile-card" aria-label="O Lucii">
                 <div class="profile-head">
-                  <div class="profile-photo-placeholder" aria-hidden="true">L</div>
+                  <div class="profile-photo-placeholder" aria-hidden="true" data-cms-image-wrapper="contact.profile.image">L</div>
                   <div>
-                    <p class="profile-label">O mně</p>
-                    <h3>Lucie</h3>
-                    <span>BEMER konzultace a domácí zapůjčení</span>
+                    <p class="profile-label" data-cms-text="contact.profile.label">O mně</p>
+                    <h3 data-cms-text="contact.profile.name">Lucie</h3>
+                    <span data-cms-text="contact.profile.role">BEMER konzultace a domácí zapůjčení</span>
                   </div>
                 </div>
-                <p>
+                <p data-cms-text="contact.profile.text">
                   Jmenuji se Lucie a BEMER terapii představuji lidem
                   srozumitelně, bez tlaku a s ohledem na jejich konkrétní
                   situaci. Pomohu vám pochopit princip terapie, nastavit domácí
                   používání a zodpovědět otázky, které vás zajímají. Cílem je,
                   abyste se mohli rozhodnout v klidu a s dostatkem informací.
                 </p>
-                <p class="profile-note">
+                <p class="profile-note" data-cms-text="contact.profile.note">
                   Konzultace je nezávazná a slouží hlavně k tomu, abychom
                   společně zjistili, zda pro vás BEMER dává smysl.
                 </p>
@@ -625,7 +632,13 @@
 
         <footer class="site-footer" aria-label="Patička webu">
           <a class="brand footer-brand" href="#top" aria-label="Lucka BEMER terapie">
-            <img class="brand-logo" src="logo.png?v=20260515-logo-left-space" alt="BEMER Lucie Klozová" />
+            <img
+              class="brand-logo"
+              src="logo.png?v=20260515-logo-left-space"
+              alt="BEMER Lucie Klozová"
+              data-cms-logo
+              data-fallback-src="logo.png?v=20260515-logo-left-space"
+            />
           </a>
           <nav class="footer-links" aria-label="Právní odkazy">
             <a href="#top">O mně</a>
@@ -649,20 +662,20 @@
               Cookies
             </button>
           </nav>
-          <span class="copyright">© 2026 Lucka - BEMER terapie. Všechna práva vyhrazena.</span>
+          <span class="copyright" data-cms-text="legal.copyright">© 2026 Lucka - BEMER terapie. Všechna práva vyhrazena.</span>
 
           <div class="legal-inline-panel" data-legal-panel aria-hidden="true">
             <div class="legal-inline-header">
               <div>
-                <p class="eyebrow">Právní informace</p>
-                <h2>Identifikační údaje, cookies a osobní údaje</h2>
+                <p class="eyebrow" data-cms-text="legal.eyebrow">Právní informace</p>
+                <h2 data-cms-text="legal.title">Identifikační údaje, cookies a osobní údaje</h2>
               </div>
               <button class="footer-link-button" type="button" data-legal-close>
                 Zavřít
               </button>
             </div>
 
-            <div class="legal-grid">
+            <div class="legal-grid" data-cms-list="legal.blocks">
               <article>
                 <h3>Identifikační údaje provozovatele</h3>
                 <p>
@@ -773,6 +786,6 @@
         });
       })();
     </script>
-    <script src="./script.js?v=20260511-motion-polish"></script>
+    <script src="./script.js?v=20260516-decap-cms"></script>
   </body>
 </html>

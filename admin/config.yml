@@ -1,0 +1,240 @@
+backend:
+  name: github
+  repo: petmal10-droid/lucka-stranky-preview
+  branch: main
+  # Pro online přihlášení na GitHub Pages je potřeba doplnit OAuth proxy.
+  # Jakmile bude proxy nasazená, přidejte sem např.:
+  # base_url: https://vase-decap-oauth-proxy.example.com
+  # auth_endpoint: auth
+
+local_backend: true
+media_folder: uploads
+public_folder: /lucka-stranky-preview/uploads
+publish_mode: simple
+
+locale: cs
+site_url: https://petmal10-droid.github.io/lucka-stranky-preview/
+display_url: https://petmal10-droid.github.io/lucka-stranky-preview/
+
+collections:
+  - name: site_content
+    label: Obsah webu
+    files:
+      - name: site
+        label: Hlavní stránka
+        file: content/site.json
+        format: json
+        editor:
+          preview: false
+        fields:
+          - label: Značka
+            name: brand
+            widget: object
+            fields:
+              - label: Logo
+                name: logo
+                widget: object
+                fields:
+                  - { label: Soubor loga, name: src, widget: image, choose_url: true, required: false, hint: "Doporučení: průhledné PNG nebo SVG, ideálně na šířku. Logo se použije v hlavičce i patičce a CSS zachová současnou velikost." }
+                  - { label: Alternativní text, name: alt, widget: string, hint: "Např. BEMER Lucie Klozová." }
+
+          - label: Horní menu
+            name: navigation
+            widget: object
+            fields:
+              - label: Položky menu
+                name: items
+                widget: list
+                summary: "{{fields.label}}"
+                min: 7
+                max: 7
+                hint: "Upravujte jen názvy položek. Pořadí odpovídá sekcím: Mikrocirkulace, BEMER, Podpora, Spolupráce, Reference, FAQ, Kontakt."
+                fields:
+                  - { label: Název v menu, name: label, widget: string, hint: "Doporučení: 1-2 slova, aby se menu vešlo i na menších obrazovkách." }
+              - { label: Text horního CTA tlačítka, name: ctaLabel, widget: string, hint: "Krátký text tlačítka vpravo nahoře." }
+
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Nadpis, name: title, widget: string, hint: "Doporučení: krátký nadpis do 1-2 řádků." }
+              - { label: Úvodní odstavec, name: intro, widget: text, hint: "Doporučení: 2-4 věty. Delší text se zalomí, ale hero bude vyšší." }
+              - label: Odrážky
+                name: points
+                widget: list
+                summary: "{{fields.item}}"
+                field: { label: Odrážka, name: item, widget: string, hint: "Doporučení: krátká věta." }
+              - { label: Primární CTA, name: primaryCta, widget: string, hint: "Krátký text tlačítka." }
+              - { label: Sekundární CTA, name: secondaryCta, widget: string, hint: "Krátký text tlačítka." }
+
+          - label: Mikrocirkulace
+            name: microcirculation
+            widget: object
+            fields:
+              - { label: Nadštítek, name: eyebrow, widget: string }
+              - { label: Nadpis, name: title, widget: string, hint: "Doporučení: do 60 znaků." }
+              - { label: Text sekce, name: text, widget: text, hint: "Doporučení: 3-5 vět." }
+              - { label: Text v boční kartě, name: insight, widget: text, hint: "Doporučení: 1-2 kratší věty." }
+              - label: Karty pod videem
+                name: features
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Nadpis, name: title, widget: string }
+                  - { label: Text, name: text, widget: text, hint: "Doporučení: 1-2 věty." }
+                  - label: Ikona
+                    name: image
+                    widget: object
+                    fields:
+                      - { label: Soubor, name: src, widget: image, choose_url: true, required: false, hint: "Doporučený formát: PNG/SVG, čtvercový nebo jednoduchá ikona. Layout ji drží v malém rámečku." }
+                      - { label: Alternativní text, name: alt, widget: string, required: false, hint: "U dekorativní ikony může zůstat prázdné." }
+
+          - label: BEMER
+            name: bemer
+            widget: object
+            fields:
+              - { label: Nadštítek, name: eyebrow, widget: string }
+              - { label: Nadpis, name: title, widget: string, hint: "Doporučení: do 60 znaků." }
+              - label: Odstavce
+                name: paragraphs
+                widget: list
+                summary: "{{fields.item}}"
+                field: { label: Odstavec, name: item, widget: text, hint: "Doporučení: 2-3 věty." }
+              - label: Důkazní karty
+                name: proofs
+                widget: list
+                summary: "{{fields.value}}"
+                fields:
+                  - { label: Výrazná hodnota, name: value, widget: string, hint: "Např. 20+, 5+, PubMed." }
+                  - { label: Popis, name: text, widget: text, hint: "Doporučení: krátký text do malé karty." }
+                  - label: Odkaz
+                    name: link
+                    widget: object
+                    required: false
+                    fields:
+                      - { label: Text odkazu, name: label, widget: string, required: false }
+                      - { label: URL, name: url, widget: string, required: false }
+              - label: Produktový obrázek
+                name: image
+                widget: object
+                fields:
+                  - { label: Soubor nebo URL, name: src, widget: image, choose_url: true, required: false, hint: "Doporučení: produkt na čistém pozadí, ideálně min. 1000 x 1000 px. Obrázek se přizpůsobí existujícímu rámečku." }
+                  - { label: Alternativní text, name: alt, widget: string, hint: "Popište, co je na obrázku." }
+                  - { label: Popisek pod obrázkem, name: caption, widget: string, required: false }
+
+          - label: S čím může terapie pomoci
+            name: support
+            widget: object
+            fields:
+              - { label: Nadštítek, name: eyebrow, widget: string }
+              - { label: Nadpis, name: title, widget: string }
+              - { label: Úvodní text, name: text, widget: text, hint: "Doporučení: 2-4 věty." }
+              - label: Karty
+                name: cards
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Nadpis, name: title, widget: string, hint: "Krátký nadpis karty." }
+                  - { label: Text, name: text, widget: text, hint: "Doporučení: 1-3 věty. Karta může růst do výšky." }
+
+          - label: Spolupráce
+            name: cooperation
+            widget: object
+            fields:
+              - { label: Nadštítek, name: eyebrow, widget: string }
+              - { label: Nadpis, name: title, widget: string }
+              - { label: Úvodní text, name: text, widget: text }
+              - label: Kroky
+                name: steps
+                widget: list
+                summary: "{{fields.number}} {{fields.title}}"
+                fields:
+                  - { label: Číslo, name: number, widget: string, hint: "Např. 01." }
+                  - { label: Nadpis, name: title, widget: string }
+                  - { label: Text, name: text, widget: text, hint: "Doporučení: 1-3 věty." }
+              - { label: Text CTA boxu, name: ctaText, widget: text }
+              - { label: Text CTA tlačítka, name: ctaLabel, widget: string }
+
+          - label: Reference
+            name: testimonials
+            widget: object
+            fields:
+              - { label: Nadštítek, name: eyebrow, widget: string }
+              - { label: Nadpis, name: title, widget: string }
+              - { label: Úvodní text, name: text, widget: text, hint: "Doporučení: 1-3 věty." }
+              - label: Seznam referencí
+                name: items
+                widget: list
+                summary: "{{fields.name}} - {{fields.tag}}"
+                fields:
+                  - { label: Štítek / typ zkušenosti, name: tag, widget: string, hint: "Např. Domácí zapůjčení." }
+                  - { label: Text reference, name: text, widget: text, hint: "Doporučení: 2-5 vět. Delší text se zalomí a karta vyroste." }
+                  - { label: Jméno nebo iniciály, name: name, widget: string }
+                  - { label: Krátký popisek osoby nebo kontext, name: context, widget: string, required: false }
+
+          - label: FAQ
+            name: faq
+            widget: object
+            fields:
+              - { label: Nadštítek, name: eyebrow, widget: string }
+              - { label: Nadpis, name: title, widget: string }
+              - { label: Úvodní text, name: text, widget: text }
+              - label: Otázky a odpovědi
+                name: items
+                widget: list
+                summary: "{{fields.question}}"
+                fields:
+                  - { label: Otázka, name: question, widget: string }
+                  - { label: Odpověď, name: answer, widget: text, hint: "Doporučení: 2-5 vět. Odpověď se v accordionu přirozeně roztáhne." }
+
+          - label: Kontakt
+            name: contact
+            widget: object
+            fields:
+              - { label: Nadštítek, name: eyebrow, widget: string }
+              - { label: Nadpis, name: title, widget: string }
+              - { label: Úvodní text, name: text, widget: text }
+              - { label: Telefon, name: phone, widget: string }
+              - { label: E-mail, name: email, widget: string }
+              - label: Kontaktní údaje
+                name: details
+                widget: object
+                fields:
+                  - { label: Nadpis boxu, name: title, widget: string }
+                  - { label: Lokalita, name: location, widget: string }
+              - label: Formulář
+                name: form
+                widget: object
+                fields:
+                  - { label: Text odesílacího tlačítka, name: submitLabel, widget: string }
+                  - { label: Poznámka pod formulářem, name: note, widget: text }
+              - label: Osobní medailonek
+                name: profile
+                widget: object
+                fields:
+                  - { label: Štítek, name: label, widget: string }
+                  - { label: Jméno, name: name, widget: string }
+                  - { label: Role, name: role, widget: string }
+                  - { label: Text medailonku, name: text, widget: text, hint: "Doporučení: 3-6 vět." }
+                  - { label: Poznámka, name: note, widget: text, required: false }
+                  - label: Profilový obrázek
+                    name: image
+                    widget: object
+                    fields:
+                      - { label: Soubor, name: src, widget: image, required: false, hint: "Volitelné. Doporučení: portrét 800 x 800 px. Když chybí, zůstane iniciála." }
+                      - { label: Alternativní text, name: alt, widget: string, required: false }
+
+          - label: Právní a identifikační údaje
+            name: legal
+            widget: object
+            fields:
+              - { label: Copyright, name: copyright, widget: string }
+              - { label: Nadštítek panelu, name: eyebrow, widget: string }
+              - { label: Nadpis panelu, name: title, widget: string }
+              - label: Bloky právních informací
+                name: blocks
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Nadpis, name: title, widget: string }
+                  - { label: Text, name: text, widget: text, hint: "Doplňte přesné identifikační a právní údaje před ostrým spuštěním." }

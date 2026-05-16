@@ -1,0 +1,291 @@
+{
+  "brand": {
+    "logo": {
+      "src": "logo.png?v=20260515-logo-left-space",
+      "alt": "BEMER Lucie Klozová"
+    }
+  },
+  "navigation": {
+    "items": [
+      {
+        "label": "Mikrocirkulace"
+      },
+      {
+        "label": "BEMER"
+      },
+      {
+        "label": "Podpora"
+      },
+      {
+        "label": "Spolupráce"
+      },
+      {
+        "label": "Reference"
+      },
+      {
+        "label": "FAQ"
+      },
+      {
+        "label": "Kontakt"
+      }
+    ],
+    "ctaLabel": "Domluvit konzultaci"
+  },
+  "hero": {
+    "title": "Podpora mikrocirkulace pomocí BEMER terapie",
+    "intro": "BEMER je neinvazivní terapie využívající pulzní elektromagnetické pole navržené pro podporu mikrocirkulace. Ta souvisí se zásobením buněk, regenerací, vitalitou a celkovou kondicí.",
+    "points": [
+      "Společně projdeme vaši situaci",
+      "Vysvětlím vše srozumitelně a bez tlaku",
+      "BEMER si můžete vyzkoušet i doma"
+    ],
+    "primaryCta": "Domluvit konzultaci",
+    "secondaryCta": "Jak BEMER funguje"
+  },
+  "microcirculation": {
+    "eyebrow": "Proč začínáme mikrocirkulací",
+    "title": "Mikrocirkulace jako základ regenerace",
+    "text": "Mikrocirkulace označuje proudění krve v nejmenších cévách. Pomáhá zásobovat buňky kyslíkem a živinami a odvádět látky, které už tělo nepotřebuje. Když funguje správně, organismus má lepší podmínky pro regeneraci, vitalitu a běžné fungování.",
+    "insight": "Dobře fungující mikrocirkulace vytváří lepší podmínky pro regeneraci, vitalitu a přirozenou odolnost těla.",
+    "features": [
+      {
+        "title": "Zásobení buněk",
+        "text": "Nejmenší cévy pomáhají přivádět kyslík a živiny do tkání a orgánů, kde jsou potřeba.",
+        "image": {
+          "src": "01_zasobeni_bunek.png",
+          "alt": ""
+        }
+      },
+      {
+        "title": "Látková výměna",
+        "text": "Mikrocirkulace podporuje výměnu látek mezi krví a tkáněmi. Díky tomu mají buňky lepší podmínky pro svou běžnou činnost.",
+        "image": {
+          "src": "02_latkova_vymena.png",
+          "alt": ""
+        }
+      },
+      {
+        "title": "Regenerace a vitalita",
+        "text": "Když je zásobení tkání dostatečné, organismus má lepší podmínky pro regeneraci, odolnost a každodenní fungování.",
+        "image": {
+          "src": "03_regenerace_vykon.png",
+          "alt": ""
+        }
+      }
+    ]
+  },
+  "bemer": {
+    "eyebrow": "Praktická podpora mikrocirkulace",
+    "title": "Jak BEMER podporuje mikrocirkulaci",
+    "paragraphs": [
+      "Mikrocirkulace ovlivňuje zásobení buněk kyslíkem, látkovou výměnu i regeneraci. BEMER do tohoto procesu vstupuje jako neinvazivní terapie využívající pulzní elektromagnetické pole navržené pro podporu mikrocirkulace.",
+      "Používá se vleže nebo vsedě na podložce, případně s lokálním aplikátorem. Terapie je nebolestivá, odpočinková a nastavení vždy přizpůsobíme vaší situaci."
+    ],
+    "proofs": [
+      {
+        "value": "20+",
+        "text": "let vývoje a praktického využití technologie BEMER v oblasti mikrocirkulace"
+      },
+      {
+        "value": "5+",
+        "text": "patentů chrání specifickou konfiguraci BEMER signálu"
+      },
+      {
+        "value": "PubMed",
+        "text": "vědecké publikace k tématu BEMER, PEMF a mikrocirkulace",
+        "link": {
+          "label": "Zobrazit studie →",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=BEMER+"
+        }
+      }
+    ],
+    "image": {
+      "src": "https://res.cloudinary.com/bemergroup/image/upload/d_fallback_emn3wg.png/ar_1,w_1200,dpr_1,c_fill,g_auto,q_auto,f_auto/v1/marketing_site_remote_images_stage_usa/8c20cc015559cce611d707daf983b678c3fc593f-1051x1051.png",
+      "alt": "BEMER Premium-Set Evo",
+      "caption": "BEMER Premium-Set Evo / B.Box Evo"
+    }
+  },
+  "support": {
+    "eyebrow": "S čím může terapie pomoci",
+    "title": "Kde může být BEMER vhodnou podporou",
+    "text": "BEMER se nejčastěji využívá jako doplňková podpora regenerace, vitality a celkové kondice. Při konzultaci společně projdeme, zda a jak může dávat smysl právě ve vaší situaci.",
+    "cards": [
+      {
+        "title": "Regenerace a energie",
+        "text": "Podpora mikrocirkulace může přispět k lepším podmínkám pro zásobení tkání kyslíkem a živinami. To může být užitečné při únavě, zátěži i regeneraci."
+      },
+      {
+        "title": "Imunitní systém",
+        "text": "Správně fungující mikrocirkulace podporuje přirozené procesy organismu. BEMER může být součástí péče o celkovou odolnost a zdravý životní styl."
+      },
+      {
+        "title": "Funkce orgánů a sliznic",
+        "text": "Orgány i sliznice jsou závislé na jemném cévním zásobení. Podpora mikrocirkulace může vytvářet lepší podmínky pro jejich běžnou činnost a obnovu."
+      },
+      {
+        "title": "Hojení a obnova tkání",
+        "text": "Při zátěži, úrazech nebo po operacích tělo potřebuje dobré podmínky pro regeneraci. BEMER může být podpůrným nástrojem v období obnovy."
+      },
+      {
+        "title": "Pohybový aparát",
+        "text": "Lidé BEMER často vyhledávají při zatížení zad, svalů nebo kloubů. Vhodné použití vždy záleží na konkrétní situaci a zdravotních omezeních."
+      },
+      {
+        "title": "Dlouhodobé potíže",
+        "text": "U chronických nebo neurologických potíží je důležitý individuální přístup a respekt k lékařské péči. BEMER může sloužit jako doplňková podpora komfortu a regenerace."
+      }
+    ]
+  },
+  "cooperation": {
+    "eyebrow": "Proč právě se mnou",
+    "title": "Jak spolupráce probíhá",
+    "text": "Nejprve si společně ujasníme, co řešíte. Poté vám ukážu, jak BEMER používat doma bezpečně, srozumitelně a podle vašich potřeb.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Úvodní konzultace",
+        "text": "Společně projdeme vaši situaci, očekávání a případná omezení. Vysvětlím vám, kde může být BEMER vhodnou podporou."
+      },
+      {
+        "number": "02",
+        "title": "Domácí vyzkoušení",
+        "text": "Pokud se rozhodnete terapii vyzkoušet, zapůjčím vám přístroj BEMER domů a ukážu vám doporučený režim používání."
+      },
+      {
+        "number": "03",
+        "title": "Průběžná podpora",
+        "text": "Během zapůjčení nejste na vše sami. Podle potřeby doladíme používání, zodpovím otázky a budeme sledovat vaši reakci."
+      },
+      {
+        "number": "04",
+        "title": "Rozhodnutí bez tlaku",
+        "text": "Po vyzkoušení se v klidu rozhodnete, zda vám BEMER dává smysl i dlouhodobě. Když budete chtít pokračovat, pomohu vám vybrat vhodné řešení."
+      }
+    ],
+    "ctaText": "Nejste si jistí, jestli je BEMER pro vás vhodný? Domluvte si nezávaznou konzultaci a společně projdeme vaši situaci.",
+    "ctaLabel": "Domluvit konzultaci"
+  },
+  "testimonials": {
+    "eyebrow": "Reference",
+    "title": "Zkušenosti lidí, kteří BEMER vyzkoušeli",
+    "text": "Každý člověk reaguje jinak. Přečtěte si osobní zkušenosti lidí, kteří si prošli konzultací nebo domácím zapůjčením přístroje.",
+    "items": [
+      {
+        "tag": "Domácí zapůjčení",
+        "text": "Po několika týdnech domácího používání jsem vnímala větší lehkost v běžném režimu. Nejvíc mi pomohlo, že jsem měla jasně vysvětlené nastavení a mohla se kdykoliv zeptat.",
+        "name": "Monika A.",
+        "context": "domácí vyzkoušení BEMER terapie"
+      },
+      {
+        "tag": "Nezávazná konzultace",
+        "text": "Ocenil jsem osobní přístup bez tlaku. Vše mi bylo vysvětleno srozumitelně a měl jsem dost prostoru na otázky před rozhodnutím.",
+        "name": "Filip P.",
+        "context": "nezávazná konzultace"
+      },
+      {
+        "tag": "Domácí zapůjčení",
+        "text": "Zapůjčení domů mi pomohlo vyzkoušet si terapii v běžném dni. Oceňuji klidné vysvětlení, jednoduché nastavení a možnost ozvat se, když jsem si nebyla jistá.",
+        "name": "Jana K.",
+        "context": "domácí vyzkoušení přístroje"
+      },
+      {
+        "tag": "Nezávazná konzultace",
+        "text": "Líbilo se mi, že konzultace nebyla prodejní. Nejdřív jsme prošli, co řeším, a až potom možnosti, jak by BEMER mohl dávat smysl.",
+        "name": "Petra S.",
+        "context": "úvodní konzultace"
+      },
+      {
+        "tag": "Dlouhodobé používání",
+        "text": "BEMER jsem začala používat jako součást pravidelné péče o regeneraci. Pomohlo mi, že jsme společně nastavili režim, který se dá dlouhodobě udržet.",
+        "name": "Lucie H.",
+        "context": "dlouhodobá podpora regenerace"
+      },
+      {
+        "tag": "Dlouhodobé používání",
+        "text": "Největší rozdíl pro mě byl v tom, že jsem věděl, jak přístroj používat bezpečně a pravidelně. Kdykoliv jsem potřeboval, dostal jsem srozumitelnou podporu.",
+        "name": "Martin R.",
+        "context": "průběžná podpora používání"
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Časté otázky",
+    "title": "Často kladené otázky",
+    "text": "Odpovědi na otázky, které lidé nejčastěji řeší před první konzultací nebo domácím vyzkoušením BEMER terapie.",
+    "items": [
+      {
+        "question": "Jak BEMER terapie funguje?",
+        "answer": "BEMER využívá nízkofrekvenční pulzní elektromagnetické pole, které je navržené jako podpora mikrocirkulace. Terapie probíhá vleže nebo vsedě na aplikační podložce a jednotlivé aplikace obvykle trvají jen několik minut."
+      },
+      {
+        "question": "Co je mikrocirkulace a proč je důležitá?",
+        "answer": "Mikrocirkulace je proudění krve v nejmenších cévách. Pomáhá zásobovat buňky kyslíkem a živinami a odvádět odpadní látky. Když funguje správně, tělo má lepší podmínky pro regeneraci i běžné fungování."
+      },
+      {
+        "question": "Pro koho může být BEMER vhodnou podporou?",
+        "answer": "BEMER může být zajímavý pro lidi, kteří řeší regeneraci, únavu, sportovní zátěž, dlouhodobou péči o vitalitu nebo podporu zdravého životního stylu. Vhodnost se vždy posuzuje individuálně podle vaší situace."
+      },
+      {
+        "question": "Jak probíhá domácí vyzkoušení přístroje?",
+        "answer": "Po konzultaci vám mohu přístroj zapůjčit domů. Ukážu vám základní nastavení, doporučený režim používání a během zapůjčení se můžete ozvat s dotazy nebo úpravou používání."
+      },
+      {
+        "question": "Je BEMER vhodný i při zdravotních potížích?",
+        "answer": "U zdravotních potíží je vždy důležité postupovat individuálně. BEMER nenahrazuje lékařskou péči ani stanovenou léčbu. Pokud řešíte konkrétní diagnózu nebo užíváte léky, doporučím vhodný postup konzultovat také s lékařem."
+      },
+      {
+        "question": "Musím se po konzultaci k něčemu zavázat?",
+        "answer": "Ne. Konzultace je prostor pro vysvětlení, otázky a zjištění, jestli vám BEMER dává smysl. Cílem není tlak na rozhodnutí, ale srozumitelně vám ukázat možnosti a nechat vám prostor se rozhodnout."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Máte otázky k BEMER terapii? Ozvěte se mi",
+    "text": "Napište mi krátce, co řešíte, a společně se domluvíme na nezávazné konzultaci nebo možnosti domácího vyzkoušení.",
+    "phone": "+420 123 456 789",
+    "email": "info@luckabemer.cz",
+    "details": {
+      "title": "Kontakt",
+      "location": "Osobní konzultace v Praze a okolí"
+    },
+    "form": {
+      "submitLabel": "Odeslat nezávaznou poptávku",
+      "note": "Odesláním zprávy předáváte údaje jen za účelem vyřízení dotazu. Podrobnosti najdete v informacích o ochraně osobních údajů níže."
+    },
+    "profile": {
+      "label": "O mně",
+      "name": "Lucie",
+      "role": "BEMER konzultace a domácí zapůjčení",
+      "text": "Jmenuji se Lucie a BEMER terapii představuji lidem srozumitelně, bez tlaku a s ohledem na jejich konkrétní situaci. Pomohu vám pochopit princip terapie, nastavit domácí používání a zodpovědět otázky, které vás zajímají. Cílem je, abyste se mohli rozhodnout v klidu a s dostatkem informací.",
+      "note": "Konzultace je nezávazná a slouží hlavně k tomu, abychom společně zjistili, zda pro vás BEMER dává smysl.",
+      "image": {
+        "src": "",
+        "alt": ""
+      }
+    }
+  },
+  "legal": {
+    "copyright": "© 2026 Lucka - BEMER terapie. Všechna práva vyhrazena.",
+    "eyebrow": "Právní informace",
+    "title": "Identifikační údaje, cookies a osobní údaje",
+    "blocks": [
+      {
+        "title": "Identifikační údaje provozovatele",
+        "text": "Doplnit před spuštěním: jméno a příjmení nebo obchodní název, IČO, sídlo nebo adresa podnikání, kontaktní e-mail a telefon. Pokud je podnikatel zapsaný v rejstříku, doplnit také údaj o zápisu."
+      },
+      {
+        "title": "Cookies",
+        "text": "Tento web používá pouze nezbytné technické cookies pro zapamatování zobrazení informační lišty. Nepoužíváme analytické ani marketingové cookies."
+      },
+      {
+        "title": "Osobní údaje",
+        "text": "Údaje z kontaktní komunikace slouží pouze k odpovědi na dotaz a navazující domluvě konzultace. Před ostrým spuštěním je potřeba doplnit přesnou identifikaci správce osobních údajů."
+      },
+      {
+        "title": "Externí obsah",
+        "text": "Stránka načítá písma, video a obrázky z externích služeb potřebných pro zobrazení webu."
+      }
+    ]
+  }
+}

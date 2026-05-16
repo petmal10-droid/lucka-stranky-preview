@@ -100,13 +100,21 @@ const applyHero = (hero = {}) => {
 const renderFeatureStrip = (features = []) => {
   const container = document.querySelector('[data-cms-list="microcirculation.features"]');
   if (!container || !Array.isArray(features) || !features.length) return;
+  const visibleFeatures = features.filter((feature) => feature && feature.active !== false);
+  if (!visibleFeatures.length) {
+    container.hidden = true;
+    return;
+  }
+
+  container.hidden = false;
+  container.dataset.count = String(visibleFeatures.length);
 
   const fallbackImages = Array.from(container.querySelectorAll("img")).map((img) => ({
     src: img.getAttribute("src") || "",
     alt: img.getAttribute("alt") || "",
   }));
 
-  const cards = features.map((feature, index) => {
+  const cards = visibleFeatures.map((feature, index) => {
     const article = createElement("article");
     const img = createElement("img");
     const fallbackImage = fallbackImages[index] || fallbackImages[0] || {};

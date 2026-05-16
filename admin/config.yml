@@ -86,6 +86,7 @@ collections:
                 widget: list
                 summary: "{{fields.title}}"
                 fields:
+                  - { label: Aktivní, name: active, widget: boolean, default: true, hint: "Vypnuto = karta zůstane uložená v CMS, ale na webu se nezobrazí." }
                   - { label: Nadpis, name: title, widget: string }
                   - { label: Text, name: text, widget: text, hint: "Doporučení: 1-2 věty." }
                   - label: Ikona

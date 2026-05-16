@@ -52,6 +52,7 @@
     },
     "features": [
       {
+        "active": true,
         "title": "Zásobení buněk",
         "text": "Mikrocirkulace podporuje výměnu látek mezi krví a tkáněmi. Díky tomu mají buňky lepší podmínky pro svou běžnou činnost.",
         "image": {
@@ -60,6 +61,7 @@
         }
       },
       {
+        "active": true,
         "title": "Regenerace a vitalita",
         "text": "Když je zásobení tkání dostatečné, organismus má lepší podmínky pro regeneraci, odolnost a každodenní fungování.",
         "image": {

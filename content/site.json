@@ -50,14 +50,6 @@
     "features": [
       {
         "title": "Zásobení buněk",
-        "text": "Nejmenší cévy pomáhají přivádět kyslík a živiny do tkání a orgánů, kde jsou potřeba.",
-        "image": {
-          "src": "01_zasobeni_bunek.png",
-          "alt": ""
-        }
-      },
-      {
-        "title": "Látková výměna",
         "text": "Mikrocirkulace podporuje výměnu látek mezi krví a tkáněmi. Díky tomu mají buňky lepší podmínky pro svou běžnou činnost.",
         "image": {
           "src": "02_latkova_vymena.png",

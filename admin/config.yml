@@ -10,12 +10,12 @@ backend:
   # na vlastní OAuth proxy.
 
 media_folder: uploads
-public_folder: /lucka-stranky-preview/uploads
+public_folder: /uploads
 publish_mode: simple
 
 locale: cs
-site_url: https://petmal10-droid.github.io/lucka-stranky-preview/
-display_url: https://petmal10-droid.github.io/lucka-stranky-preview/
+site_url: https://www.bemer-lucie.cz/
+display_url: https://www.bemer-lucie.cz/
 
 collections:
   - name: site_content
@@ -256,8 +256,21 @@ collections:
                 name: form
                 widget: object
                 fields:
+                  - { label: E-mail pro odeslání formuláře, name: recipientEmail, widget: string, required: false, hint: "Když zůstane prázdný, použije se hlavní kontaktní e-mail výše." }
+                  - { label: Předmět e-mailu, name: subject, widget: string, required: false }
+                  - { label: Endpoint formuláře, name: endpoint, widget: string, required: false, hint: "Volitelné. Pro skutečné odeslání bez otevření e-mailového klienta vložte URL ze služby typu Formspree, Getform nebo z vlastního serveru. Bez endpointu web použije mailto." }
                   - { label: Text odesílacího tlačítka, name: submitLabel, widget: string }
+                  - { label: Hláška po úspěšném odeslání, name: successMessage, widget: text, required: false }
+                  - { label: Hláška při chybě odeslání, name: errorMessage, widget: text, required: false }
+                  - { label: Hláška při chybějící reCAPTCHA, name: recaptchaMessage, widget: text, required: false }
+                  - { label: Hláška při otevření e-mailového klienta, name: mailtoMessage, widget: text, required: false }
                   - { label: Poznámka pod formulářem, name: note, widget: text }
+                  - label: Google reCAPTCHA
+                    name: recaptcha
+                    widget: object
+                    fields:
+                      - { label: Zapnout reCAPTCHA, name: enabled, widget: boolean, default: false, hint: "Vyžaduje veřejný Site key z Google reCAPTCHA v2 checkbox. Secret key se do statického webu nevkládá." }
+                      - { label: Site key, name: siteKey, widget: string, required: false, hint: "Veřejný klíč pro doménu www.bemer-lucie.cz. Pokud se má formulář testovat i na GitHub Pages preview, přidejte v Google reCAPTCHA také petmal10-droid.github.io." }
               - label: Osobní medailonek
                 name: profile
                 widget: object

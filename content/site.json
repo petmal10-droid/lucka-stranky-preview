@@ -292,8 +292,19 @@
       "location": "Osobní konzultace v Praze a okolí"
     },
     "form": {
+      "recipientEmail": "info@luckabemer.cz",
+      "subject": "Poptávka z webu Lucka BEMER",
+      "endpoint": "",
       "submitLabel": "Odeslat nezávaznou poptávku",
-      "note": "Odesláním zprávy předáváte údaje jen za účelem vyřízení dotazu. Podrobnosti najdete v informacích o ochraně osobních údajů níže."
+      "successMessage": "Děkuji, zpráva byla odeslána. Ozvu se vám co nejdříve.",
+      "errorMessage": "Odeslání se nepodařilo. Zkuste to prosím znovu nebo napište přímo na e-mail.",
+      "recaptchaMessage": "Potvrďte prosím, že nejste robot.",
+      "mailtoMessage": "Otevře se vám e-mailový klient s připravenou zprávou.",
+      "note": "Odesláním zprávy předáváte údaje jen za účelem vyřízení dotazu. Podrobnosti najdete v informacích o ochraně osobních údajů níže.",
+      "recaptcha": {
+        "enabled": false,
+        "siteKey": ""
+      }
     },
     "profile": {
       "label": "O mně",

@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   await loadCmsContent();
+  initContactForm();
   initReveal(prefersReducedMotion);
   initHeader();
   initHeroParallax(prefersReducedMotion);
@@ -42,6 +43,33 @@ const normalizeImagePath = (path) => {
   if (!path || typeof path !== "string") return "";
   if (/^(https?:)?\/\//.test(path) || path.startsWith("/")) return path;
   return path.replace(/^\.?\//, "");
+};
+
+const encodeMailtoSubject = (subject) => encodeURIComponent(subject || "Poptávka z webu");
+
+const setFormStatus = (form, message, type = "info") => {
+  const status = form.querySelector("[data-form-status]");
+  if (!status) return;
+
+  status.textContent = message || "";
+  status.hidden = !message;
+  status.dataset.status = type;
+};
+
+const loadRecaptchaScript = () => {
+  if (document.querySelector('script[src*="google.com/recaptcha/api.js"]')) return;
+
+  const script = document.createElement("script");
+  script.src = "https://www.google.com/recaptcha/api.js";
+  script.async = true;
+  script.defer = true;
+  document.head.append(script);
+};
+
+const resetRecaptcha = () => {
+  if (window.grecaptcha && typeof window.grecaptcha.reset === "function") {
+    window.grecaptcha.reset();
+  }
 };
 
 const applyImage = (image, target) => {
@@ -290,15 +318,47 @@ const renderLegalBlocks = (blocks = []) => {
 };
 
 const applyContact = (contact = {}) => {
+  const form = document.querySelector("[data-contact-form]");
+  const formSettings = contact.form || {};
+  const recipientEmail = formSettings.recipientEmail || contact.email;
+
   if (contact.email) {
     const email = document.querySelector('[data-cms-contact="email"]');
     if (email) {
       email.textContent = contact.email;
       email.href = `mailto:${contact.email}`;
     }
+  }
 
-    const form = document.querySelector(".contact-form");
-    if (form) form.action = `mailto:${contact.email}`;
+  if (form && recipientEmail) {
+    const endpoint = formSettings.endpoint?.trim();
+    const subject = encodeMailtoSubject(formSettings.subject);
+    form.action = endpoint || `mailto:${recipientEmail}?subject=${subject}`;
+    form.method = "post";
+    form.enctype = endpoint ? "multipart/form-data" : "text/plain";
+    form.dataset.successMessage = formSettings.successMessage || "Děkujeme, zpráva byla odeslána.";
+    form.dataset.mailtoMessage =
+      formSettings.mailtoMessage || "Otevře se vám e-mailový klient s připravenou zprávou.";
+    form.dataset.errorMessage =
+      formSettings.errorMessage || "Odeslání se nepodařilo. Zkuste to prosím znovu nebo napište přímo na e-mail.";
+    form.dataset.recaptchaMessage =
+      formSettings.recaptchaMessage || "Potvrďte prosím, že nejste robot.";
+    form.dataset.hasEndpoint = String(Boolean(endpoint));
+  }
+
+  const recaptcha = formSettings.recaptcha || {};
+  const recaptchaContainer = document.querySelector("[data-recaptcha-container]");
+  if (recaptchaContainer) {
+    const shouldShowRecaptcha = Boolean(recaptcha.enabled && recaptcha.siteKey);
+    recaptchaContainer.hidden = !shouldShowRecaptcha;
+    recaptchaContainer.replaceChildren();
+
+    if (shouldShowRecaptcha) {
+      const recaptchaElement = createElement("div", "g-recaptcha");
+      recaptchaElement.dataset.sitekey = recaptcha.siteKey;
+      recaptchaContainer.append(recaptchaElement);
+      loadRecaptchaScript();
+    }
   }
 
   if (contact.phone) {
@@ -320,6 +380,53 @@ const applyContact = (contact = {}) => {
     profilePhoto.replaceChildren(img);
     profilePhoto.removeAttribute("aria-hidden");
   }
+};
+
+const initContactForm = () => {
+  const form = document.querySelector("[data-contact-form]");
+  if (!form) return;
+
+  form.addEventListener("submit", async (event) => {
+    const recaptchaContainer = form.querySelector("[data-recaptcha-container]");
+    const recaptchaResponse = form.querySelector('[name="g-recaptcha-response"]');
+    const recaptchaRequired = recaptchaContainer && !recaptchaContainer.hidden;
+
+    if (recaptchaRequired && !recaptchaResponse?.value) {
+      event.preventDefault();
+      setFormStatus(form, form.dataset.recaptchaMessage, "error");
+      return;
+    }
+
+    if (form.dataset.hasEndpoint !== "true") {
+      setFormStatus(form, form.dataset.mailtoMessage, "info");
+      return;
+    }
+
+    event.preventDefault();
+    const submitButton = form.querySelector('button[type="submit"]');
+    if (submitButton) submitButton.disabled = true;
+    setFormStatus(form, "", "info");
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method || "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) throw new Error(`Form endpoint failed: ${response.status}`);
+
+      form.reset();
+      resetRecaptcha();
+      setFormStatus(form, form.dataset.successMessage, "success");
+    } catch (error) {
+      console.warn("Contact form could not be submitted.", error);
+      resetRecaptcha();
+      setFormStatus(form, form.dataset.errorMessage, "error");
+    } finally {
+      if (submitButton) submitButton.disabled = false;
+    }
+  });
 };
 
 const applyCmsContent = (content) => {

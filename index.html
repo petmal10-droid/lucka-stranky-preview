@@ -564,15 +564,16 @@
                 action="mailto:info@luckabemer.cz"
                 method="post"
                 enctype="text/plain"
+                data-contact-form
               >
                 <div class="form-row">
                   <label>
                     Jméno
-                    <input name="Jméno" type="text" autocomplete="name" placeholder="Vaše jméno" />
+                    <input name="Jméno" type="text" autocomplete="name" placeholder="Vaše jméno" required />
                   </label>
                   <label>
                     E-mail
-                    <input name="E-mail" type="email" autocomplete="email" placeholder="vas@email.cz" />
+                    <input name="E-mail" type="email" autocomplete="email" placeholder="vas@email.cz" required />
                   </label>
                 </div>
                 <label>
@@ -585,11 +586,14 @@
                     name="Zpráva"
                     rows="4"
                     placeholder="Napište stručně, s čím vám mohu pomoci."
+                    required
                   ></textarea>
                 </label>
+                <div class="recaptcha-field" data-recaptcha-container hidden></div>
                 <button class="button button-primary" type="submit">
                   <span data-cms-text="contact.form.submitLabel">Odeslat nezávaznou poptávku</span>
                 </button>
+                <p class="form-status" data-form-status hidden role="status"></p>
                 <p class="form-note" data-cms-text="contact.form.note">
                   Odesláním zprávy předáváte údaje jen za účelem vyřízení dotazu.
                   Podrobnosti najdete v informacích o ochraně osobních údajů níže.

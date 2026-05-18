@@ -284,15 +284,15 @@
       "text": "Kontakt"
     },
     "title": "Máte otázky k BEMER terapii? Ozvěte se mi",
-    "text": "Napište mi krátce, co řešíte, a společně se domluvíme na nezávazné konzultaci nebo možnosti domácího vyzkoušení.",
-    "phone": "+420 123 456 789",
-    "email": "info@luckabemer.cz",
+    "text": "Zde napište dotaz",
+    "phone": "+420 775 447 563",
+    "email": "lucieklozovaa@seznam.cz",
     "details": {
       "title": "Kontakt",
-      "location": "Osobní konzultace v Praze a okolí"
+      "location": "Osobní konzultace v Brně a okolí"
     },
     "form": {
-      "recipientEmail": "info@luckabemer.cz",
+      "recipientEmail": "lucieklozovaa@seznam.cz",
       "subject": "Poptávka z webu Lucka BEMER",
       "endpoint": "",
       "submitLabel": "Odeslat nezávaznou poptávku",
@@ -302,7 +302,7 @@
       "mailtoMessage": "Otevře se vám e-mailový klient s připravenou zprávou.",
       "note": "Odesláním zprávy předáváte údaje jen za účelem vyřízení dotazu. Podrobnosti najdete v informacích o ochraně osobních údajů níže.",
       "recaptcha": {
-        "enabled": false,
+        "enabled": true,
         "siteKey": ""
       }
     },

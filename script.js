@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   initContactForm();
   initReveal(prefersReducedMotion);
   initHeader();
+  initMobileMenu();
   initHeroParallax(prefersReducedMotion);
   initActiveNavigation();
   initFaq();
@@ -492,6 +493,42 @@ const initHeader = () => {
 
   updateHeader();
   window.addEventListener("scroll", updateHeader, { passive: true });
+};
+
+const initMobileMenu = () => {
+  const header = document.querySelector(".site-header");
+  const toggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector("#site-menu");
+  if (!header || !toggle || !menu) return;
+
+  const closeMenu = () => {
+    header.classList.remove("is-menu-open");
+    toggle.setAttribute("aria-expanded", "false");
+  };
+
+  const toggleMenu = () => {
+    const isOpen = header.classList.toggle("is-menu-open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  };
+
+  toggle.addEventListener("click", toggleMenu);
+
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+  });
+
+  document.addEventListener("click", (event) => {
+    if (header.contains(event.target)) return;
+    closeMenu();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.matchMedia("(min-width: 681px)").matches) closeMenu();
+  });
 };
 
 const initHeroParallax = (prefersReducedMotion) => {

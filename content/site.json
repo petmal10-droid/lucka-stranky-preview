@@ -184,6 +184,11 @@
         "number": "01",
         "title": "Konzultace",
         "text": "Společně projdeme vaši situaci, očekávání a případná omezení. Vysvětlím vám, kde může být BEMER vhodnou podporou.",
+        "price": {
+          "active": false,
+          "bold": true,
+          "text": ""
+        },
         "image": {
           "src": "",
           "alt": ""
@@ -192,7 +197,12 @@
       {
         "number": "02",
         "title": "Pronájem",
-        "text": "Pro účinnou terapii je klíčová pravidelná aplikace. Proto půjčujeme přístroje k vám domů.\n\nzapůjčení na měsíc: 8 000 Kč\nzapůjčení na 2 měsíce: 15 000 Kč",
+        "text": "Pro účinnou terapii je klíčová pravidelná aplikace. Proto půjčujeme přístroje k vám domů.",
+        "price": {
+          "active": true,
+          "bold": true,
+          "text": "zapůjčení na měsíc: 8 000 Kč\nzapůjčení na 2 měsíce: 15 000 Kč"
+        },
         "image": {
           "src": "",
           "alt": ""
@@ -202,6 +212,11 @@
         "number": "03",
         "title": "Prodej",
         "text": "Pro dlouhodobé použití je vhodné přístroj BEMER zakoupit. Při nákupu se cena za předchzí pronájem nuluje.",
+        "price": {
+          "active": false,
+          "bold": true,
+          "text": ""
+        },
         "image": {
           "src": "",
           "alt": ""

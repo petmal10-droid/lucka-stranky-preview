@@ -953,6 +953,18 @@ h3 {
   margin: 18px 0 12px;
 }
 
+.audience-card .audience-card-price {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(239, 111, 24, 0.18);
+  color: var(--text);
+  white-space: pre-line;
+}
+
+.audience-card .audience-card-price--bold {
+  font-weight: 800;
+}
+
 .process-number {
   display: grid;
   place-items: center;

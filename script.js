@@ -234,6 +234,10 @@ const renderSteps = (steps = []) => {
       }
 
       article.append(marker, createElement("h3", "", step.title || ""), createElement("p", "", step.text || ""));
+      if (step.price?.active && step.price?.text) {
+        const price = createElement("p", `audience-card-price${step.price.bold ? " audience-card-price--bold" : ""}`, step.price.text);
+        article.append(price);
+      }
       return article;
     })
   );

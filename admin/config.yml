@@ -197,6 +197,14 @@ collections:
                   - { label: Číslo, name: number, widget: string, hint: "Např. 01." }
                   - { label: Nadpis, name: title, widget: string }
                   - { label: Text, name: text, widget: text, hint: "Doporučení: 1-3 věty." }
+                  - label: Cena / zvýrazněný blok
+                    name: price
+                    widget: object
+                    required: false
+                    fields:
+                      - { label: Aktivní, name: active, widget: boolean, default: false, hint: "Vypnuto = blok ceny se v kartě nezobrazí." }
+                      - { label: Tučně, name: bold, widget: boolean, default: true, hint: "Zapnuto = celý cenový blok bude výrazně tučný." }
+                      - { label: Text, name: text, widget: text, required: false, hint: "Každý řádek zůstane oddělený. Vhodné např. pro ceny pronájmu." }
                   - label: Ikona místo čísla
                     name: image
                     widget: object

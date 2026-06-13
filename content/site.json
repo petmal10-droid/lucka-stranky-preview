@@ -115,7 +115,7 @@
     },
     "title": "S čím může BEMER pomoci",
     "text": {
-      "active": true,
+      "active": false,
       "text": "a"
     },
     "cards": [
@@ -176,7 +176,7 @@
     },
     "title": "Jak spolupráce probíhá",
     "text": {
-      "active": true,
+      "active": false,
       "text": "Nejprve si společně ujasníme, co řešíte. Poté vám ukážu, jak BEMER používat doma bezpečně, srozumitelně a podle vašich potřeb."
     },
     "steps": [
@@ -202,7 +202,7 @@
       }
     ],
     "cta": {
-      "active": true,
+      "active": false,
       "text": "Nejste si jistí, jestli je BEMER pro vás vhodný? Domluvte si nezávaznou konzultaci a společně projdeme vaši situaci.",
       "label": "Domluvit konzultaci"
     }
@@ -214,7 +214,7 @@
     },
     "title": "Zkušenosti lidí, kteří BEMER vyzkoušeli",
     "text": {
-      "active": true,
+      "active": false,
       "text": "Každý člověk reaguje jinak. Přečtěte si osobní zkušenosti lidí, kteří si prošli konzultací nebo domácím zapůjčením přístroje."
     },
     "items": [

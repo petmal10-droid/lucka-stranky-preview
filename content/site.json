@@ -114,7 +114,10 @@
       "text": "S čím může terapie pomoci"
     },
     "title": "S čím může BEMER pomoci",
-    "text": "a",
+    "text": {
+      "active": true,
+      "text": "a"
+    },
     "cards": [
       {
         "title": "Regenerace a energie",
@@ -172,7 +175,10 @@
       "text": "Proč právě se mnou"
     },
     "title": "Jak spolupráce probíhá",
-    "text": "Nejprve si společně ujasníme, co řešíte. Poté vám ukážu, jak BEMER používat doma bezpečně, srozumitelně a podle vašich potřeb.",
+    "text": {
+      "active": true,
+      "text": "Nejprve si společně ujasníme, co řešíte. Poté vám ukážu, jak BEMER používat doma bezpečně, srozumitelně a podle vašich potřeb."
+    },
     "steps": [
       {
         "number": "01",
@@ -195,8 +201,11 @@
         "text": "Po vyzkoušení se v klidu rozhodnete, zda vám BEMER dává smysl i dlouhodobě. Když budete chtít pokračovat, pomohu vám vybrat vhodné řešení."
       }
     ],
-    "ctaText": "Nejste si jistí, jestli je BEMER pro vás vhodný? Domluvte si nezávaznou konzultaci a společně projdeme vaši situaci.",
-    "ctaLabel": "Domluvit konzultaci"
+    "cta": {
+      "active": true,
+      "text": "Nejste si jistí, jestli je BEMER pro vás vhodný? Domluvte si nezávaznou konzultaci a společně projdeme vaši situaci.",
+      "label": "Domluvit konzultaci"
+    }
   },
   "testimonials": {
     "eyebrow": {
@@ -204,7 +213,10 @@
       "text": "Reference"
     },
     "title": "Zkušenosti lidí, kteří BEMER vyzkoušeli",
-    "text": "Každý člověk reaguje jinak. Přečtěte si osobní zkušenosti lidí, kteří si prošli konzultací nebo domácím zapůjčením přístroje.",
+    "text": {
+      "active": true,
+      "text": "Každý člověk reaguje jinak. Přečtěte si osobní zkušenosti lidí, kteří si prošli konzultací nebo domácím zapůjčením přístroje."
+    },
     "items": [
       {
         "tag": "Domácí zapůjčení",

@@ -487,6 +487,11 @@ h3 {
   display: none;
 }
 
+.section-heading p[hidden],
+.process-cta[hidden] {
+  display: none;
+}
+
 .section-heading {
   display: grid;
   gap: 13px;

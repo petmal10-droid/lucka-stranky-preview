@@ -968,6 +968,19 @@ h3 {
     box-shadow var(--motion-base) var(--ease-standard);
 }
 
+.process-number--custom {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.process-number img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .process-cta {
   display: flex;
   align-items: center;

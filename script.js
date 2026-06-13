@@ -221,8 +221,19 @@ const renderSteps = (steps = []) => {
   container.replaceChildren(
     ...steps.map((step, index) => {
       const article = createElement("article", "audience-card");
-      const number = createElement("span", "process-number", step.number || String(index + 1).padStart(2, "0"));
-      article.append(number, createElement("h3", "", step.title || ""), createElement("p", "", step.text || ""));
+      const marker = createElement("span", "process-number", step.number || String(index + 1).padStart(2, "0"));
+      marker.setAttribute("aria-hidden", "true");
+
+      if (step.image?.src) {
+        marker.classList.add("process-number--custom");
+        marker.textContent = "";
+        const img = createElement("img");
+        img.src = normalizeImagePath(step.image.src);
+        img.alt = step.image.alt || "";
+        marker.append(img);
+      }
+
+      article.append(marker, createElement("h3", "", step.title || ""), createElement("p", "", step.text || ""));
       return article;
     })
   );

@@ -183,22 +183,38 @@
       {
         "number": "01",
         "title": "Úvodní konzultace",
-        "text": "Společně projdeme vaši situaci, očekávání a případná omezení. Vysvětlím vám, kde může být BEMER vhodnou podporou."
+        "text": "Společně projdeme vaši situaci, očekávání a případná omezení. Vysvětlím vám, kde může být BEMER vhodnou podporou.",
+        "image": {
+          "src": "",
+          "alt": ""
+        }
       },
       {
         "number": "02",
         "title": "Domácí vyzkoušení",
-        "text": "Pokud se rozhodnete terapii vyzkoušet, zapůjčím vám přístroj BEMER domů a ukážu vám doporučený režim používání."
+        "text": "Pokud se rozhodnete terapii vyzkoušet, zapůjčím vám přístroj BEMER domů a ukážu vám doporučený režim používání.",
+        "image": {
+          "src": "",
+          "alt": ""
+        }
       },
       {
         "number": "03",
         "title": "Průběžná podpora",
-        "text": "Během zapůjčení nejste na vše sami. Podle potřeby doladíme používání, zodpovím otázky a budeme sledovat vaši reakci."
+        "text": "Během zapůjčení nejste na vše sami. Podle potřeby doladíme používání, zodpovím otázky a budeme sledovat vaši reakci.",
+        "image": {
+          "src": "",
+          "alt": ""
+        }
       },
       {
         "number": "04",
         "title": "Rozhodnutí bez tlaku",
-        "text": "Po vyzkoušení se v klidu rozhodnete, zda vám BEMER dává smysl i dlouhodobě. Když budete chtít pokračovat, pomohu vám vybrat vhodné řešení."
+        "text": "Po vyzkoušení se v klidu rozhodnete, zda vám BEMER dává smysl i dlouhodobě. Když budete chtít pokračovat, pomohu vám vybrat vhodné řešení.",
+        "image": {
+          "src": "",
+          "alt": ""
+        }
       }
     ],
     "cta": {

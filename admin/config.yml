@@ -197,6 +197,13 @@ collections:
                   - { label: Číslo, name: number, widget: string, hint: "Např. 01." }
                   - { label: Nadpis, name: title, widget: string }
                   - { label: Text, name: text, widget: text, hint: "Doporučení: 1-3 věty." }
+                  - label: Ikona místo čísla
+                    name: image
+                    widget: object
+                    required: false
+                    fields:
+                      - { label: Soubor, name: src, widget: image, choose_url: true, required: false, hint: "Volitelné. Lze nahrát PNG s průhledností nebo SVG. Když zůstane prázdné, zobrazí se číslo kroku." }
+                      - { label: Alternativní text, name: alt, widget: string, required: false, hint: "U dekorativní ikony může zůstat prázdné." }
               - label: CTA box
                 name: cta
                 widget: object

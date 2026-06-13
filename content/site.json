@@ -182,7 +182,7 @@
     "steps": [
       {
         "number": "01",
-        "title": "Úvodní konzultace",
+        "title": "Konzultace",
         "text": "Společně projdeme vaši situaci, očekávání a případná omezení. Vysvětlím vám, kde může být BEMER vhodnou podporou.",
         "image": {
           "src": "",
@@ -191,8 +191,8 @@
       },
       {
         "number": "02",
-        "title": "Domácí vyzkoušení",
-        "text": "Pokud se rozhodnete terapii vyzkoušet, zapůjčím vám přístroj BEMER domů a ukážu vám doporučený režim používání.",
+        "title": "Pronájem",
+        "text": "Pro účinnou terapii je klíčová pravidelná aplikace. Proto půjčujeme přístroje k vám domů.\n\nzapůjčení na měsíc: 8 000 Kč\nzapůjčení na 2 měsíce: 15 000 Kč",
         "image": {
           "src": "",
           "alt": ""
@@ -200,17 +200,8 @@
       },
       {
         "number": "03",
-        "title": "Průběžná podpora",
-        "text": "Během zapůjčení nejste na vše sami. Podle potřeby doladíme používání, zodpovím otázky a budeme sledovat vaši reakci.",
-        "image": {
-          "src": "",
-          "alt": ""
-        }
-      },
-      {
-        "number": "04",
-        "title": "Rozhodnutí bez tlaku",
-        "text": "Po vyzkoušení se v klidu rozhodnete, zda vám BEMER dává smysl i dlouhodobě. Když budete chtít pokračovat, pomohu vám vybrat vhodné řešení.",
+        "title": "Prodej",
+        "text": "Pro dlouhodobé použití je vhodné přístroj BEMER zakoupit. Při nákupu se cena za předchzí pronájem nuluje.",
         "image": {
           "src": "",
           "alt": ""

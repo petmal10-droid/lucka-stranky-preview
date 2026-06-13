@@ -268,7 +268,7 @@ const renderFaq = (items = []) => {
   );
 };
 
-const renderTestimonials = (items = []) => {
+const renderTestimonials = (items = [], display = {}) => {
   const section = document.querySelector("#testimonials");
   const carousel = document.querySelector('[data-cms-list="testimonials.items"]');
   if (!section || !carousel || !Array.isArray(items)) return;
@@ -279,6 +279,8 @@ const renderTestimonials = (items = []) => {
   }
 
   const orderedItems = shuffleItems(items);
+  const showTags = display.showTags !== false;
+  const showContexts = display.showContexts !== false;
   const slides = chunkItems(orderedItems, 2).map((group, slideIndex) => {
     const slide = createElement("div", `testimonial-slide${slideIndex === 0 ? " is-active" : ""}`);
     slide.dataset.testimonialSlide = String(slideIndex);
@@ -290,13 +292,16 @@ const renderTestimonials = (items = []) => {
       const mark = createElement("span", "", "“");
       mark.setAttribute("aria-hidden", "true");
       const footer = createElement("footer");
-      footer.append(createElement("strong", "", testimonial.name || ""), createElement("small", "", testimonial.context || ""));
-      quote.append(
-        mark,
-        createElement("div", "testimonial-tag", testimonial.tag || ""),
-        createElement("p", "", testimonial.text || ""),
-        footer
-      );
+      footer.append(createElement("strong", "", testimonial.name || ""));
+      if (showContexts && testimonial.contextActive !== false && testimonial.context) {
+        footer.append(createElement("small", "", testimonial.context));
+      }
+
+      quote.append(mark);
+      if (showTags && testimonial.tagActive !== false && testimonial.tag) {
+        quote.append(createElement("div", "testimonial-tag", testimonial.tag));
+      }
+      quote.append(createElement("p", "", testimonial.text || ""), footer);
       grid.append(quote);
     });
 
@@ -455,7 +460,7 @@ const applyCmsContent = (content) => {
   applyImage(content.bemer?.image, document.querySelector('[data-cms-image-wrapper="bemer.image"]'));
   renderHelpCards(content.support?.cards);
   renderSteps(content.cooperation?.steps);
-  renderTestimonials(content.testimonials?.items);
+  renderTestimonials(content.testimonials?.items, content.testimonials?.display);
   renderFaq(content.faq?.items);
   applyContact(content.contact);
   renderLegalBlocks(content.legal?.blocks);

@@ -239,41 +239,57 @@
       "active": false,
       "text": "Každý člověk reaguje jinak. Přečtěte si osobní zkušenosti lidí, kteří si prošli konzultací nebo domácím zapůjčením přístroje."
     },
+    "display": {
+      "showTags": false,
+      "showContexts": false
+    },
     "items": [
       {
+        "tagActive": false,
         "tag": "Domácí zapůjčení",
         "text": "Po několika týdnech domácího používání jsem vnímala větší lehkost v běžném režimu. Nejvíc mi pomohlo, že jsem měla jasně vysvětlené nastavení a mohla se kdykoliv zeptat.",
         "name": "Monika A.",
+        "contextActive": false,
         "context": "domácí vyzkoušení BEMER terapie"
       },
       {
+        "tagActive": false,
         "tag": "Nezávazná konzultace",
         "text": "Ocenil jsem osobní přístup bez tlaku. Vše mi bylo vysvětleno srozumitelně a měl jsem dost prostoru na otázky před rozhodnutím.",
         "name": "Filip P.",
+        "contextActive": false,
         "context": "nezávazná konzultace"
       },
       {
+        "tagActive": false,
         "tag": "Domácí zapůjčení",
         "text": "Zapůjčení domů mi pomohlo vyzkoušet si terapii v běžném dni. Oceňuji klidné vysvětlení, jednoduché nastavení a možnost ozvat se, když jsem si nebyla jistá.",
         "name": "Jana K.",
+        "contextActive": false,
         "context": "domácí vyzkoušení přístroje"
       },
       {
+        "tagActive": false,
         "tag": "Nezávazná konzultace",
         "text": "Líbilo se mi, že konzultace nebyla prodejní. Nejdřív jsme prošli, co řeším, a až potom možnosti, jak by BEMER mohl dávat smysl.",
         "name": "Petra S.",
+        "contextActive": false,
         "context": "úvodní konzultace"
       },
       {
+        "tagActive": false,
         "tag": "Dlouhodobé používání",
         "text": "BEMER jsem začala používat jako součást pravidelné péče o regeneraci. Pomohlo mi, že jsme společně nastavili režim, který se dá dlouhodobě udržet.",
         "name": "Lucie H.",
+        "contextActive": false,
         "context": "dlouhodobá podpora regenerace"
       },
       {
+        "tagActive": false,
         "tag": "Dlouhodobé používání",
         "text": "Největší rozdíl pro mě byl v tom, že jsem věděl, jak přístroj používat bezpečně a pravidelně. Kdykoliv jsem potřeboval, dostal jsem srozumitelnou podporu.",
         "name": "Martin R.",
+        "contextActive": false,
         "context": "průběžná podpora používání"
       }
     ]

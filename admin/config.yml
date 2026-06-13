@@ -237,14 +237,22 @@ collections:
                 fields:
                   - { label: Aktivní, name: active, widget: boolean, default: true, hint: "Vypnuto = úvodní text se na webu nezobrazí a nezabere žádné místo." }
                   - { label: Text, name: text, widget: text, hint: "Doporučení: 1-3 věty." }
+              - label: Zobrazení polí v kartách
+                name: display
+                widget: object
+                fields:
+                  - { label: Zobrazovat štítek reference, name: showTags, widget: boolean, default: false, hint: "Vypnuto = horní štítek typu zkušenosti se v kartách referencí nezobrazí." }
+                  - { label: Zobrazovat krátký popisek pod jménem, name: showContexts, widget: boolean, default: false, hint: "Vypnuto = malý kontext pod jménem se v kartách referencí nezobrazí." }
               - label: Seznam referencí
                 name: items
                 widget: list
                 summary: "{{fields.name}} - {{fields.tag}}"
                 fields:
+                  - { label: Zobrazit štítek této reference, name: tagActive, widget: boolean, default: false, hint: "Vypnuto = štítek zůstane uložený v CMS, ale na webu se nezobrazí." }
                   - { label: Štítek / typ zkušenosti, name: tag, widget: string, hint: "Např. Domácí zapůjčení." }
                   - { label: Text reference, name: text, widget: text, hint: "Doporučení: 2-5 vět. Delší text se zalomí a karta vyroste." }
                   - { label: Jméno nebo iniciály, name: name, widget: string }
+                  - { label: Zobrazit krátký popisek pod jménem, name: contextActive, widget: boolean, default: false, hint: "Vypnuto = popisek zůstane uložený v CMS, ale na webu se nezobrazí." }
                   - { label: Krátký popisek osoby nebo kontext, name: context, widget: string, required: false }
 
           - label: FAQ

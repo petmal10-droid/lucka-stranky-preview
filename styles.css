@@ -933,6 +933,10 @@ h3 {
 
 .audience-card {
   position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 48px;
+  column-gap: 18px;
+  align-content: start;
   min-height: 246px;
   min-width: 0;
   padding: 30px 24px 26px;
@@ -953,15 +957,23 @@ h3 {
 }
 
 .audience-card h3 {
-  margin: 18px 0 12px;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  margin: 0;
   color: #fffaf2;
+  font-size: clamp(1.35rem, 2.2vw, 1.72rem);
+  line-height: 1.12;
 }
 
 .audience-card p {
+  grid-column: 1 / -1;
+  margin-top: 18px;
   color: rgba(255, 250, 242, 0.88);
 }
 
 .audience-card .audience-card-price {
+  grid-column: 1 / -1;
   margin-top: 18px;
   padding-top: 16px;
   border-top: 1px solid rgba(255, 238, 218, 0.34);
@@ -974,6 +986,9 @@ h3 {
 }
 
 .process-number {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
   display: grid;
   place-items: center;
   width: 48px;
@@ -2046,14 +2061,12 @@ h3 {
   }
 
   .audience-card {
-    padding-left: 76px;
+    grid-template-columns: minmax(0, 1fr) 40px;
+    column-gap: 14px;
     min-height: auto;
   }
 
   .process-number {
-    position: absolute;
-    left: 20px;
-    top: 24px;
     width: 40px;
     height: 40px;
   }

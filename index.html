@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lucka | BEMER terapie</title>
+    <link rel="canonical" href="https://www.bemer-lucie.cz/" />
     <meta
       name="description"
       content="Osobní konzultace BEMER terapie se zaměřením na mikrocirkulaci, regeneraci a celkovou vitalitu."
@@ -14,7 +15,9 @@
       href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260615-cooperation-number-title-row" />
+    <link rel="stylesheet" href="./assets/site.css?v=20260926-detail" />
+    <link rel="stylesheet" href="./assets/hero-surface.css?v=20260926-detail" />
+    <link rel="stylesheet" href="./assets/hero.css?v=20260926-detail" />
     <noscript>
       <style>
         .reveal,
@@ -59,7 +62,7 @@
       </header>
 
       <main id="top">
-        <section class="hero reveal">
+        <section class="hero">
           <div class="hero-copy">
             <h1 data-cms-text="hero.title">Podpora mikrocirkulace pomocí BEMER terapie</h1>
             <p class="hero-text" data-cms-text="hero.intro">
@@ -80,12 +83,9 @@
             </div>
           </div>
 
-          <div class="hero-art" aria-hidden="true">
-            <span class="signal-sun"></span>
-            <span class="signal-dot signal-dot-one"></span>
-            <span class="signal-dot signal-dot-two"></span>
-            <span class="signal-dot signal-dot-three"></span>
-            <span class="signal-dot signal-dot-four"></span>
+          <div class="depth-art" aria-hidden="true" data-visibility="71" data-strength="100" data-detail="100" data-focus="true">
+            <img class="depth-fallback" src="./assets/hero/detail.webp" alt="" fetchpriority="high" />
+            <canvas class="depth-canvas"></canvas>
           </div>
 
         </section>
@@ -342,96 +342,70 @@
           <div class="section-heading full">
             <p class="eyebrow" data-cms-active="testimonials.eyebrow.active" data-cms-text="testimonials.eyebrow.text">Reference</p>
             <h2 data-cms-text="testimonials.title">Zkušenosti lidí, kteří BEMER vyzkoušeli</h2>
-            <p data-cms-active="testimonials.text.active" data-cms-text="testimonials.text.text">
-              Každý člověk reaguje jinak. Přečtěte si osobní zkušenosti lidí,
-              kteří si prošli konzultací nebo domácím zapůjčením přístroje.
-            </p>
+            <p data-cms-active="testimonials.text.active" data-cms-text="testimonials.text.text">Zkrácené parafráze osobních zkušeností s BEMER terapií.</p>
           </div>
-
-          <div class="testimonial-carousel reveal-stagger" aria-label="Reference klientů" data-cms-list="testimonials.items">
+          <div class="testimonial-carousel reveal-stagger" aria-label="Osobní zkušenosti s BEMER" data-cms-list="testimonials.items">
             <div class="testimonial-slide is-active" data-testimonial-slide="0">
               <div class="testimonial-grid">
                 <blockquote class="testimonial-card">
                   <span aria-hidden="true">“</span>
-                  <p>
-                    Po několika týdnech domácího používání jsem vnímala větší
-                    lehkost v běžném režimu. Nejvíc mi pomohlo, že jsem měla jasně
-                    vysvětlené nastavení a mohla se kdykoliv zeptat.
-                  </p>
-                  <footer>
-                    <strong>Monika A.</strong>
-                  </footer>
+                  <p>Migrény mám celý život, ale poslední dva roky se výrazně zhoršily. Jen na začátku července jsem měla devět dní s migrénou. Do BEMERu jsem velké naděje nevkládala, ale už při prvním použití mě překvapila úleva při lehké bolesti hlavy. Koupila jsem si vlastní přístroj a nyní mívám jednu až dvě migrény měsíčně. Navíc se mi výrazně zlepšilo soustředění.</p>
+                  <footer><strong>Klára M.</strong></footer>
                 </blockquote>
                 <blockquote class="testimonial-card">
                   <span aria-hidden="true">“</span>
-                  <p>
-                    Ocenil jsem osobní přístup bez tlaku. Vše mi bylo vysvětleno
-                    srozumitelně a měl jsem dost prostoru na otázky před rozhodnutím.
-                  </p>
-                  <footer>
-                    <strong>Filip P.</strong>
-                  </footer>
+                  <p>Přístroj jsme měli doma půjčený měsíc. Podložku jsme používali my rodiče i náš syn s DMO a epilepsií. Na sobě jsem pocítil lepší vnímání těla, uvolnění ztuhlých míst a snazší pohyb. Překvapily mě i nové pocity a myšlenky. U syna se zlepšila vnímavost při doteku, začal vydávat nové slabiky, rozšířil si slovní zásobu a je zase o něco zvědavější.</p>
+                  <footer><strong>Filip P.</strong></footer>
                 </blockquote>
               </div>
             </div>
-
             <div class="testimonial-slide" data-testimonial-slide="1" hidden>
               <div class="testimonial-grid">
                 <blockquote class="testimonial-card">
                   <span aria-hidden="true">“</span>
-                  <p>
-                    Zapůjčení domů mi pomohlo vyzkoušet si terapii v běžném dni.
-                    Oceňuji klidné vysvětlení, jednoduché nastavení a možnost ozvat
-                    se, když jsem si nebyla jistá.
-                  </p>
-                  <footer>
-                    <strong>Jana K.</strong>
-                  </footer>
+                  <p>Dcera si při srpnové havárii poranila kyčelní kloub. Původně jsme slyšeli, že je všechno v pořádku, ale i po dvou měsících měla velké bolesti, minimální rozsah pohybu a nemohla chodit. Po šesti týdnech terapie se jí rozsah pohybu vrátil zhruba na 80 %, je bez bolesti a jako tanečnice se postupně vrací do tréninku. Jsem vděčná, že jsme se k terapii dostali.</p>
+                  <footer><strong>Monika A.</strong></footer>
                 </blockquote>
                 <blockquote class="testimonial-card">
                   <span aria-hidden="true">“</span>
-                  <p>
-                    Líbilo se mi, že konzultace nebyla prodejní. Nejdřív jsme prošli,
-                    co řeším, a až potom možnosti, jak by BEMER mohl dávat smysl.
-                  </p>
-                  <footer>
-                    <strong>Petra S.</strong>
-                  </footer>
+                  <p>O BEMERu jsem se dozvěděla v nemocnici, kde byla dcera se zápalem plic. Má od narození DMO. Už po dvou týdnech používání jsme pozorovali změny a v pěti letech začala dělat samostatné kroky. Přístroj jsme si pak pořídili domů. Po několika měsících vnímám zpevnění trupu, posun v motorice, lepší soustředění a spolupráci. Lépe také zvládá kolektiv školky.</p>
+                  <footer><strong>Lucie K.</strong></footer>
                 </blockquote>
               </div>
             </div>
-
             <div class="testimonial-slide" data-testimonial-slide="2" hidden>
               <div class="testimonial-grid">
                 <blockquote class="testimonial-card">
                   <span aria-hidden="true">“</span>
-                  <p>
-                    BEMER jsem začala používat jako součást pravidelné péče o
-                    regeneraci. Pomohlo mi, že jsme společně nastavili režim, který
-                    se dá dlouhodobě udržet.
-                  </p>
-                  <footer>
-                    <strong>Lucie H.</strong>
-                  </footer>
+                  <p>Naše dcera byla po těžké porodní asfyxii dlouho na umělé plicní ventilaci. Při pravidelném používání BEMERu pozoruji méně napětí a větší spokojenost. Je usměvavá a vnímavější. V sedmi letech se naučila pít z hrníčku, což dřív kvůli poruše polykání nezvládala. Při chůzi se víc pouští do prostoru, je pevnější a získává jistotu. Tento stav trvá a dál se mírně zlepšuje.</p>
+                  <footer><strong>Adéla Š.</strong></footer>
                 </blockquote>
                 <blockquote class="testimonial-card">
                   <span aria-hidden="true">“</span>
-                  <p>
-                    Největší rozdíl pro mě byl v tom, že jsem věděl, jak přístroj
-                    používat bezpečně a pravidelně. Kdykoliv jsem potřeboval, dostal
-                    jsem srozumitelnou podporu.
-                  </p>
-                  <footer>
-                    <strong>Martin R.</strong>
-                  </footer>
+                  <p>Dcera po těžké porodní asfyxii prodělala těžké změny na mozku a žije s DMO a epilepsií. BEMER jsme pro ni měli půjčený už potřetí a pokaždé jsme zaznamenali nějakou malou změnu. Při posledním zapůjčení jsme jí také víc ukazovali, jak udělat „malá“. Jsou to malé změny, ale pro naši rodinu znamenají mnoho. Věřím, že si BEMER jednou pořídíme i domů.</p>
+                  <footer><strong>Monika K.</strong></footer>
                 </blockquote>
               </div>
             </div>
-
+            <div class="testimonial-slide" data-testimonial-slide="3" hidden>
+              <div class="testimonial-grid">
+                <blockquote class="testimonial-card">
+                  <span aria-hidden="true">“</span>
+                  <p>Dcerka si opařila ruku a v popáleninovém centru nám potvrdili hlubokou popáleninu II.b stupně. Rána se nehojila dobře a lékaři počítali s plastikou. V sobotu jsme si půjčili BEMER; při pondělním převazu nám lékař řekl, že se tkáň už odlučuje a operace nebude potřeba. Dál jsme chodili na převazy, po šesti a půl týdnech dostala kompresní rukavičku. Věřím, že nám BEMER hodně pomohl.</p>
+                  <footer><strong>Radka P.</strong></footer>
+                </blockquote>
+                <blockquote class="testimonial-card">
+                  <span aria-hidden="true">“</span>
+                  <p>Synovi ve třech letech diagnostikovali nekrózu nártní kosti. Nejprve absolvoval klasickou magnetoterapii, pak šest týdnů BEMER. Po třech měsících ukázal kontrolní rentgen přestavěnou, doufejme plně funkční kost a propustili nás ze sledování. Průběh byl ale hodně bolestivý a syn proplakal mnoho nocí i po skončení terapií. Na kontrolu jsem šla s obavami; pro mě to byl malý zázrak.</p>
+                  <footer><strong>Anonymní autorka</strong></footer>
+                </blockquote>
+              </div>
+            </div>
             <div class="testimonial-dots" aria-label="Přepnout reference">
               <button class="testimonial-dot is-active" type="button" aria-label="Zobrazit reference 1" aria-current="true" data-testimonial-dot="0"></button>
               <button class="testimonial-dot" type="button" aria-label="Zobrazit reference 2" aria-current="false" data-testimonial-dot="1"></button>
               <button class="testimonial-dot" type="button" aria-label="Zobrazit reference 3" aria-current="false" data-testimonial-dot="2"></button>
+              <button class="testimonial-dot" type="button" aria-label="Zobrazit reference 4" aria-current="false" data-testimonial-dot="3"></button>
             </div>
           </div>
         </section>
@@ -604,26 +578,17 @@
                 <span data-cms-text="contact.details.location">Osobní konzultace v Praze a okolí</span>
               </div>
 
-              <article class="profile-card" aria-label="O Lucii">
+              <article id="o-mne" class="profile-card" aria-label="O Lucii">
                 <div class="profile-head">
                   <div class="profile-photo-placeholder" aria-hidden="true" data-cms-image-wrapper="contact.profile.image">L</div>
                   <div>
                     <p class="profile-label" data-cms-text="contact.profile.label">O mně</p>
                     <h3 data-cms-text="contact.profile.name">Lucie</h3>
-                    <span data-cms-text="contact.profile.role">BEMER konzultace a domácí zapůjčení</span>
+                    <span data-cms-text="contact.profile.role">Lékařka</span>
                   </div>
                 </div>
-                <p data-cms-text="contact.profile.text">
-                  Jmenuji se Lucie a BEMER terapii představuji lidem
-                  srozumitelně, bez tlaku a s ohledem na jejich konkrétní
-                  situaci. Pomohu vám pochopit princip terapie, nastavit domácí
-                  používání a zodpovědět otázky, které vás zajímají. Cílem je,
-                  abyste se mohli rozhodnout v klidu a s dostatkem informací.
-                </p>
-                <p class="profile-note" data-cms-text="contact.profile.note">
-                  Konzultace je nezávazná a slouží hlavně k tomu, abychom
-                  společně zjistili, zda pro vás BEMER dává smysl.
-                </p>
+                <p data-cms-text="contact.profile.text">Jmenuji se Lucie a jsem lékařka. Baví mě hledat souvislosti mezi tělem, nervovým systémem a tím, co prožíváme. Zajímá mě práce s traumatem i kraniosakrální terapie. Mám ráda pohyb a vím, že za malým pokrokem někdy stojí spousta práce.</p>
+                <p class="profile-note" data-cms-text="contact.profile.note">K BEMERu mě přivedla dcera Karolínka. Poznala jsem ho nejdřív skrze naši vlastní zkušenost. O to, co jsem sama prožila a poznala, se dnes ráda dělím s ostatními.</p>
               </article>
             </aside>
           </div>
@@ -640,7 +605,7 @@
             />
           </a>
           <nav class="footer-links" aria-label="Právní odkazy">
-            <a href="#top">O mně</a>
+            <a href="#o-mne">O mně</a>
             <button
               class="footer-link-button"
               type="button"
@@ -678,10 +643,9 @@
               <article>
                 <h3>Identifikační údaje provozovatele</h3>
                 <p>
-                  Doplnit před spuštěním: jméno a příjmení nebo obchodní název,
-                  IČO, sídlo nebo adresa podnikání, kontaktní e-mail a telefon.
-                  Pokud je podnikatel zapsaný v rejstříku, doplnit také údaj o
-                  zápisu.
+                  Lucie Klozová, IČO: 21226270. Sídlo: Šebrov 198, 679 22 Šebrov-Kateřina.
+                  Fyzická osoba zapsaná v živnostenském rejstříku.
+                  E-mail: lucieklozovaa@seznam.cz. Telefon: +420 775 447 563.
                 </p>
               </article>
               <article>
@@ -695,9 +659,10 @@
               <article>
                 <h3>Osobní údaje</h3>
                 <p>
+                  Správcem osobních údajů je Lucie Klozová, IČO: 21226270,
+                  se sídlem Šebrov 198, 679 22 Šebrov-Kateřina.
                   Údaje z kontaktní komunikace slouží pouze k odpovědi na dotaz
-                  a navazující domluvě konzultace. Před ostrým spuštěním je
-                  potřeba doplnit přesnou identifikaci správce osobních údajů.
+                  a navazující domluvě konzultace.
                 </p>
               </article>
               <article>
@@ -785,6 +750,8 @@
         });
       })();
     </script>
-    <script src="./script.js?v=20260613-testimonial-display"></script>
+    <script src="./script.js?v=20260926-detail"></script>
+    <script src="./assets/hero-layout.js?v=20260926-detail"></script>
+    <script type="module" src="./assets/hero/depth.js?v=20260926-detail"></script>
   </body>
 </html>

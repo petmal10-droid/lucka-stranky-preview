@@ -32,6 +32,7 @@
     "ctaLabel": "Domluvit konzultaci"
   },
   "hero": {
+    "visual": { "visibility": 71, "strength": 100, "detail": 100, "focus": true },
     "title": "Podpora mikrocirkulace pomocí BEMER terapie",
     "intro": "BEMER je neinvazivní terapie využívající pulzní elektromagnetické pole navržené pro podporu mikrocirkulace. Ta souvisí se zásobením buněk, regenerací, vitalitou a celkovou kondicí.",
     "points": [
@@ -236,8 +237,8 @@
     },
     "title": "Zkušenosti lidí, kteří BEMER vyzkoušeli",
     "text": {
-      "active": false,
-      "text": "Každý člověk reaguje jinak. Přečtěte si osobní zkušenosti lidí, kteří si prošli konzultací nebo domácím zapůjčením přístroje."
+      "active": true,
+      "text": "Zkrácené parafráze osobních zkušeností s BEMER terapií."
     },
     "display": {
       "showTags": false,
@@ -246,51 +247,67 @@
     "items": [
       {
         "tagActive": false,
-        "tag": "Domácí zapůjčení",
-        "text": "Po několika týdnech domácího používání jsem vnímala větší lehkost v běžném režimu. Nejvíc mi pomohlo, že jsem měla jasně vysvětlené nastavení a mohla se kdykoliv zeptat.",
-        "name": "Monika A.",
+        "tag": "",
+        "name": "Klára M.",
+        "text": "Migrény mám celý život, ale poslední dva roky se výrazně zhoršily. Jen na začátku července jsem měla devět dní s migrénou. Do BEMERu jsem velké naděje nevkládala, ale už při prvním použití mě překvapila úleva při lehké bolesti hlavy. Koupila jsem si vlastní přístroj a nyní mívám jednu až dvě migrény měsíčně. Navíc se mi výrazně zlepšilo soustředění.",
         "contextActive": false,
-        "context": "domácí vyzkoušení BEMER terapie"
+        "context": ""
       },
       {
         "tagActive": false,
-        "tag": "Nezávazná konzultace",
-        "text": "Ocenil jsem osobní přístup bez tlaku. Vše mi bylo vysvětleno srozumitelně a měl jsem dost prostoru na otázky před rozhodnutím.",
+        "tag": "",
         "name": "Filip P.",
+        "text": "Přístroj jsme měli doma půjčený měsíc. Podložku jsme používali my rodiče i náš syn s DMO a epilepsií. Na sobě jsem pocítil lepší vnímání těla, uvolnění ztuhlých míst a snazší pohyb. Překvapily mě i nové pocity a myšlenky. U syna se zlepšila vnímavost při doteku, začal vydávat nové slabiky, rozšířil si slovní zásobu a je zase o něco zvědavější.",
         "contextActive": false,
-        "context": "nezávazná konzultace"
+        "context": ""
       },
       {
         "tagActive": false,
-        "tag": "Domácí zapůjčení",
-        "text": "Zapůjčení domů mi pomohlo vyzkoušet si terapii v běžném dni. Oceňuji klidné vysvětlení, jednoduché nastavení a možnost ozvat se, když jsem si nebyla jistá.",
-        "name": "Jana K.",
+        "tag": "",
+        "name": "Monika A.",
+        "text": "Dcera si při srpnové havárii poranila kyčelní kloub. Původně jsme slyšeli, že je všechno v pořádku, ale i po dvou měsících měla velké bolesti, minimální rozsah pohybu a nemohla chodit. Po šesti týdnech terapie se jí rozsah pohybu vrátil zhruba na 80 %, je bez bolesti a jako tanečnice se postupně vrací do tréninku. Jsem vděčná, že jsme se k terapii dostali.",
         "contextActive": false,
-        "context": "domácí vyzkoušení přístroje"
+        "context": ""
       },
       {
         "tagActive": false,
-        "tag": "Nezávazná konzultace",
-        "text": "Líbilo se mi, že konzultace nebyla prodejní. Nejdřív jsme prošli, co řeším, a až potom možnosti, jak by BEMER mohl dávat smysl.",
-        "name": "Petra S.",
+        "tag": "",
+        "name": "Lucie K.",
+        "text": "O BEMERu jsem se dozvěděla v nemocnici, kde byla dcera se zápalem plic. Má od narození DMO. Už po dvou týdnech používání jsme pozorovali změny a v pěti letech začala dělat samostatné kroky. Přístroj jsme si pak pořídili domů. Po několika měsících vnímám zpevnění trupu, posun v motorice, lepší soustředění a spolupráci. Lépe také zvládá kolektiv školky.",
         "contextActive": false,
-        "context": "úvodní konzultace"
+        "context": ""
       },
       {
         "tagActive": false,
-        "tag": "Dlouhodobé používání",
-        "text": "BEMER jsem začala používat jako součást pravidelné péče o regeneraci. Pomohlo mi, že jsme společně nastavili režim, který se dá dlouhodobě udržet.",
-        "name": "Lucie H.",
+        "tag": "",
+        "name": "Adéla Š.",
+        "text": "Naše dcera byla po těžké porodní asfyxii dlouho na umělé plicní ventilaci. Při pravidelném používání BEMERu pozoruji méně napětí a větší spokojenost. Je usměvavá a vnímavější. V sedmi letech se naučila pít z hrníčku, což dřív kvůli poruše polykání nezvládala. Při chůzi se víc pouští do prostoru, je pevnější a získává jistotu. Tento stav trvá a dál se mírně zlepšuje.",
         "contextActive": false,
-        "context": "dlouhodobá podpora regenerace"
+        "context": ""
       },
       {
         "tagActive": false,
-        "tag": "Dlouhodobé používání",
-        "text": "Největší rozdíl pro mě byl v tom, že jsem věděl, jak přístroj používat bezpečně a pravidelně. Kdykoliv jsem potřeboval, dostal jsem srozumitelnou podporu.",
-        "name": "Martin R.",
+        "tag": "",
+        "name": "Monika K.",
+        "text": "Dcera po těžké porodní asfyxii prodělala těžké změny na mozku a žije s DMO a epilepsií. BEMER jsme pro ni měli půjčený už potřetí a pokaždé jsme zaznamenali nějakou malou změnu. Při posledním zapůjčení jsme jí také víc ukazovali, jak udělat „malá“. Jsou to malé změny, ale pro naši rodinu znamenají mnoho. Věřím, že si BEMER jednou pořídíme i domů.",
         "contextActive": false,
-        "context": "průběžná podpora používání"
+        "context": ""
+      },
+      {
+        "tagActive": false,
+        "tag": "",
+        "name": "Radka P.",
+        "text": "Dcerka si opařila ruku a v popáleninovém centru nám potvrdili hlubokou popáleninu II.b stupně. Rána se nehojila dobře a lékaři počítali s plastikou. V sobotu jsme si půjčili BEMER; při pondělním převazu nám lékař řekl, že se tkáň už odlučuje a operace nebude potřeba. Dál jsme chodili na převazy, po šesti a půl týdnech dostala kompresní rukavičku. Věřím, že nám BEMER hodně pomohl.",
+        "contextActive": false,
+        "context": ""
+      },
+      {
+        "tagActive": false,
+        "tag": "",
+        "name": "Anonymní autorka",
+        "text": "Synovi ve třech letech diagnostikovali nekrózu nártní kosti. Nejprve absolvoval klasickou magnetoterapii, pak šest týdnů BEMER. Po třech měsících ukázal kontrolní rentgen přestavěnou, doufejme plně funkční kost a propustili nás ze sledování. Průběh byl ale hodně bolestivý a syn proplakal mnoho nocí i po skončení terapií. Na kontrolu jsem šla s obavami; pro mě to byl malý zázrak.",
+        "contextActive": false,
+        "context": ""
       }
     ]
   },
@@ -359,9 +376,9 @@
     "profile": {
       "label": "O mně",
       "name": "Lucie",
-      "role": "BEMER konzultace a domácí zapůjčení",
-      "text": "Jmenuji se Lucie a BEMER terapii představuji lidem srozumitelně, bez tlaku a s ohledem na jejich konkrétní situaci. Pomohu vám pochopit princip terapie, nastavit domácí používání a zodpovědět otázky, které vás zajímají. Cílem je, abyste se mohli rozhodnout v klidu a s dostatkem informací.",
-      "note": "Konzultace je nezávazná a slouží hlavně k tomu, abychom společně zjistili, zda pro vás BEMER dává smysl.",
+      "role": "Lékařka",
+      "text": "Jmenuji se Lucie a jsem lékařka. Baví mě hledat souvislosti mezi tělem, nervovým systémem a tím, co prožíváme. Zajímá mě práce s traumatem i kraniosakrální terapie. Mám ráda pohyb a vím, že za malým pokrokem někdy stojí spousta práce.",
+      "note": "K BEMERu mě přivedla dcera Karolínka. Poznala jsem ho nejdřív skrze naši vlastní zkušenost. O to, co jsem sama prožila a poznala, se dnes ráda dělím s ostatními.",
       "image": {
         "src": "",
         "alt": ""
@@ -378,7 +395,7 @@
     "blocks": [
       {
         "title": "Identifikační údaje provozovatele",
-        "text": "Doplnit před spuštěním: jméno a příjmení nebo obchodní název, IČO, sídlo nebo adresa podnikání, kontaktní e-mail a telefon. Pokud je podnikatel zapsaný v rejstříku, doplnit také údaj o zápisu."
+        "text": "Lucie Klozová, IČO: 21226270. Sídlo: Šebrov 198, 679 22 Šebrov-Kateřina. Fyzická osoba zapsaná v živnostenském rejstříku. E-mail: lucieklozovaa@seznam.cz. Telefon: +420 775 447 563."
       },
       {
         "title": "Cookies",
@@ -386,7 +403,7 @@
       },
       {
         "title": "Osobní údaje",
-        "text": "Údaje z kontaktní komunikace slouží pouze k odpovědi na dotaz a navazující domluvě konzultace. Před ostrým spuštěním je potřeba doplnit přesnou identifikaci správce osobních údajů."
+        "text": "Správcem osobních údajů je Lucie Klozová, IČO: 21226270, se sídlem Šebrov 198, 679 22 Šebrov-Kateřina. Údaje z kontaktní komunikace slouží pouze k odpovědi na dotaz a navazující domluvě konzultace."
       },
       {
         "title": "Externí obsah",

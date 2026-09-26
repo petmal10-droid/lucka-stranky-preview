@@ -58,6 +58,15 @@ collections:
             name: hero
             widget: object
             fields:
+              - label: Vzhled ilustrace
+                name: visual
+                widget: object
+                hint: "Pevná ilustrace Detail. Nastavení je dostupné pouze v administraci, nikoli návštěvníkům webu."
+                fields:
+                  - { label: Viditelnost (%), name: visibility, widget: number, value_type: int, min: 0, max: 100, default: 71 }
+                  - { label: Prostorový efekt (%), name: strength, widget: number, value_type: int, min: 0, max: 100, default: 100 }
+                  - { label: Reliéf krvinek (%), name: detail, widget: number, value_type: int, min: 0, max: 100, default: 100 }
+                  - { label: Přeostření při scrollu, name: focus, widget: boolean, default: true }
               - { label: Nadpis, name: title, widget: string, hint: "Doporučení: krátký nadpis do 1-2 řádků." }
               - { label: Úvodní odstavec, name: intro, widget: text, hint: "Doporučení: 2-4 věty. Delší text se zalomí, ale hero bude vyšší." }
               - label: Odrážky

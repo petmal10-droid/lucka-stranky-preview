@@ -122,6 +122,18 @@ const applyBrand = (brand = {}) => {
 };
 
 const applyHero = (hero = {}) => {
+  const art = document.querySelector('.depth-art');
+  if (art && hero.visual) {
+    for (const key of ['visibility', 'strength', 'detail']) {
+      const value = hero.visual[key];
+      if (typeof value === 'number' && Number.isFinite(value)) {
+        art.dataset[key] = String(Math.min(100, Math.max(0, value)));
+      }
+    }
+    if (typeof hero.visual.focus === 'boolean') art.dataset.focus = String(hero.visual.focus);
+    art.style.setProperty('--depth-art-opacity', String(Number(art.dataset.visibility) / 100));
+    window.dispatchEvent(new Event('hero-visual-change'));
+  }
   const points = document.querySelector('[data-cms-list="hero.points"]');
   if (points && Array.isArray(hero.points) && hero.points.length) {
     points.replaceChildren(...hero.points.filter(Boolean).map((point) => createElement("li", "", point)));

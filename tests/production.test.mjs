@@ -66,6 +66,10 @@ test('operator and existing form destination are present in public CMS content',
   assert.match(content.legal.blocks[0].text, /Lucie Klozová, IČO: 21226270/);
   assert.match(content.legal.blocks[0].text, /Šebrov 198, 679 22 Šebrov-Kateřina/);
   assert.match(content.legal.blocks[0].text, /lucieklozovaa@seznam.cz/);
+  assert.equal(content.contact.form.recipientEmail, 'lucieklozovaa@seznam.cz');
+  assert.equal(content.contact.email, content.contact.form.recipientEmail);
+  assert.ok(html.includes(`action="mailto:${content.contact.form.recipientEmail}"`));
+  assert.doesNotMatch(html, /info@luckabemer\.cz/);
   assert.equal(content.testimonials.items.length, 7);
   assert.ok(content.testimonials.items.some(item => item.name === 'Anonymní autorka'));
   assert.ok(content.testimonials.items.every(item => item.name !== 'Lucie K.'));

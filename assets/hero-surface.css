@@ -32,6 +32,11 @@
 .depth-fallback { transform: scale(1.087); }
 .depth-art.is-ready .depth-canvas { opacity: 1; }
 .depth-art.is-ready .depth-fallback { display: none; }
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
+  .depth-art .depth-canvas { display: none; }
+  .depth-art .depth-fallback,
+  .depth-art.is-ready .depth-fallback { display: block; }
+}
 @media (prefers-reduced-motion: reduce) {
   .depth-canvas { transition: none; }
 }

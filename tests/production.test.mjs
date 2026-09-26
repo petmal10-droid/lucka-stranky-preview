@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
+import { runInNewContext } from 'node:vm';
 import { heroDefaults, heroSettings } from '../assets/hero/settings.mjs';
 import { frameState, coverScale, meshConfig } from '../assets/hero/depth-math.mjs';
 
@@ -69,4 +70,53 @@ test('operator and existing form destination are present in public CMS content',
   assert.equal(content.contact.profile.role, 'Lékařka');
   assert.equal(content.testimonials.display.showTags, false);
   assert.equal(content.testimonials.display.showContexts, false);
+});
+
+test('mobile shows a static image without loading Three.js, including wide touch screens', () => {
+  const renderer = read('../assets/hero/depth.js');
+  const media = '(max-width: 900px), (hover: none) and (pointer: coarse)';
+  assert.ok(read('../assets/hero-surface.css').includes(`@media ${media}`));
+  assert.doesNotMatch(renderer, /import \* as THREE/);
+  assert.match(renderer, /await import\('\.\/vendor\/three.module.js'\)/);
+  const executable = renderer.replace(/^import .*;$/gm, '')
+    .replace("import('./vendor/three.module.js')", 'loadThree()')
+    .replaceAll('import.meta.url', "'https://example.test/assets/hero/depth.js'");
+
+  for (const width of [390, 844, 1200]) {
+    const listeners = new Map();
+    const styles = new Map();
+    const classes = new Set(['is-ready']);
+    const canvas = { dataset: {} };
+    const hero = { offsetHeight: 800 };
+    const art = {
+      dataset: {},
+      classList: { remove: value => classes.delete(value) },
+      style: { setProperty: (name, value) => styles.set(name, value) },
+    };
+    const fallback = { naturalWidth: 1600, naturalHeight: 1200, addEventListener() {} };
+    const elements = { '.hero': hero, '.depth-art': art, '.depth-canvas': canvas, '.depth-fallback': fallback };
+    let imports = 0;
+    const staticMode = { matches: true, addEventListener: (name, callback) => listeners.set(name, callback) };
+    runInNewContext(executable, {
+      document: { querySelector: selector => elements[selector], documentElement: { clientWidth: width } },
+      window: { addEventListener() {} },
+      matchMedia: query => query === media ? staticMode : { matches: query.includes('600') && width <= 600, addEventListener() {} },
+      location: { href: 'https://example.test/' }, URL,
+      ResizeObserver: class { observe() {} },
+      heroSettings, loadThree: () => { imports++; return new Promise(() => {}); },
+    });
+    assert.equal(canvas.dataset.state, 'static-mobile');
+    assert.equal(classes.has('is-ready'), false);
+    assert.equal(imports, 0, `No WebGL library at ${width}px`);
+    assert.equal(styles.get('--depth-art-opacity'), '0.71');
+    assert.ok(parseFloat(styles.get('--depth-art-height')) >= hero.offsetHeight + 150);
+
+    staticMode.matches = false;
+    listeners.get('change')();
+    listeners.get('change')();
+    assert.equal(imports, 1, 'Desktop transition starts the renderer only once');
+    staticMode.matches = true;
+    listeners.get('change')();
+    assert.equal(canvas.dataset.state, 'static-mobile');
+  }
 });

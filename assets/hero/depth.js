@@ -1,4 +1,3 @@
-import * as THREE from './vendor/three.module.js';
 import { clamp, coverScale, frameState, meshConfig } from './depth-math.mjs';
 import { prepareDepthField, sampleField } from './depth-field.mjs';
 import { heroSettings } from './settings.mjs';
@@ -6,11 +5,15 @@ import { heroSettings } from './settings.mjs';
 const hero = document.querySelector('.hero');
 const art = document.querySelector('.depth-art');
 const canvas = document.querySelector('.depth-canvas');
+const fallback = document.querySelector('.depth-fallback');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const mobile = matchMedia('(max-width: 600px)');
+// Include touch phones in landscape, not only narrow portrait viewports.
+const staticHero = matchMedia('(max-width: 900px), (hover: none) and (pointer: coarse)');
 const visualQa = new URL(location.href).searchParams.has('qa');
 let settings = heroSettings(art.dataset);
 let invalidate = () => {};
+let started = false;
 
 function syncSettings() {
   settings = heroSettings(art.dataset);
@@ -79,15 +82,36 @@ const fragmentShader = `
   }
 `;
 
-function showFallback() {
+function showFallback(state = 'static-fallback') {
   art.classList.remove('is-ready');
-  canvas.dataset.state = 'static-fallback';
+  canvas.dataset.state = state;
+}
+
+function syncArtHeight() {
+  const ratio = fallback.naturalWidth ? fallback.naturalHeight / fallback.naturalWidth : 0.75;
+  const artHeight = Math.max(hero.offsetHeight + (mobile.matches ? 150 : 180), document.documentElement.clientWidth * (ratio + 0.01));
+  art.style.setProperty('--depth-art-height', `${artHeight}px`);
+}
+
+function syncMode() {
+  syncArtHeight();
+  if (staticHero.matches) showFallback('static-mobile');
+  else if (!started) {
+    started = true;
+    initialize();
+  } else invalidate();
 }
 
 async function initialize() {
   let renderer;
   const textures = [];
   try {
+    const THREE = await import('./vendor/three.module.js');
+    if (staticHero.matches) {
+      started = false;
+      showFallback('static-mobile');
+      return;
+    }
     renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false, powerPreference: 'low-power', preserveDrawingBuffer: visualQa });
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.setClearColor(0x000000, 0);
@@ -150,12 +174,18 @@ async function initialize() {
     let visible = true, disposed = false, failed = false;
 
     function requestRender() {
+      if (staticHero.matches) {
+        if (frame !== null) cancelAnimationFrame(frame);
+        frame = null;
+        showFallback('static-mobile');
+        return;
+      }
       if (frame === null && visible && !document.hidden && !disposed && !failed) frame = requestAnimationFrame(render);
     }
     invalidate = requestRender;
     function render(time) {
       frame = null;
-      if (!visible || document.hidden || disposed || failed) return;
+      if (staticHero.matches || !visible || document.hidden || disposed || failed) return;
       const target = reducedMotion.matches ? 0 : clamp(-hero.getBoundingClientRect().top, 0, hero.offsetHeight);
       const dt = Math.min(0.05, (time - previousTime) / 1000 || 0.016);
       previousTime = time;
@@ -184,8 +214,8 @@ async function initialize() {
       if (currentScroll !== target) frame = requestAnimationFrame(render);
     }
     function resize() {
-      const artHeight = Math.max(hero.offsetHeight + (mobile.matches ? 150 : 180), document.documentElement.clientWidth * (height / width + 0.01));
-      art.style.setProperty('--depth-art-height', `${artHeight}px`);
+      syncArtHeight();
+      if (staticHero.matches) { requestRender(); return; }
       renderer.setPixelRatio(Math.min(devicePixelRatio || 1, mobile.matches ? 1.25 : 1.6));
       renderer.setSize(Math.max(1, art.clientWidth), Math.max(1, art.clientHeight), false);
       const scale = coverScale(art.clientWidth, art.clientHeight, width, height);
@@ -240,4 +270,8 @@ async function initialize() {
     console.warn('Hero uses its static image fallback.', error);
   }
 }
-initialize();
+new ResizeObserver(syncArtHeight).observe(hero);
+fallback.addEventListener('load', syncArtHeight);
+window.addEventListener('resize', syncArtHeight, { passive: true });
+staticHero.addEventListener('change', syncMode);
+syncMode();

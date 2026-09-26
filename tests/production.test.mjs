@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { runInNewContext } from 'node:vm';
 import { heroDefaults, heroSettings } from '../assets/hero/settings.mjs';
-import { frameState, coverScale, meshConfig } from '../assets/hero/depth-math.mjs';
+import { frameState, coverScale, meshConfig, mobilePhotoShift } from '../assets/hero/depth-math.mjs';
 
 const read = path => readFileSync(new URL(path, import.meta.url), 'utf8').replace(/\r\n/g, '\n');
 const html = read('../index.html');
@@ -66,13 +66,16 @@ test('operator and existing form destination are present in public CMS content',
   assert.match(content.legal.blocks[0].text, /Lucie Klozová, IČO: 21226270/);
   assert.match(content.legal.blocks[0].text, /Šebrov 198, 679 22 Šebrov-Kateřina/);
   assert.match(content.legal.blocks[0].text, /lucieklozovaa@seznam.cz/);
-  assert.equal(content.testimonials.items.length, 8);
+  assert.equal(content.testimonials.items.length, 7);
+  assert.ok(content.testimonials.items.some(item => item.name === 'Anonymní autorka'));
+  assert.ok(content.testimonials.items.every(item => item.name !== 'Lucie K.'));
+  assert.ok(!html.includes('<strong>Lucie K.</strong>'));
   assert.equal(content.contact.profile.role, 'Lékařka');
   assert.equal(content.testimonials.display.showTags, false);
   assert.equal(content.testimonials.display.showContexts, false);
 });
 
-test('mobile shows a static image without loading Three.js, including wide touch screens', () => {
+test('mobile shows a photo without loading Three.js, including wide touch screens', () => {
   const renderer = read('../assets/hero/depth.js');
   const media = '(max-width: 900px), (hover: none) and (pointer: coarse)';
   assert.ok(read('../assets/hero-surface.css').includes(`@media ${media}`));
@@ -87,7 +90,8 @@ test('mobile shows a static image without loading Three.js, including wide touch
     const styles = new Map();
     const classes = new Set(['is-ready']);
     const canvas = { dataset: {} };
-    const hero = { offsetHeight: 800 };
+    let scroll = 0;
+    const hero = { offsetHeight: 800, getBoundingClientRect: () => ({ top: -scroll }) };
     const art = {
       dataset: {},
       classList: { remove: value => classes.delete(value) },
@@ -96,27 +100,49 @@ test('mobile shows a static image without loading Three.js, including wide touch
     const fallback = { naturalWidth: 1600, naturalHeight: 1200, addEventListener() {} };
     const elements = { '.hero': hero, '.depth-art': art, '.depth-canvas': canvas, '.depth-fallback': fallback };
     let imports = 0;
+    const windowListeners = new Map();
+    const frames = [];
     const staticMode = { matches: true, addEventListener: (name, callback) => listeners.set(name, callback) };
     runInNewContext(executable, {
       document: { querySelector: selector => elements[selector], documentElement: { clientWidth: width } },
-      window: { addEventListener() {} },
+      window: { addEventListener: (name, callback) => windowListeners.set(name, callback) },
       matchMedia: query => query === media ? staticMode : { matches: query.includes('600') && width <= 600, addEventListener() {} },
       location: { href: 'https://example.test/' }, URL,
       ResizeObserver: class { observe() {} },
-      heroSettings, loadThree: () => { imports++; return new Promise(() => {}); },
+      heroSettings, mobilePhotoShift,
+      requestAnimationFrame: callback => { frames.push(callback); return frames.length; },
+      loadThree: () => { imports++; return new Promise(() => {}); },
     });
     assert.equal(canvas.dataset.state, 'static-mobile');
     assert.equal(classes.has('is-ready'), false);
     assert.equal(imports, 0, `No WebGL library at ${width}px`);
     assert.equal(styles.get('--depth-art-opacity'), '0.71');
     assert.ok(parseFloat(styles.get('--depth-art-height')) >= hero.offsetHeight + 150);
+    assert.equal(styles.get('--hero-photo-shift'), '0.00px');
+    scroll = 400;
+    windowListeners.get('scroll')();
+    windowListeners.get('scroll')();
+    assert.equal(frames.length, 1, 'Scroll events share one animation frame');
+    frames.shift()();
+    assert.equal(styles.get('--hero-photo-shift'), '9.00px');
+    assert.equal(imports, 0, 'Photo parallax does not need WebGL');
 
     staticMode.matches = false;
     listeners.get('change')();
     listeners.get('change')();
     assert.equal(imports, 1, 'Desktop transition starts the renderer only once');
+    assert.equal(styles.get('--hero-photo-shift'), '0.00px');
     staticMode.matches = true;
     listeners.get('change')();
     assert.equal(canvas.dataset.state, 'static-mobile');
   }
+});
+
+test('mobile photo parallax stays within the image overscan and respects reduced motion', () => {
+  assert.equal(mobilePhotoShift({ scroll: -100 }), 0);
+  assert.equal(mobilePhotoShift({ scroll: 400, height: 800 }), 9);
+  assert.equal(mobilePhotoShift({ scroll: 800, height: 800 }), 18);
+  assert.equal(mobilePhotoShift({ scroll: 20000, height: 800 }), 18);
+  assert.equal(mobilePhotoShift({ scroll: 800, reduced: true }), 0);
+  assert.match(read('../assets/hero-surface.css'), /translateY\(var\(--hero-photo-shift, 0px\)\) scale\(1\.087\)/);
 });

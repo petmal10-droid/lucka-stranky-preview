@@ -1,4 +1,4 @@
-import { clamp, coverScale, frameState, meshConfig } from './depth-math.mjs';
+import { clamp, coverScale, frameState, meshConfig, mobilePhotoShift } from './depth-math.mjs?v=20260926-parallax';
 import { prepareDepthField, sampleField } from './depth-field.mjs';
 import { heroSettings } from './settings.mjs';
 
@@ -14,10 +14,33 @@ const visualQa = new URL(location.href).searchParams.has('qa');
 let settings = heroSettings(art.dataset);
 let invalidate = () => {};
 let started = false;
+let photoFrame = null;
+let previousPhotoShift = null;
+
+function syncPhotoParallax() {
+  const shift = staticHero.matches ? mobilePhotoShift({
+    scroll: -hero.getBoundingClientRect().top,
+    height: hero.offsetHeight,
+    reduced: reducedMotion.matches,
+  }) : 0;
+  const value = `${shift.toFixed(2)}px`;
+  if (value === previousPhotoShift) return;
+  art.style.setProperty('--hero-photo-shift', value);
+  previousPhotoShift = value;
+}
+
+function requestPhotoParallax() {
+  if (!staticHero.matches || reducedMotion.matches || document.hidden || photoFrame !== null) return;
+  photoFrame = requestAnimationFrame(() => {
+    photoFrame = null;
+    syncPhotoParallax();
+  });
+}
 
 function syncSettings() {
   settings = heroSettings(art.dataset);
   art.style.setProperty('--depth-art-opacity', String(settings.visibility / 100));
+  syncPhotoParallax();
   invalidate();
 }
 window.addEventListener('hero-visual-change', syncSettings);
@@ -91,6 +114,7 @@ function syncArtHeight() {
   const ratio = fallback.naturalWidth ? fallback.naturalHeight / fallback.naturalWidth : 0.75;
   const artHeight = Math.max(hero.offsetHeight + (mobile.matches ? 150 : 180), document.documentElement.clientWidth * (ratio + 0.01));
   art.style.setProperty('--depth-art-height', `${artHeight}px`);
+  syncPhotoParallax();
 }
 
 function syncMode() {
@@ -273,5 +297,7 @@ async function initialize() {
 new ResizeObserver(syncArtHeight).observe(hero);
 fallback.addEventListener('load', syncArtHeight);
 window.addEventListener('resize', syncArtHeight, { passive: true });
+window.addEventListener('scroll', requestPhotoParallax, { passive: true });
+window.addEventListener('pageshow', requestPhotoParallax);
 staticHero.addEventListener('change', syncMode);
 syncMode();

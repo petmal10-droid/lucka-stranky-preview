@@ -33,6 +33,11 @@ export function frameState({ scroll = 0, height = 800, strength = 0.85, mobile =
   };
 }
 
+export function mobilePhotoShift({ scroll = 0, height = 800, reduced = false }) {
+  const progress = reduced ? 0 : clamp(scroll / Math.max(height, 1));
+  return 18 * progress * progress * (3 - 2 * progress);
+}
+
 export function combineDepth(macro, detail, amount = 0.25) {
   return clamp(macro + clamp(detail - macro, -0.2, 0.2) * clamp(amount, 0, 0.4));
 }

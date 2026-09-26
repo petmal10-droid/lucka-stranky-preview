@@ -8,7 +8,9 @@ Approved source: the local `previews/live-with-depth-v1/` page, including its cu
 - Visibility 71%, depth strength 100%, cell relief 100%, scroll focus enabled.
 - The same single-surface depth projection, smoothing and scroll limits as the tested preview.
 - Static image fallback; respects reduced-motion settings and suspends drawing off-screen.
-- Mobile layouts (up to 900px) and primary touch devices use the static Detail image, including landscape orientation. Three.js and the depth map are not requested on a mobile page load. Desktop depth resumes when a desktop viewport is restored.
+- Mobile layouts (up to 900px) and primary touch devices use the Detail photo with at most 18px of scroll parallax, including landscape orientation. No deformation or refocusing; reduced-motion disables even the photo shift. Three.js and the depth map are not requested on a mobile page load. Desktop depth resumes when a desktop viewport is restored.
+- Testimonials are shuffled on each page load and advance every 42 seconds (previously 7 seconds). Lucie K. was removed; the other seven entries, including the anonymous author, retain their wording.
+- For an odd number of entries, the final pair is filled using another entry from the shuffled selection; CMS content remains unique. A lone entry is never paired with itself.
 - Self-contained assets under `assets/`; no deployed dependency on `previews/` or `node_modules/`.
 - Existing CMS, contacts, form behavior and cookie preference key retained. CMS-only visual controls added.
 - Original PNG image and map preserved locally. Public WebP versions are lossless and decoded pixel equality was checked.

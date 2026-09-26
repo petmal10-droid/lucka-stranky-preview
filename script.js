@@ -291,6 +291,10 @@ const renderTestimonials = (items = [], display = {}) => {
   }
 
   const orderedItems = shuffleItems(items);
+  // Keep the final pair complete without adding a duplicate to CMS content.
+  if (orderedItems.length > 1 && orderedItems.length % 2 === 1) {
+    orderedItems.push(orderedItems[0]);
+  }
   const showTags = display.showTags !== false;
   const showContexts = display.showContexts !== false;
   const slides = chunkItems(orderedItems, 2).map((group, slideIndex) => {
@@ -684,7 +688,7 @@ const initTestimonials = (prefersReducedMotion) => {
     if (prefersReducedMotion || testimonialTimer) return;
     testimonialTimer = window.setInterval(() => {
       showTestimonial((activeTestimonial + 1) % testimonialSlides.length);
-    }, 7000);
+    }, 42000);
   };
 
   const stopTestimonialTimer = () => {

@@ -29,7 +29,7 @@
   filter: hue-rotate(9deg) saturate(0.92);
 }
 .depth-canvas { opacity: 0; }
-.depth-fallback { transform: scale(1.087); }
+.depth-fallback { transform: translateY(var(--hero-photo-shift, 0px)) scale(1.087); }
 .depth-art.is-ready .depth-canvas { opacity: 1; }
 .depth-art.is-ready .depth-fallback { display: none; }
 @media (max-width: 900px), (hover: none) and (pointer: coarse) {
@@ -39,4 +39,5 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .depth-canvas { transition: none; }
+  .depth-fallback { transform: scale(1.087); }
 }

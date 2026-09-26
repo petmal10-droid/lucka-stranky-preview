@@ -74,7 +74,10 @@ test('operator and existing form destination are present in public CMS content',
   assert.ok(content.testimonials.items.some(item => item.name === 'Anonymní autorka'));
   assert.ok(content.testimonials.items.every(item => item.name !== 'Lucie K.'));
   assert.ok(!html.includes('<strong>Lucie K.</strong>'));
-  assert.equal(content.contact.profile.role, 'Lékařka');
+  assert.equal(content.contact.profile.name, 'MUDr. Lucie Klozová');
+  assert.equal(content.contact.profile.role, '');
+  assert.ok(html.includes('<h3 data-cms-text="contact.profile.name">MUDr. Lucie Klozová</h3>'));
+  assert.ok(html.includes('<span data-cms-text="contact.profile.role"></span>'));
   assert.equal(content.testimonials.display.showTags, false);
   assert.equal(content.testimonials.display.showContexts, false);
 });

@@ -329,7 +329,7 @@ collections:
                 fields:
                   - { label: Štítek, name: label, widget: string }
                   - { label: Jméno, name: name, widget: string }
-                  - { label: Role, name: role, widget: string }
+                  - { label: Role, name: role, widget: string, required: false }
                   - { label: Text medailonku, name: text, widget: text, hint: "Doporučení: 3-6 vět." }
                   - { label: Poznámka, name: note, widget: text, required: false }
                   - label: Profilový obrázek

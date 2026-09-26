@@ -75,6 +75,17 @@ test('operator and existing form destination are present in public CMS content',
   assert.equal(content.testimonials.display.showContexts, false);
 });
 
+test('profile uses the supplied portrait through the existing CMS image field', () => {
+  assert.equal(content.contact.profile.image.src, 'uploads/lucie-klozova.png');
+  assert.equal(content.contact.profile.image.alt, 'Lucie Klozová');
+  const portrait = readFileSync(new URL(`../${content.contact.profile.image.src}`, import.meta.url));
+  assert.equal(portrait.toString('hex', 0, 8), '89504e470d0a1a0a');
+  assert.equal(portrait.readUInt32BE(16), 556);
+  assert.equal(portrait.readUInt32BE(20), 808);
+  assert.match(html, /data-cms-image-wrapper="contact.profile.image"/);
+  assert.match(read('../assets/site.css'), /\.profile-photo-placeholder \{[^}]*grid-template-rows: minmax\(0, 1fr\)/);
+});
+
 test('mobile shows a photo without loading Three.js, including wide touch screens', () => {
   const renderer = read('../assets/hero/depth.js');
   const media = '(max-width: 900px), (hover: none) and (pointer: coarse)';

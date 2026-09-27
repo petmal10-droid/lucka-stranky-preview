@@ -40,6 +40,15 @@ test('hero shares the Lora heading family without a separate font override', () 
   for (const [, declarations] of heroRules) assert.doesNotMatch(declarations, /font(?:-family)?\s*:/);
 });
 
+test('hero grows the previous half-sized whitespace by thirty percent without scaling its artwork', () => {
+  const css = read('../assets/hero.css');
+  assert.match(css, /--hero-space-scale: 0\.65;/);
+  assert.match(css, /padding: calc\(var\(--hero-copy-top\) \* var\(--hero-space-scale\)\) 0 calc\(var\(--hero-copy-bottom\) \* var\(--hero-space-scale\)\)/);
+  assert.match(css, /\.micro-section \{[^}]*padding-top: 31\.2px/);
+  assert.match(css, /\.micro-section \{ padding-top: 22\.1px/);
+  assert.match(css, /min-height: calc\(var\(--hero-original-height\) \+ 180px\)/);
+});
+
 test('purchase card uses the approved title and supplied description', () => {
   const step = content.cooperation.steps.find(item => item.number === '03');
   assert.equal(step.title, 'Nákup');

@@ -33,6 +33,13 @@ test('support navigation uses the approved label and preserves its section targe
   assert.ok(html.includes('<a href="#support" data-cms-text="navigation.items.2.label">Kde pomáhá</a>'));
 });
 
+test('hero shares the Lora heading family without a separate font override', () => {
+  assert.match(read('../assets/site.css'), /h1,\s*h2,\s*h3\s*\{[^}]*font-family: "Lora", Georgia, serif/);
+  const heroRules = [...read('../assets/hero.css').matchAll(/\.hero h1\s*\{([^}]*)\}/g)];
+  assert.ok(heroRules.length > 0);
+  for (const [, declarations] of heroRules) assert.doesNotMatch(declarations, /font(?:-family)?\s*:/);
+});
+
 test('purchase card uses the approved title and supplied description', () => {
   const step = content.cooperation.steps.find(item => item.number === '03');
   assert.equal(step.title, 'Nákup');

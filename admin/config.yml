@@ -239,7 +239,7 @@ collections:
                 fields:
                   - { label: Aktivní, name: active, widget: boolean, default: true, hint: "Vypnuto = nadštítek se na webu nezobrazí a nezabere žádné místo." }
                   - { label: Text, name: text, widget: string }
-              - { label: Nadpis, name: title, widget: string }
+              - { label: Nadpis, name: title, widget: text }
               - label: Úvodní text
                 name: text
                 widget: object

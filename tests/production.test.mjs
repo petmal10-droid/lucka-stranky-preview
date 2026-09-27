@@ -152,6 +152,14 @@ test('the testimonial introduction is hidden in CMS content and HTML fallback', 
   assert.match(html, /<p[^>]*data-cms-active="testimonials.text.active"[^>]* hidden>/);
 });
 
+test('testimonial heading preserves the requested line break in CMS and fallback', () => {
+  assert.equal(content.testimonials.title, 'Zkušenosti lidí,\nkteří BEMER vyzkoušeli');
+  assert.ok(html.includes(`<h2 data-cms-text="testimonials.title">${content.testimonials.title}</h2>`));
+  assert.match(read('../assets/site.css'), /\.testimonials-section h2\s*\{\s*white-space: pre-line;/);
+  const schema = read('../admin/config.yml').split('name: testimonials')[1].split('name: faq')[0];
+  assert.ok(schema.includes('{ label: Nadpis, name: title, widget: text }'));
+});
+
 test('profile keeps the supplied biography in two matching CMS and fallback paragraphs', () => {
   const profile = content.contact.profile;
   assert.equal(profile.text, 'Jmenuji se Lucie a jsem lékařka. Na člověka se dívám komplexně a díky životním zkušenostem už vím, že žádná cesta není ideální pro všechny. Zajímá mě práce s traumatem, psychosomatika, celostní medicína a paliativní medicína. Mám ráda pohyb a vím, že za malým pokrokem někdy stojí spousta práce.');

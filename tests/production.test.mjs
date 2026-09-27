@@ -82,6 +82,14 @@ test('operator and existing form destination are present in public CMS content',
   assert.equal(content.testimonials.display.showContexts, false);
 });
 
+test('profile keeps the supplied biography in two matching CMS and fallback paragraphs', () => {
+  const profile = content.contact.profile;
+  assert.equal(profile.text, 'Jmenuji se Lucie a jsem lékařka. Na člověka se dívám komplexně a díky životním zkušenostem už vím, že žádná cesta není ideální pro všechny. Zajímá mě práce s traumatem, psychosomatika, celostní medicína a paliativní medicína. Mám ráda pohyb a vím, že za malým pokrokem někdy stojí spousta práce.');
+  assert.equal(profile.note, 'K BEMERu mě přivedla dcera Karolínka, která má kombinované postižení. Poznala jsem ho nejdřív skrze naši vlastní zkušenost, kdy díky terapii v pěti letech konečně udělala své první kroky. O to, co jsem sama prožila a poznala, se dnes ráda dělím s ostatními.');
+  assert.ok(html.includes(`<p data-cms-text="contact.profile.text">${profile.text}</p>`));
+  assert.ok(html.includes(`<p class="profile-note" data-cms-text="contact.profile.note">${profile.note}</p>`));
+});
+
 test('profile uses the supplied portrait through the existing CMS image field', () => {
   assert.equal(content.contact.profile.image.src, 'uploads/lucie-klozova.png');
   assert.equal(content.contact.profile.image.alt, 'Lucie Klozová');

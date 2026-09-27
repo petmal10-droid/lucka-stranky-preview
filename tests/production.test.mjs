@@ -109,6 +109,11 @@ test('the new anonymous testimonial keeps the supplied wording in CMS and fallba
   assert.equal(content.testimonials.items.filter(item => item.name === 'Anonymní autorka').length, 2);
 });
 
+test('the testimonial introduction is hidden in CMS content and HTML fallback', () => {
+  assert.equal(content.testimonials.text.active, false);
+  assert.match(html, /<p[^>]*data-cms-active="testimonials.text.active"[^>]* hidden>/);
+});
+
 test('profile keeps the supplied biography in two matching CMS and fallback paragraphs', () => {
   const profile = content.contact.profile;
   assert.equal(profile.text, 'Jmenuji se Lucie a jsem lékařka. Na člověka se dívám komplexně a díky životním zkušenostem už vím, že žádná cesta není ideální pro všechny. Zajímá mě práce s traumatem, psychosomatika, celostní medicína a paliativní medicína. Mám ráda pohyb a vím, že za malým pokrokem někdy stojí spousta práce.');

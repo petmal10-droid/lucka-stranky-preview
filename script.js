@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  await loadCmsContent();
   initContactForm();
+  await loadCmsContent();
   initReveal(prefersReducedMotion);
   initHeader();
   initMobileMenu();
@@ -46,7 +46,8 @@ const normalizeImagePath = (path) => {
   return path.replace(/^\.?\//, "");
 };
 
-const encodeMailtoSubject = (subject) => encodeURIComponent(subject || "Poptávka z webu");
+const web3FormsEndpoint = "https://api.web3forms.com/submit";
+const isFormAccessKey = (key) => /^[a-f\d]{8}(?:-[a-f\d]{4}){3}-[a-f\d]{12}$/i.test(key || "");
 
 const setFormStatus = (form, message, type = "info") => {
   const status = form.querySelector("[data-form-status]");
@@ -55,22 +56,6 @@ const setFormStatus = (form, message, type = "info") => {
   status.textContent = message || "";
   status.hidden = !message;
   status.dataset.status = type;
-};
-
-const loadRecaptchaScript = () => {
-  if (document.querySelector('script[src*="google.com/recaptcha/api.js"]')) return;
-
-  const script = document.createElement("script");
-  script.src = "https://www.google.com/recaptcha/api.js";
-  script.async = true;
-  script.defer = true;
-  document.head.append(script);
-};
-
-const resetRecaptcha = () => {
-  if (window.grecaptcha && typeof window.grecaptcha.reset === "function") {
-    window.grecaptcha.reset();
-  }
 };
 
 const applyImage = (image, target) => {
@@ -359,7 +344,6 @@ const renderLegalBlocks = (blocks = []) => {
 const applyContact = (contact = {}) => {
   const form = document.querySelector("[data-contact-form]");
   const formSettings = contact.form || {};
-  const recipientEmail = formSettings.recipientEmail || contact.email;
 
   if (contact.email) {
     const email = document.querySelector('[data-cms-contact="email"]');
@@ -369,35 +353,31 @@ const applyContact = (contact = {}) => {
     }
   }
 
-  if (form && recipientEmail) {
-    const endpoint = formSettings.endpoint?.trim();
-    const subject = encodeMailtoSubject(formSettings.subject);
-    form.action = endpoint || `mailto:${recipientEmail}?subject=${subject}`;
+  if (form) {
+    const accessKey = formSettings.accessKey?.trim() || "";
+    form.action = web3FormsEndpoint;
     form.method = "post";
-    form.enctype = endpoint ? "multipart/form-data" : "text/plain";
     form.dataset.successMessage = formSettings.successMessage || "Děkujeme, zpráva byla odeslána.";
-    form.dataset.mailtoMessage =
-      formSettings.mailtoMessage || "Otevře se vám e-mailový klient s připravenou zprávou.";
     form.dataset.errorMessage =
       formSettings.errorMessage || "Odeslání se nepodařilo. Zkuste to prosím znovu nebo napište přímo na e-mail.";
-    form.dataset.recaptchaMessage =
-      formSettings.recaptchaMessage || "Potvrďte prosím, že nejste robot.";
-    form.dataset.hasEndpoint = String(Boolean(endpoint));
-  }
-
-  const recaptcha = formSettings.recaptcha || {};
-  const recaptchaContainer = document.querySelector("[data-recaptcha-container]");
-  if (recaptchaContainer) {
-    const shouldShowRecaptcha = Boolean(recaptcha.enabled && recaptcha.siteKey);
-    recaptchaContainer.hidden = !shouldShowRecaptcha;
-    recaptchaContainer.replaceChildren();
-
-    if (shouldShowRecaptcha) {
-      const recaptchaElement = createElement("div", "g-recaptcha");
-      recaptchaElement.dataset.sitekey = recaptcha.siteKey;
-      recaptchaContainer.append(recaptchaElement);
-      loadRecaptchaScript();
+    form.dataset.pendingMessage = formSettings.pendingMessage || "Odesílám zprávu…";
+    form.dataset.unavailableMessage = formSettings.unavailableMessage ||
+      "Formulář zatím není dostupný. Napište prosím na uvedený e-mail nebo zavolejte.";
+    for (const [name, value] of Object.entries({
+      access_key: accessKey,
+      subject: formSettings.subject || "Poptávka z webu BEMER Lucie",
+    })) {
+      const input = form.querySelector(`[name="${name}"]`);
+      if (input) {
+        input.defaultValue = value;
+        input.value = value;
+      }
     }
+    const ready = isFormAccessKey(accessKey);
+    form.dataset.ready = String(ready);
+    const submitButton = form.querySelector('button[type="submit"]');
+    if (submitButton) submitButton.disabled = !ready;
+    setFormStatus(form, ready ? "" : form.dataset.unavailableMessage, "error");
   }
 
   if (contact.phone) {
@@ -429,45 +409,46 @@ const applyContact = (contact = {}) => {
 const initContactForm = () => {
   const form = document.querySelector("[data-contact-form]");
   if (!form) return;
+  let submitting = false;
 
   form.addEventListener("submit", async (event) => {
-    const recaptchaContainer = form.querySelector("[data-recaptcha-container]");
-    const recaptchaResponse = form.querySelector('[name="g-recaptcha-response"]');
-    const recaptchaRequired = recaptchaContainer && !recaptchaContainer.hidden;
-
-    if (recaptchaRequired && !recaptchaResponse?.value) {
-      event.preventDefault();
-      setFormStatus(form, form.dataset.recaptchaMessage, "error");
-      return;
-    }
-
-    if (form.dataset.hasEndpoint !== "true") {
-      setFormStatus(form, form.dataset.mailtoMessage, "info");
-      return;
-    }
-
     event.preventDefault();
+    if (submitting || !form.reportValidity()) return;
+    if (form.dataset.ready !== "true" || !isFormAccessKey(form.querySelector('[name="access_key"]')?.value)) {
+      setFormStatus(form, form.dataset.unavailableMessage, "error");
+      return;
+    }
+
+    submitting = true;
     const submitButton = form.querySelector('button[type="submit"]');
     if (submitButton) submitButton.disabled = true;
-    setFormStatus(form, "", "info");
+    form.setAttribute("aria-busy", "true");
+    setFormStatus(form, form.dataset.pendingMessage, "info");
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 20000);
 
     try {
-      const response = await fetch(form.action, {
-        method: form.method || "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" },
+      const response = await fetch(web3FormsEndpoint, {
+        method: "POST",
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        signal: controller.signal,
       });
-
-      if (!response.ok) throw new Error(`Form endpoint failed: ${response.status}`);
+      const result = await response.json();
+      if (!response.ok || result.success !== true) throw new Error("Submission not accepted");
 
       form.reset();
-      resetRecaptcha();
       setFormStatus(form, form.dataset.successMessage, "success");
     } catch (error) {
-      console.warn("Contact form could not be submitted.", error);
-      resetRecaptcha();
-      setFormStatus(form, form.dataset.errorMessage, "error");
+      // A timeout does not prove rejection; avoid inviting an immediate duplicate.
+      const message = error.name === "AbortError"
+        ? "Nepodařilo se potvrdit odeslání. Zpráva mohla dorazit; před opakováním prosím chvíli vyčkejte nebo zavolejte."
+        : form.dataset.errorMessage;
+      setFormStatus(form, message, "error");
     } finally {
+      clearTimeout(timeout);
+      submitting = false;
+      form.removeAttribute("aria-busy");
       if (submitButton) submitButton.disabled = false;
     }
   });
@@ -498,6 +479,8 @@ const loadCmsContent = async () => {
     applyCmsContent(content);
   } catch (error) {
     console.warn("CMS content could not be loaded; using HTML fallback.", error);
+    const form = document.querySelector("[data-contact-form]");
+    if (form) setFormStatus(form, "Formulář se nepodařilo načíst. Obnovte stránku nebo využijte uvedený e-mail či telefon.", "error");
   }
 };
 

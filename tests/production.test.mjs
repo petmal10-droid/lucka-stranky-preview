@@ -124,7 +124,8 @@ test('operator and existing form destination are present in public CMS content',
   assert.match(content.legal.blocks[0].text, /lucieklozovaa@seznam.cz/);
   assert.equal(content.contact.form.recipientEmail, 'lucieklozovaa@seznam.cz');
   assert.equal(content.contact.email, content.contact.form.recipientEmail);
-  assert.ok(html.includes(`action="mailto:${content.contact.form.recipientEmail}"`));
+  assert.ok(html.includes('action="https://api.web3forms.com/submit"'));
+  assert.doesNotMatch(html, /action="mailto:/);
   assert.doesNotMatch(html, /info@luckabemer\.cz/);
   assert.equal(content.testimonials.items.length, 8);
   assert.ok(content.testimonials.items.some(item => item.name === 'Anonymní autorka'));

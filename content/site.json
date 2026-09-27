@@ -369,17 +369,13 @@
     "form": {
       "recipientEmail": "lucieklozovaa@seznam.cz",
       "subject": "Poptávka z webu Lucka BEMER",
-      "endpoint": "",
+      "accessKey": "0729218e-93c7-4e1c-bf0d-8880375c0297",
       "submitLabel": "Odeslat nezávaznou poptávku",
       "successMessage": "Děkuji, zpráva byla odeslána. Ozvu se vám co nejdříve.",
       "errorMessage": "Odeslání se nepodařilo. Zkuste to prosím znovu nebo napište přímo na e-mail.",
-      "recaptchaMessage": "Potvrďte prosím, že nejste robot.",
-      "mailtoMessage": "Otevře se vám e-mailový klient s připravenou zprávou.",
-      "note": "Odesláním zprávy předáváte údaje jen za účelem vyřízení dotazu. Podrobnosti najdete v informacích o ochraně osobních údajů níže.",
-      "recaptcha": {
-        "enabled": true,
-        "siteKey": ""
-      }
+      "pendingMessage": "Odesílám zprávu…",
+      "unavailableMessage": "Formulář zatím není dostupný. Napište prosím na lucieklozovaa@seznam.cz nebo zavolejte.",
+      "note": "Zprávu doručuje služba Web3Forms. Formulář slouží k domluvení konzultace; neposílejte prosím zdravotní dokumentaci ani podrobné zdravotní údaje. Podrobnosti najdete v informacích o ochraně osobních údajů níže."
     },
     "profile": {
       "label": "O mně",
@@ -411,7 +407,7 @@
       },
       {
         "title": "Osobní údaje",
-        "text": "Správcem osobních údajů je Lucie Klozová, IČO: 21226270, se sídlem Šebrov 198, 679 22 Šebrov-Kateřina. Údaje z kontaktní komunikace slouží pouze k odpovědi na dotaz a navazující domluvě konzultace."
+        "text": "Správcem osobních údajů je Lucie Klozová, IČO: 21226270, se sídlem Šebrov 198, 679 22 Šebrov-Kateřina. Údaje z kontaktní komunikace slouží pouze k odpovědi na dotaz a navazující domluvě konzultace. Kontaktní formulář předává jméno, e-mail, případně telefon a obsah zprávy službě Web3Forms, která zajišťuje doručení na kontaktní e-mail. Formulář není určen k zasílání zdravotní dokumentace ani podrobných zdravotních údajů."
       },
       {
         "title": "Externí obsah",

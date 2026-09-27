@@ -275,42 +275,45 @@ kteří BEMER vyzkoušeli</h2>
               </div>
               <form
                 class="contact-form"
-                action="mailto:lucieklozovaa@seznam.cz"
+                action="https://api.web3forms.com/submit"
                 method="post"
-                enctype="text/plain"
                 data-contact-form
               >
+                <input type="hidden" name="access_key" value="" />
+                <input type="hidden" name="subject" value="Poptávka z webu Lucka BEMER" />
+                <input type="hidden" name="from_name" value="BEMER Lucie Klozová" />
+                <input type="checkbox" name="botcheck" hidden tabindex="-1" autocomplete="off" aria-hidden="true" />
                 <div class="form-row">
                   <label>
                     Jméno
-                    <input name="Jméno" type="text" autocomplete="name" placeholder="Vaše jméno" required />
+                    <input name="name" type="text" autocomplete="name" placeholder="Vaše jméno" maxlength="150" required />
                   </label>
                   <label>
                     E-mail
-                    <input name="E-mail" type="email" autocomplete="email" placeholder="vas@email.cz" required />
+                    <input name="email" type="email" autocomplete="email" placeholder="vas@email.cz" maxlength="254" required />
                   </label>
                 </div>
                 <label>
                   Telefon
-                  <input name="Telefon" type="tel" autocomplete="tel" placeholder="+420 ..." />
+                  <input name="phone" type="tel" autocomplete="tel" placeholder="+420 ..." maxlength="50" />
                 </label>
                 <label>
                   Zpráva
                   <textarea
-                    name="Zpráva"
+                    name="message"
                     rows="4"
+                    maxlength="5000"
                     placeholder="Napište stručně, s čím vám mohu pomoci."
                     required
                   ></textarea>
                 </label>
-                <div class="recaptcha-field" data-recaptcha-container hidden></div>
-                <button class="button button-primary" type="submit">
+                <button class="button button-primary" type="submit" disabled>
                   <span data-cms-text="contact.form.submitLabel">Odeslat nezávaznou poptávku</span>
                 </button>
                 <p class="form-status" data-form-status hidden role="status"></p>
+                <noscript><p class="form-note">Pro odeslání formuláře zapněte JavaScript, nebo napište na <a href="mailto:lucieklozovaa@seznam.cz">lucieklozovaa@seznam.cz</a>.</p></noscript>
                 <p class="form-note" data-cms-text="contact.form.note">
-                  Odesláním zprávy předáváte údaje jen za účelem vyřízení dotazu.
-                  Podrobnosti najdete v informacích o ochraně osobních údajů níže.
+                  Zprávu doručuje služba Web3Forms. Formulář slouží k domluvení konzultace; neposílejte prosím zdravotní dokumentaci ani podrobné zdravotní údaje. Podrobnosti najdete v informacích o ochraně osobních údajů níže.
                 </p>
               </form>
             </div>
@@ -378,7 +381,7 @@ kteří BEMER vyzkoušeli</h2>
               </button>
             </div>
 
-            <div class="legal-grid" data-cms-list="legal.blocks"><article><h3>Identifikační údaje provozovatele</h3><p>Lucie Klozová, IČO: 21226270. Sídlo: Šebrov 198, 679 22 Šebrov-Kateřina. Fyzická osoba zapsaná v živnostenském rejstříku. E-mail: lucieklozovaa@seznam.cz. Telefon: +420 775 447 563.</p></article><article><h3>Cookies</h3><p>Tento web používá pouze nezbytné technické cookies pro zapamatování zobrazení informační lišty. Nepoužíváme analytické ani marketingové cookies.</p></article><article><h3>Osobní údaje</h3><p>Správcem osobních údajů je Lucie Klozová, IČO: 21226270, se sídlem Šebrov 198, 679 22 Šebrov-Kateřina. Údaje z kontaktní komunikace slouží pouze k odpovědi na dotaz a navazující domluvě konzultace.</p></article><article><h3>Externí obsah</h3><p>Stránka načítá písma, video a obrázky z externích služeb potřebných pro zobrazení webu.</p></article></div>
+            <div class="legal-grid" data-cms-list="legal.blocks"><article><h3>Identifikační údaje provozovatele</h3><p>Lucie Klozová, IČO: 21226270. Sídlo: Šebrov 198, 679 22 Šebrov-Kateřina. Fyzická osoba zapsaná v živnostenském rejstříku. E-mail: lucieklozovaa@seznam.cz. Telefon: +420 775 447 563.</p></article><article><h3>Cookies</h3><p>Tento web používá pouze nezbytné technické cookies pro zapamatování zobrazení informační lišty. Nepoužíváme analytické ani marketingové cookies.</p></article><article><h3>Osobní údaje</h3><p>Správcem osobních údajů je Lucie Klozová, IČO: 21226270, se sídlem Šebrov 198, 679 22 Šebrov-Kateřina. Údaje z kontaktní komunikace slouží pouze k odpovědi na dotaz a navazující domluvě konzultace. Kontaktní formulář předává jméno, e-mail, případně telefon a obsah zprávy službě Web3Forms, která zajišťuje doručení na kontaktní e-mail. Formulář není určen k zasílání zdravotní dokumentace ani podrobných zdravotních údajů.</p></article><article><h3>Externí obsah</h3><p>Stránka načítá písma, video a obrázky z externích služeb potřebných pro zobrazení webu.</p></article></div>
           </div>
         </footer>
       </main>
@@ -457,7 +460,7 @@ kteří BEMER vyzkoušeli</h2>
       })();
     </script>
     <script src="./assets/seo.js?v=20260927-seo"></script>
-    <script src="./script.js?v=20260927-seo"></script>
+    <script src="./script.js?v=20260927-web3forms"></script>
     <script src="./assets/hero-layout.js?v=20260926-detail"></script>
     <script type="module" src="./assets/hero/depth.js?v=20260926-mobile-parallax"></script>
   </body>

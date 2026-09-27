@@ -323,21 +323,15 @@ collections:
                 name: form
                 widget: object
                 fields:
-                  - { label: E-mail pro odeslání formuláře, name: recipientEmail, widget: string, required: false, hint: "Když zůstane prázdný, použije se hlavní kontaktní e-mail výše." }
+                  - { label: E-mail příjemce (evidence), name: recipientEmail, widget: string, hint: "Skutečného příjemce určuje Access Key ve Web3Forms. Samotná změna tohoto pole nepřesměruje zprávy; změňte příjemce také ve Web3Forms a ověřte doručení." }
                   - { label: Předmět e-mailu, name: subject, widget: string, required: false }
-                  - { label: Endpoint formuláře, name: endpoint, widget: string, required: false, hint: "Volitelné. Pro skutečné odeslání bez otevření e-mailového klienta vložte URL ze služby typu Formspree, Getform nebo z vlastního serveru. Bez endpointu web použije mailto." }
+                  - { label: Web3Forms Access Key, name: accessKey, widget: string, required: false, hint: "Veřejný klíč formuláře z app.web3forms.com pro ověřený e-mail příjemce. Nezadávejte heslo ani soukromý API token. Bez klíče je odesílání vypnuté." }
                   - { label: Text odesílacího tlačítka, name: submitLabel, widget: string }
                   - { label: Hláška po úspěšném odeslání, name: successMessage, widget: text, required: false }
                   - { label: Hláška při chybě odeslání, name: errorMessage, widget: text, required: false }
-                  - { label: Hláška při chybějící reCAPTCHA, name: recaptchaMessage, widget: text, required: false }
-                  - { label: Hláška při otevření e-mailového klienta, name: mailtoMessage, widget: text, required: false }
+                  - { label: Hláška během odesílání, name: pendingMessage, widget: string }
+                  - { label: Hláška bez nastaveného klíče, name: unavailableMessage, widget: text }
                   - { label: Poznámka pod formulářem, name: note, widget: text }
-                  - label: Google reCAPTCHA
-                    name: recaptcha
-                    widget: object
-                    fields:
-                      - { label: Zapnout reCAPTCHA, name: enabled, widget: boolean, default: false, hint: "Vyžaduje veřejný Site key z Google reCAPTCHA v2 checkbox. Secret key se do statického webu nevkládá." }
-                      - { label: Site key, name: siteKey, widget: string, required: false, hint: "Veřejný klíč pro doménu www.bemer-lucie.cz. Pokud se má formulář testovat i na GitHub Pages preview, přidejte v Google reCAPTCHA také petmal10-droid.github.io." }
               - label: Osobní medailonek
                 name: profile
                 widget: object

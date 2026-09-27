@@ -91,12 +91,12 @@ test('profile keeps the supplied biography in two matching CMS and fallback para
 });
 
 test('profile uses the supplied portrait through the existing CMS image field', () => {
-  assert.equal(content.contact.profile.image.src, 'uploads/lucie-klozova.png');
+  assert.equal(content.contact.profile.image.src, 'uploads/lucie-klozova-portrait.png');
   assert.equal(content.contact.profile.image.alt, 'Lucie Klozová');
   const portrait = readFileSync(new URL(`../${content.contact.profile.image.src}`, import.meta.url));
   assert.equal(portrait.toString('hex', 0, 8), '89504e470d0a1a0a');
-  assert.equal(portrait.readUInt32BE(16), 556);
-  assert.equal(portrait.readUInt32BE(20), 808);
+  assert.equal(portrait.readUInt32BE(16), 172);
+  assert.equal(portrait.readUInt32BE(20), 266);
   assert.match(html, /data-cms-image-wrapper="contact.profile.image"/);
   assert.match(read('../assets/site.css'), /\.profile-photo-placeholder \{[^}]*grid-template-rows: minmax\(0, 1fr\)/);
 });

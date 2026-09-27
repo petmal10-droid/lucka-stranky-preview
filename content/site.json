@@ -211,8 +211,8 @@
       },
       {
         "number": "03",
-        "title": "Prodej",
-        "text": "Pro dlouhodobé použití je vhodné přístroj BEMER zakoupit. Při nákupu se cena za předchzí pronájem nuluje.",
+        "title": "Nákup",
+        "text": "Pokud chcete mít vlastní přístroj doma, můžete si před nákupem zdarma ověřit, že je tato investice pro vás vhodná",
         "price": {
           "active": false,
           "bold": true,

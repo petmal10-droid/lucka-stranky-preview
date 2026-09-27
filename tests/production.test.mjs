@@ -33,6 +33,12 @@ test('support navigation uses the approved label and preserves its section targe
   assert.ok(html.includes('<a href="#support" data-cms-text="navigation.items.2.label">Kde pomáhá</a>'));
 });
 
+test('purchase card uses the approved title and supplied description', () => {
+  const step = content.cooperation.steps.find(item => item.number === '03');
+  assert.equal(step.title, 'Nákup');
+  assert.equal(step.text, 'Pokud chcete mít vlastní přístroj doma, můžete si před nákupem zdarma ověřit, že je tato investice pro vás vhodná');
+});
+
 test('CMS settings stay bounded and accept saved numeric strings', () => {
   assert.deepEqual(heroSettings({}), heroDefaults);
   assert.deepEqual(heroSettings({ visibility: '0', strength: 900, detail: -1, focus: 'false' }), { visibility: 0, strength: 100, detail: 0, focus: false });

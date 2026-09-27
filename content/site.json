@@ -7,11 +7,6 @@
     "imageAlt": "Ilustrace červených krvinek v cévě",
     "areaServed": ["Brno", "Blansko"]
   },
-  "guides": {
-    "title": "Více o mikrocirkulaci a domácím použití BEMER",
-    "microLabel": "Co je mikrocirkulace a jak souvisí s BEMER",
-    "rentalLabel": "Pronájem BEMER: cena a průběh zapůjčení"
-  },
   "brand": {
     "logo": {
       "src": "logo.png?v=20260515-logo-left-space",
@@ -195,7 +190,6 @@
     },
     "steps": [
       {
-        "id": "consultation",
         "number": "01",
         "title": "Konzultace",
         "text": "Společně projdeme vaši situaci, očekávání a případná omezení. Vysvětlím vám, kde může být BEMER vhodnou podporou.",
@@ -210,7 +204,6 @@
         }
       },
       {
-        "id": "rental",
         "number": "02",
         "title": "Pronájem",
         "text": "Pro účinnou terapii je klíčová pravidelná aplikace. Proto půjčujeme přístroje k vám domů.",
@@ -225,7 +218,6 @@
         }
       },
       {
-        "id": "purchase",
         "number": "03",
         "title": "Nákup",
         "text": "Pokud chcete mít vlastní přístroj doma, můžete si před nákupem zdarma ověřit, že je tato investice pro vás vhodná",

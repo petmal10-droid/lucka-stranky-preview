@@ -6,23 +6,19 @@ import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { runInNewContext } from 'node:vm';
 import { parseHTML } from 'linkedom';
-import { rentalPrice } from '../scripts/rental-price.mjs';
 
 const root = new URL('../', import.meta.url);
 const read = path => readFileSync(new URL(path, root), 'utf8');
 const content = JSON.parse(read('content/site.json'));
-const guides = readdirSync(new URL('content/guides/', root)).filter(name => name.endsWith('.json'))
-  .map(name => JSON.parse(read(`content/guides/${name}`)));
-const pages = ['', ...guides.map(page => `${page.slug}/`)];
+const pages = [''];
 
-test('all indexable pages ship complete metadata, working internal links and a unique heading without JS', () => {
+test('the single homepage ships current metadata, working links and one heading without JS', () => {
   for (const path of pages) {
     const { document } = parseHTML(read(`dist/${path}index.html`));
-    const page = guides.find(item => `${item.slug}/` === path);
     assert.equal(document.querySelectorAll('h1').length, 1);
-    assert.equal(document.title, page?.title || content.seo.title);
-    assert.equal(document.querySelector('h1').textContent, page?.heading || content.hero.title);
-    assert.equal(document.querySelector('meta[name="description"]').content, page?.description || content.seo.description);
+    assert.equal(document.title, content.seo.title);
+    assert.equal(document.querySelector('h1').textContent, content.hero.title);
+    assert.equal(document.querySelector('meta[name="description"]').content, content.seo.description);
     assert.equal(document.querySelector('meta[property="og:title"]').content, document.title);
     assert.equal(document.querySelector('link[rel="canonical"]').href, `https://www.bemer-lucie.cz/${path}`);
     assert.ok(!document.querySelector('meta[name="robots"]').content.includes('noindex'));
@@ -45,10 +41,15 @@ test('all indexable pages ship complete metadata, working internal links and a u
   }
 });
 
-test('sitemap includes canonical content only and old previews remain crawlable but noindex', () => {
+test('sitemap indexes only the homepage, no guide pages are published, and old previews are noindex', () => {
   const sitemap = read('dist/sitemap.xml');
   assert.equal((sitemap.match(/<loc>/g) || []).length, pages.length);
   for (const path of pages) assert.ok(sitemap.includes(`<loc>https://www.bemer-lucie.cz/${path}</loc>`));
+  for (const path of ['mikrocirkulace', 'pronajem-bemer', 'content/guides']) {
+    assert.ok(!existsSync(new URL(`dist/${path}`, root)), `Single-page publication must not contain ${path}`);
+    assert.ok(!sitemap.includes(path));
+  }
+  assert.doesNotMatch(read('dist/index.html'), /href=["'][^"']*(?:mikrocirkulace|pronajem-bemer)\//);
   assert.match(read('dist/robots.txt'), /Sitemap: https:\/\/www.bemer-lucie.cz\/sitemap.xml/);
   for (const path of ['admin/index.html', 'varianta-1.html', 'porovnani.html']) {
     assert.match(read(`dist/${path}`), /name="robots" content="noindex/);
@@ -57,25 +58,6 @@ test('sitemap includes canonical content only and old previews remain crawlable 
   for (const path of ['output', 'previews', 'tests', '.git', 'node_modules', 'PROJECT_CONTEXT.md']) {
     assert.ok(!existsSync(new URL(`dist/${path}`, root)), `Private working path must not be published: ${path}`);
   }
-});
-
-test('rental price is shared with the homepage and follows its card after CMS reorder', () => {
-  const expected = rentalPrice(content);
-  const changed = structuredClone(content);
-  changed.cooperation.steps.reverse();
-  changed.cooperation.steps.unshift({ id: 'new-service', price: { active: true, text: '999 Kč' } });
-  assert.equal(rentalPrice(changed), expected);
-  changed.cooperation.steps.find(step => step.id === 'rental').price = { active: true, text: 'NOVÁ CENA' };
-  assert.equal(rentalPrice(changed), 'NOVÁ CENA');
-  changed.cooperation.steps.find(step => step.id === 'rental').price.active = false;
-  assert.ok(!rentalPrice(changed).includes('NOVÁ CENA'));
-  for (const path of guides.filter(page => page.sections.some(section => section.sourceReference === 'rental-price')).map(page => `${page.slug}/`)) {
-    const { document } = parseHTML(read(`dist/${path}index.html`));
-    assert.equal(document.querySelector('.guide-price').textContent, expected);
-  }
-  const home = parseHTML(read('dist/index.html')).document;
-  const rental = content.cooperation.steps.find(step => step.id === 'rental');
-  if (rental.price?.active && rental.price.text) assert.ok(home.querySelector('[data-cms-list="cooperation.steps"]').textContent.includes(expected));
 });
 
 test('CMS hydration updates search metadata and schema together without changing the canonical host', () => {
@@ -121,9 +103,8 @@ test('a complete rebuild accepts normal CMS edits and publishes escaped, current
     changed.contact.profile.role = '';
     changed.testimonials.items = [];
     changed.navigation.items = changed.navigation.items.map((item, index) => ({ ...item, label: `Odkaz ${index + 1}` }));
-    changed.cooperation.steps.reverse();
-    const rental = changed.cooperation.steps.find(step => step.id === 'rental');
-    rental.price = { active: false, text: 'Hidden price must not leak', bold: true };
+    const rental = { title: 'Pronájem v CMS', text: 'Aktuální podmínky', price: { active: false, text: 'Hidden price must not leak', bold: true } };
+    changed.cooperation.steps = [rental, { title: 'Konzultace v CMS', text: 'Domluva podle potřeby' }].reverse();
     const build = () => {
       writeFileSync(resolve(fixture, 'content/site.json'), JSON.stringify(changed));
       execFileSync(process.execPath, [resolve(fixture, 'scripts/build-site.mjs')], { cwd: fixture, stdio: 'pipe', timeout: 20000 });
@@ -138,18 +119,15 @@ test('a complete rebuild accepts normal CMS edits and publishes escaped, current
     assert.equal(home.querySelectorAll('.testimonial-card').length, 0);
     assert.equal(home.querySelector('#testimonials').hidden, true);
     assert.ok(!home.body.textContent.includes(rental.price.text));
-    const rentalGuide = guides.find(page => page.sections.some(section => section.sourceReference === 'rental-price'));
-    if (rentalGuide) {
-      const guide = parseHTML(readFileSync(resolve(fixture, `dist/${rentalGuide.slug}/index.html`), 'utf8')).document;
-      assert.equal(guide.querySelector('.guide-price').textContent, rentalPrice(changed));
-    }
+    assert.deepEqual([...home.querySelectorAll('[data-cms-list="cooperation.steps"] h3')].map(item => item.textContent), changed.cooperation.steps.map(step => step.title));
+    for (const path of ['mikrocirkulace', 'pronajem-bemer']) assert.ok(!existsSync(resolve(fixture, 'dist', path)));
     changed.testimonials.items = [{ name: 'CMS autorka', text: 'Nová zkušenost & nezměněné znění.' }];
     delete changed.contact.profile.image;
     rental.price = { active: true, text: 'Přesunutá cena: 9 250 Kč', bold: false };
     home = build();
     assert.equal(home.querySelector('#testimonials').hidden, false);
     assert.equal(home.querySelector('.testimonial-card > p').textContent, changed.testimonials.items[0].text);
-    assert.ok(home.body.textContent.includes(rental.price.text));
+    assert.equal(home.querySelector('[data-cms-list="cooperation.steps"] .audience-card-price').textContent, rental.price.text);
     assert.equal(JSON.parse(home.querySelector('#site-structured-data').textContent)['@graph'].find(item => item['@type'] === 'Person').image, undefined);
   } finally {
     const target = resolve(fixture);

@@ -2,12 +2,12 @@
 (() => {
   const origin = 'https://www.bemer-lucie.cz/';
   const absolute = value => new URL(value, origin).href;
-  const metadata = (content, page) => {
+  const metadata = content => {
     const seo = content.seo;
     const contact = content.contact;
-    const url = page ? absolute(`${page.slug}/`) : origin;
-    const title = page?.title || seo.title;
-    const description = page?.description || seo.description;
+    const url = origin;
+    const title = seo.title;
+    const description = seo.description;
     const image = absolute(seo.image);
     const graph = [
       { '@type': 'WebSite', '@id': `${origin}#website`, name: seo.siteName,
@@ -24,10 +24,6 @@
         provider: { '@id': `${origin}#lucie-klozova` },
         areaServed: seo.areaServed.map(name => ({ '@type': 'City', name })) }
     ];
-    if (page) graph.push({ '@type': 'BreadcrumbList', itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Úvod', item: origin },
-      { '@type': 'ListItem', position: 2, name: page.heading, item: url }
-    ] });
     return { title, description, url, image, imageAlt: seo.imageAlt, siteName: seo.siteName,
       structured: { '@context': 'https://schema.org', '@graph': graph } };
   };

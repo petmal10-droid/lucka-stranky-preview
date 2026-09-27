@@ -91,7 +91,7 @@ const applyImage = (image, target) => {
 const applyTextFields = (content) => {
   document.querySelectorAll("[data-cms-text]").forEach((element) => {
     const value = getValue(content, element.dataset.cmsText);
-    if (typeof value === "string" && value.trim()) element.textContent = value;
+    if (typeof value === "string") element.textContent = value;
   });
 };
 
@@ -287,8 +287,10 @@ const renderTestimonials = (items = [], display = {}) => {
 
   if (!items.length) {
     section.hidden = true;
+    carousel.replaceChildren();
     return;
   }
+  section.hidden = false;
 
   const orderedItems = shuffleItems(items);
   // Keep the final pair complete without adding a duplicate to CMS content.
@@ -407,10 +409,15 @@ const applyContact = (contact = {}) => {
   }
 
   const profilePhoto = document.querySelector('[data-cms-image-wrapper="contact.profile.image"]');
-  if (profilePhoto && contact.profile?.image?.src) {
+  if (profilePhoto && !contact.profile?.image?.src) {
+    profilePhoto.replaceChildren(document.createTextNode((contact.profile?.name || "L").trim().charAt(0)));
+    profilePhoto.setAttribute("aria-hidden", "true");
+  } else if (profilePhoto && contact.profile?.image?.src) {
     const img = createElement("img");
     img.src = normalizeImagePath(contact.profile.image.src);
     img.alt = contact.profile.image.alt || contact.profile.name || "Profilová fotografie";
+    img.loading = "lazy";
+    img.decoding = "async";
     img.onerror = () => {
       profilePhoto.replaceChildren(document.createTextNode((contact.profile.name || "L").trim().charAt(0)));
     };
@@ -480,6 +487,7 @@ const applyCmsContent = (content) => {
   renderFaq(content.faq?.items);
   applyContact(content.contact);
   renderLegalBlocks(content.legal?.blocks);
+  window.BemerSeo?.apply(content);
 };
 
 const loadCmsContent = async () => {

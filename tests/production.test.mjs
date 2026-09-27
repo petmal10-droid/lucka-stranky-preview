@@ -10,13 +10,13 @@ const html = read('../index.html');
 const content = JSON.parse(read('../content/site.json'));
 
 test('search metadata identifies Lucie and the services currently offered', () => {
-  const title = 'BEMER terapie | MUDr. Lucie Klozová';
-  const description = 'Osobní konzultace BEMER terapie s MUDr. Lucií Klozovou v Brně, Blansku a okolí. Možnost pronájmu přístroje domů i nákupu. Domluvte si nezávaznou konzultaci.';
+  const { title, description } = content.seo;
   assert.ok(html.includes(`<title>${title}</title>`));
-  assert.ok(html.includes(`name="description"\n      content="${description}"`));
+  assert.ok(html.includes(`name="description" content="${description}"`));
   assert.ok(html.includes(`property="og:title" content="${title}"`));
   assert.ok(html.includes(`property="og:description" content="${description}"`));
-  const structured = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+  const graph = JSON.parse(html.match(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/)[1])['@graph'];
+  const structured = graph.find(item => item['@type'] === 'WebSite');
   assert.equal(structured['@type'], 'WebSite');
   assert.equal(structured.name, 'BEMER Lucie Klozová');
   assert.equal(structured.url, 'https://www.bemer-lucie.cz/');

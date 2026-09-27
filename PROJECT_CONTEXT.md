@@ -1,5 +1,13 @@
 # Lucka stránky - projektový kontext
 
+## SEO – 27. 9. 2026
+
+- Statické HTML se generuje z CMS, včetně správných kontaktů, cen a referencí. SEO pole a obě nové podstránky lze spravovat v administraci.
+- Přidány `/mikrocirkulace/`, `/pronajem-bemer/`, mapa webu, robots.txt, sdílecí metadata a strukturované údaje. Staré varianty jsou noindex. Detaily a další priority jsou v `docs/seo-plan.md`.
+- Nový postup: `npm ci --ignore-scripts`, `npm run seo:sync`, `npm run test:publish`. Veřejný výstup je `dist/`. GitHub Pages musí používat GitHub Actions s workflow `.github/workflows/pages.yml`, aby se i po změně v CMS aktualizovalo statické HTML.
+- Karta Pronájem má stabilní interní ID `rental`; pořadí lze měnit, cena detailu pochází z této karty. Původní texty referencí a osobního profilu byly zachovány.
+- Lokálně ověřený kandidát; push a potvrzení veřejného nasazení se ověřují samostatně. Search Console a firemní profily zatím nebyly propojeny.
+
 Aktualizováno: 2026-04-26
 
 ## Účel dokumentu

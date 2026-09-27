@@ -1,0 +1,15 @@
+{
+  "name": "bemer-lucie-web",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:publish": "node --test tests/seo.test.mjs tests/static-cms.test.mjs",
+    "seo:sync": "node scripts/build-site.mjs --sync"
+  },
+  "engines": { "node": ">=22" },
+  "devDependencies": {
+    "linkedom": "0.18.13",
+    "parse5": "8.0.1"
+  }
+}

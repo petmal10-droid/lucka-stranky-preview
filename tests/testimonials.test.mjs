@@ -42,23 +42,38 @@ function harness(random = () => 0.5) {
   const slides = () => document.querySelectorAll('[data-testimonial-slide]');
   const dots = () => document.querySelectorAll('[data-testimonial-dot]');
   const names = () => descendants(carousel).filter(node => node.tagName === 'strong').map(node => node.textContent);
-  return { ...api, section, carousel, timers, slides, dots, names };
+  const texts = () => descendants(carousel).filter(node => node.tagName === 'p').map(node => node.textContent);
+  return { ...api, section, carousel, timers, slides, dots, names, texts };
 }
 
-test('seven source references make four full pairs without changing the CMS list', () => {
+test('eight source references make four unique pairs, including two anonymous authors', () => {
   const original = JSON.stringify(items);
   const h = harness();
   h.renderTestimonials(items, { showTags: false, showContexts: false });
   assert.equal(h.slides().length, 4);
+  assert.equal(h.texts().length, 8);
+  assert.equal(new Set(h.texts()).size, 8);
+  assert.deepEqual(h.texts().sort(), items.map(item => item.text).sort());
+  for (const slide of h.slides()) assert.equal(slide.children[0].children.length, 2);
+  assert.equal(h.names().filter(name => name === 'Anonymní autorka').length, 2);
+  assert.equal(JSON.stringify(items), original);
+});
+
+test('seven source references make four full pairs without changing the CMS list', () => {
+  const oddItems = items.slice(0, 7);
+  const original = JSON.stringify(oddItems);
+  const h = harness();
+  h.renderTestimonials(oddItems, { showTags: false, showContexts: false });
+  assert.equal(h.slides().length, 4);
   for (const slide of h.slides()) {
     const cards = slide.children[0].children;
     assert.equal(cards.length, 2);
-    assert.notEqual(cards[0].children.at(-1).children[0].textContent, cards[1].children.at(-1).children[0].textContent);
+    assert.notEqual(cards[0].children.find(node => node.tagName === 'p').textContent, cards[1].children.find(node => node.tagName === 'p').textContent);
   }
   assert.equal(h.names().length, 8);
-  assert.equal(new Set(h.names()).size, 7);
-  assert.deepEqual([...new Set(h.names())].sort(), items.map(item => item.name).sort());
-  assert.equal(JSON.stringify(items), original);
+  assert.equal(new Set(h.texts()).size, 7);
+  assert.deepEqual([...new Set(h.texts())].sort(), oddItems.map(item => item.text).sort());
+  assert.equal(JSON.stringify(oddItems), original);
   assert.ok(h.names().includes('Anonymní autorka'));
   assert.ok(!h.names().includes('Lucie K.'));
 });
@@ -66,14 +81,14 @@ test('seven source references make four full pairs without changing the CMS list
 test('new random values produce different ordering and a different filler reference', () => {
   const a = harness(() => 0);
   const b = harness(() => 0.999);
-  a.renderTestimonials(items);
-  b.renderTestimonials(items);
-  assert.notDeepEqual(a.names(), b.names());
-  assert.notEqual(a.names().at(-1), b.names().at(-1));
+  a.renderTestimonials(items.slice(0, 7));
+  b.renderTestimonials(items.slice(0, 7));
+  assert.notDeepEqual(a.texts(), b.texts());
+  assert.notEqual(a.texts().at(-1), b.texts().at(-1));
 });
 
 test('empty, single and even lists do not gain filler cards', () => {
-  for (const size of [0, 1, 2, 6]) {
+  for (const size of [0, 1, 2, 6, 8]) {
     const h = harness();
     h.renderTestimonials(items.slice(0, size));
     assert.equal(h.names().length, size);

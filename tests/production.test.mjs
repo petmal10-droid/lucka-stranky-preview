@@ -88,7 +88,7 @@ test('operator and existing form destination are present in public CMS content',
   assert.equal(content.contact.email, content.contact.form.recipientEmail);
   assert.ok(html.includes(`action="mailto:${content.contact.form.recipientEmail}"`));
   assert.doesNotMatch(html, /info@luckabemer\.cz/);
-  assert.equal(content.testimonials.items.length, 7);
+  assert.equal(content.testimonials.items.length, 8);
   assert.ok(content.testimonials.items.some(item => item.name === 'Anonymní autorka'));
   assert.ok(content.testimonials.items.every(item => item.name !== 'Lucie K.'));
   assert.ok(!html.includes('<strong>Lucie K.</strong>'));
@@ -98,6 +98,15 @@ test('operator and existing form destination are present in public CMS content',
   assert.ok(html.includes('<span data-cms-text="contact.profile.role"></span>'));
   assert.equal(content.testimonials.display.showTags, false);
   assert.equal(content.testimonials.display.showContexts, false);
+});
+
+test('the new anonymous testimonial keeps the supplied wording in CMS and fallback', () => {
+  const text = 'BEMER byl jeden z pomocníků, který mi po opakovaně neúspěšném IVF pomohl otěhotnět. Používala jsem ho každý den po dobu dvou měsíců: podložku dvakrát denně, 20 minut ráno a 16 minut večer, a jednou denně pás kolem bříška na 16 minut. Všem přeji hodně štěstí, ať je vaše cesta jakákoliv.';
+  const matches = content.testimonials.items.filter(item => item.text === text);
+  assert.equal(matches.length, 1);
+  assert.equal(matches[0].name, 'Anonymní autorka');
+  assert.ok(html.includes(`<p>${text}</p>`));
+  assert.equal(content.testimonials.items.filter(item => item.name === 'Anonymní autorka').length, 2);
 });
 
 test('profile keeps the supplied biography in two matching CMS and fallback paragraphs', () => {

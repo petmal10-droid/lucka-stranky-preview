@@ -28,6 +28,11 @@ test('approved appearance is the default, independent of URL and saved preview c
   for (const [key, value] of Object.entries(heroDefaults)) assert.ok(html.includes(`data-${key}="${value}"`));
 });
 
+test('support navigation uses the approved label and preserves its section target', () => {
+  assert.equal(content.navigation.items[2].label, 'Kde pomáhá');
+  assert.ok(html.includes('<a href="#support" data-cms-text="navigation.items.2.label">Kde pomáhá</a>'));
+});
+
 test('CMS settings stay bounded and accept saved numeric strings', () => {
   assert.deepEqual(heroSettings({}), heroDefaults);
   assert.deepEqual(heroSettings({ visibility: '0', strength: 900, detail: -1, focus: 'false' }), { visibility: 0, strength: 100, detail: 0, focus: false });

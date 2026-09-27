@@ -9,6 +9,35 @@ const read = path => readFileSync(new URL(path, import.meta.url), 'utf8').replac
 const html = read('../index.html');
 const content = JSON.parse(read('../content/site.json'));
 
+test('search metadata identifies Lucie and the services currently offered', () => {
+  const title = 'BEMER terapie | MUDr. Lucie Klozová';
+  const description = 'Osobní konzultace BEMER terapie s MUDr. Lucií Klozovou v Brně, Blansku a okolí. Možnost pronájmu přístroje domů i nákupu. Domluvte si nezávaznou konzultaci.';
+  assert.ok(html.includes(`<title>${title}</title>`));
+  assert.ok(html.includes(`name="description"\n      content="${description}"`));
+  assert.ok(html.includes(`property="og:title" content="${title}"`));
+  assert.ok(html.includes(`property="og:description" content="${description}"`));
+  const structured = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+  assert.equal(structured['@type'], 'WebSite');
+  assert.equal(structured.name, 'BEMER Lucie Klozová');
+  assert.equal(structured.url, 'https://www.bemer-lucie.cz/');
+});
+
+test('LK favicon files cover search, browser tabs and Apple bookmarks', () => {
+  for (const [path, size] of [['favicon.png', 96], ['apple-touch-icon.png', 180]]) {
+    const png = readFileSync(new URL(`../${path}`, import.meta.url));
+    assert.equal(png.toString('hex', 0, 8), '89504e470d0a1a0a');
+    assert.equal(png.readUInt32BE(16), size);
+    assert.equal(png.readUInt32BE(20), size);
+    assert.ok(html.includes(`href="./${path}"`));
+  }
+  const ico = readFileSync(new URL('../favicon.ico', import.meta.url));
+  assert.equal(ico.readUInt16LE(0), 0);
+  assert.equal(ico.readUInt16LE(2), 1);
+  assert.equal(ico.readUInt16LE(4), 3);
+  assert.deepEqual([0, 1, 2].map(i => ico[6 + i * 16]), [16, 32, 48]);
+  assert.ok(html.includes('rel="icon" href="./favicon.ico"'));
+});
+
 test('production has a fixed artwork and no preview UI or preview dependency', () => {
   assert.doesNotMatch(html, /previews\/|node_modules|depth-tools|depth-tool-|data-artwork|noindex|<base/);
   assert.match(html, /class="depth-fallback" src="\.\/assets\/hero\/detail.webp"/);
